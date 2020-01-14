@@ -39,7 +39,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}">Settings</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}">Profile</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}">Blog</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}">Portfolio</a></li>
                                 <li class="nav-item" class="nav-item">

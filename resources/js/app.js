@@ -15,12 +15,12 @@ import App from './views/App'
 import Home from './views/Home'
 import About from './views/About'
 import Portfolio from './views/Portfolio'
-import SkillsAndOffer from './views/SkillsAndOffer'
+import Blog from './views/Blog'
 import Contact from './views/Contact'
 
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: '',
     routes: [
         {
             path: '/',
@@ -39,9 +39,9 @@ const router = new VueRouter({
             meta: { transitionName: 'slide' }
         },
         {
-            path: '/skills-and-offer',
-            name: 'Skills And Offer',
-            component: SkillsAndOffer,
+            path: '/blog',
+            name: 'Blog',
+            component: Blog,
         },
         {
             path: '/contact',

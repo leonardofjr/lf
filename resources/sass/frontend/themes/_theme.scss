@@ -1,15 +1,90 @@
 body, html, #app, #app > .row {
     height: 100%;
 }
-.frontend {
-    height: 100%;
-    overflow: auto;
-}
+
 body {
     background-image: $body-img;
     background-repeat: no-repeat;
-    background-color: #000;
+    background-color: #fff;
     background-size: cover;
     overflow-x: hidden;
     line-height: 1.5;
+}
+
+.h1 {
+    font-size: 3.5em!important;
+}
+
+@include breakpoint(lg) {
+    main {
+        height: 100%;
+        width: 100%;
+    }
+
+    aside {
+        position: absolute;
+        left: -500px;
+        z-index: 900;
+    
+    }
+    #app {
+        margin-top: 50px;
+    }
+    .top-navbar {
+        display: block!important;
+        background:white;
+        box-shadow: 10px 0 10px #aaa;
+    }
+    .content {
+        width: 100%;
+        margin-top: 50px;
+        position: absolute;
+    }
+
+}
+
+
+
+@keyframes fadeInNavigation {
+    0% {left: -400px;}
+    100% {left: 0;}
+}
+
+@keyframes fadeOutNavigation {
+    0% {left: 0;}
+    100% {left: -400px;}
+}
+
+@keyframes pushContentToRight {
+    0% {left: 0}
+    100% {left: 400px;}
+}
+
+@keyframes pushContentToLeft {
+    0% {left: 400px;}
+    100% {left: 0;}
+}
+
+.fadeInNavigation {
+    animation-name: fadeInNavigation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.fadeOutNavigation {
+    animation-name: fadeOutNavigation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.pushContentToRight {
+    animation-name: pushContentToRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.pushContentToLeft {
+    animation-name: pushContentToLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }

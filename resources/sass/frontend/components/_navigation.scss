@@ -2,9 +2,8 @@
 @import "../../helpers/_mixins";
 
 aside {
-        background-color: $primary-color;
+        color: #000;
 
-        color: $sidebar-font-color;
         .navbar {
             border-top: 0;
         }
@@ -22,10 +21,10 @@ aside {
         }
 
         a {
-            color: $sidebar-font-color;
+            color: #999
         }
         a:hover {
-            color: $sidebar-hyperlink-font-color;
+            color: #fff
         }
         .router-link-active {
             font-weight: 600;
@@ -38,13 +37,17 @@ aside {
         }
 
         .navbar-toggler {
-            border-color: white;
+            border-color: black;
         }
 
         .user {
             .avatar {
                 max-width: 190px;
             }
+            .user-name a {
+                color: #000;
+            }
+            
         }
         .block-social {
             .block-title {
@@ -53,9 +56,11 @@ aside {
             }
         }
         @include breakpoint(lg) {
+            width: 400px;
             position: fixed !important;
             height: 100%;
             .primary-menu {
+                margin-left: 3rem;
             }
             .primary-menu .nav-item:hover:after,
             .primary-menu .nav-item.router-link-active:after {

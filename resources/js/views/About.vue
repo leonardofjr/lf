@@ -1,13 +1,17 @@
 <template>
-        <div id="about">
+        <section id="about" class="container">
             <div class="page-title">
-                <h2>About Me</h2>
+                <h2 class="h1">Web Developer & Graphic Designer<br> experienced in creating CRUD applications.</h2>
             </div>
             <div>
                 <div v-html="this.$parent.data.bio"></div>
                 <!--<button class="btn btn-primary">VIEW RESUME</button>-->
             </div>
-        </div>
+            <div>
+              <div v-html="this.$parent.data.skills_and_offer"></div>
+                <!--<button class="btn btn-primary">VIEW RESUME</button>-->
+            </div>
+        </section>
 </template>
 
 <script>

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Auth;
 use App\Portfolio;
+use App\Blog;
 use Illuminate\Http\UploadedFile;
 use Carbon\Carbon;
 
@@ -30,13 +31,9 @@ class UserSettingController extends Controller
         }
         $user = User::find($user_id);
         $user->logged_in =  (Auth::user() ? true : false);
-        $portfolio = Portfolio::get()->where('user_id', $user_id);
-        $photos = [];
-        foreach($portfolio as $i => $item) {
-            $photos[$i] = $item;
-            $photos[$i]->portfolio_entries = $item->portfolio_entries;
-        }
-        $user->portfolio = $photos;
+        $user->portfolio;
+        $user->blog;
+
         return response()->json($user);
     }
 
@@ -77,7 +74,7 @@ class UserSettingController extends Controller
             $user->email = $request->email;
             // Saving data to database
             $user->save();
-            return redirect('/admin/settings');
+            return redirect('/admin/profile');
         }
 
         else {
@@ -98,7 +95,7 @@ class UserSettingController extends Controller
             $user->email = $request->email;
 
             $user->save();
-            return redirect('/admin/settings');
+            return redirect('/admin/profile');
 
         }
 

@@ -14236,8 +14236,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_About___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_About__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Portfolio__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Portfolio___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_Portfolio__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_SkillsAndOffer__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_SkillsAndOffer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_SkillsAndOffer__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_Blog__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_Blog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_Blog__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_Contact__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_Contact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_Contact__);
 
@@ -14261,7 +14261,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
-    mode: 'history',
+    mode: '',
     routes: [{
         path: '/',
         name: 'home',
@@ -14276,9 +14276,9 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
         component: __WEBPACK_IMPORTED_MODULE_6__views_Portfolio___default.a,
         meta: { transitionName: 'slide' }
     }, {
-        path: '/skills-and-offer',
-        name: 'Skills And Offer',
-        component: __WEBPACK_IMPORTED_MODULE_7__views_SkillsAndOffer___default.a
+        path: '/blog',
+        name: 'Blog',
+        component: __WEBPACK_IMPORTED_MODULE_7__views_Blog___default.a
     }, {
         path: '/contact',
         name: 'Contact Me',
@@ -50891,8 +50891,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("aside", { staticClass: "col-lg-3 nav-bg" }, [
+  return _c("div", { staticClass: "row content" }, [
+    _c("aside", { staticClass: "sidebar-bg" }, [
       !_vm.user
         ? _c("div", { staticClass: "mr-3 my-3 text-right" }, [
             _c("a", { staticClass: "ml-2", attrs: { href: "/admin/login" } }, [
@@ -51021,7 +51021,6 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "navbar-brand text-uppercase",
-                  staticStyle: { color: "#fff", "font-weight": "600" },
                   attrs: { to: "/", exact: "" }
                 },
                 [
@@ -51119,7 +51118,7 @@ var render = function() {
                       staticClass: "nav-item nav-link",
                       attrs: { to: "/about", exact: "" }
                     },
-                    [_vm._v("ABOUT")]
+                    [_vm._v("About")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -51128,16 +51127,16 @@ var render = function() {
                       staticClass: "nav-item nav-link",
                       attrs: { to: "/portfolio/", exact: "" }
                     },
-                    [_vm._v("PORTFOLIO")]
+                    [_vm._v("Portfolio")]
                   ),
                   _vm._v(" "),
                   _c(
                     "router-link",
                     {
                       staticClass: "nav-item nav-link",
-                      attrs: { to: "/skills-and-offer" }
+                      attrs: { to: "/blog" }
                     },
-                    [_vm._v("SKILLS AND OFFER")]
+                    [_vm._v("Blog")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -51146,7 +51145,7 @@ var render = function() {
                       staticClass: "nav-item nav-link",
                       attrs: { to: "/contact" }
                     },
-                    [_vm._v("CONTACT ME")]
+                    [_vm._v("Let's Talk")]
                   )
                 ],
                 1
@@ -51210,7 +51209,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "main",
-      { staticClass: "col-lg-9", attrs: { id: "frontend" } },
+      { attrs: { id: "frontend" } },
       [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
       1
     )
@@ -51342,7 +51341,7 @@ var render = function() {
   return _c("div", { staticClass: " row", attrs: { id: "home" } }, [
     _c("div", { staticClass: "home-background" }),
     _vm._v(" "),
-    _c("div", { staticClass: "col-12" }, [
+    _c("div", { staticClass: "content col-12" }, [
       _c("h2", [
         _c("b", [_vm._v("Hi!")]),
         _vm._v(" I'm "),
@@ -51363,7 +51362,6 @@ var render = function() {
               _vm._v("PORTFOLIO")
             ])
           ]),
-          _c("br"),
           _vm._v(" "),
           _c("router-link", { attrs: { to: "/skills-and-offer" } }, [
             _c("button", { staticClass: "btn btn-secondary" }, [
@@ -51463,6 +51461,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -51484,11 +51486,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "about" } }, [
+  return _c("section", { staticClass: "container", attrs: { id: "about" } }, [
     _vm._m(0),
     _vm._v(" "),
     _c("div", [
       _c("div", { domProps: { innerHTML: _vm._s(this.$parent.data.bio) } })
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c("div", {
+        domProps: { innerHTML: _vm._s(this.$parent.data.skills_and_offer) }
+      })
     ])
   ])
 }
@@ -51498,7 +51506,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("About Me")])
+      _c("h2", { staticClass: "h1" }, [
+        _vm._v("Web Developer & Graphic Designer"),
+        _c("br"),
+        _vm._v(" experienced in creating CRUD applications.")
+      ])
     ])
   }
 ]
@@ -51618,7 +51630,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "portfolio" } },
+    { staticClass: "container", attrs: { id: "portfolio" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -51666,116 +51678,9 @@ if (false) {
 }
 
 /***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(53)
-/* template */
-var __vue_template__ = __webpack_require__(54)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/SkillsAndOffer.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6d445886", Component.options)
-  } else {
-    hotAPI.reload("data-v-6d445886", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 53 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {};
-    },
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    },
-
-    // Fetches posts when the component is created.
-    created: function created() {}
-});
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "skills-and-offer" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", {
-      domProps: { innerHTML: _vm._s(this.$parent.data.skills_and_offer) }
-    })
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("Skills & Offer")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6d445886", module.exports)
-  }
-}
-
-/***/ }),
+/* 52 */,
+/* 53 */,
+/* 54 */,
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -51864,8 +51769,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -51887,86 +51790,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row'", attrs: { id: "contact" } }, [
-    _c("div", { staticClass: "col-sm-12" }, [
-      _vm._m(0),
+  return _c("div", { staticClass: "container", attrs: { id: "contact" } }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v("I am available for hire and open to any ideas of cooperation.")
+    ]),
+    _vm._v(" "),
+    _c("dl", { staticClass: "dl dl-vertical" }, [
+      this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
       _vm._v(" "),
-      _c("p", [
-        _vm._v("I am available for hire and open to any ideas of cooperation.")
-      ]),
+      this.$parent.data.email
+        ? _c("dd", { staticClass: "mb-5" }, [
+            _c("i", { staticClass: "fas fa-envelope" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "mailto:" + this.$parent.data.email } }, [
+              _vm._v(_vm._s(this.$parent.data.email))
+            ])
+          ])
+        : _vm._e(),
       _vm._v(" "),
-      _c("dl", { staticClass: "dl dl-vertical" }, [
-        this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.email
-          ? _c("dd", { staticClass: "mb-5" }, [
-              _c("i", { staticClass: "fas fa-envelope" }),
-              _vm._v(" "),
-              _c(
-                "a",
-                { attrs: { href: "mailto:" + this.$parent.data.email } },
-                [_vm._v(_vm._s(this.$parent.data.email))]
-              )
+      this.$parent.data.twitter_url ? _c("dt", [_vm._v("Twitter:")]) : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.twitter_url
+        ? _c("dd", [
+            _c("i", { staticClass: "fab fa-twitter" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
+              _vm._v(_vm._s(this.$parent.data.twitter_url))
+            ]),
+            _c("br")
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.linkedin_url
+        ? _c("dt", [_vm._v("Linkedin:")])
+        : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.linkedin_url
+        ? _c("dd", [
+            _c("i", { staticClass: "fab fa-linkedin-in" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
+              _vm._v(_vm._s(this.$parent.data.linkedin_url))
+            ]),
+            _c("br")
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.facebook_url
+        ? _c("dt", [_vm._v("Facebook:")])
+        : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.facebook_url
+        ? _c("dd", [
+            _c("i", { staticClass: "fab fa-facebook" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
+              _vm._v(_vm._s(this.$parent.data.facebook_url))
+            ]),
+            _c("br")
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.github_url ? _c("dt", [_vm._v("Github:")]) : _vm._e(),
+      _vm._v(" "),
+      this.$parent.data.github_url
+        ? _c("dd", [
+            _c("i", { staticClass: "fab fa-github" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: this.$parent.data.github_url } }, [
+              _vm._v(_vm._s(this.$parent.data.github_url))
             ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.twitter_url
-          ? _c("dt", [_vm._v("Twitter:")])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.twitter_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-twitter" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
-                _vm._v(_vm._s(this.$parent.data.twitter_url))
-              ]),
-              _c("br")
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.linkedin_url
-          ? _c("dt", [_vm._v("Linkedin:")])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.linkedin_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-linkedin-in" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
-                _vm._v(_vm._s(this.$parent.data.linkedin_url))
-              ]),
-              _c("br")
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.facebook_url
-          ? _c("dt", [_vm._v("Facebook:")])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.facebook_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-facebook" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
-                _vm._v(_vm._s(this.$parent.data.facebook_url))
-              ]),
-              _c("br")
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.github_url ? _c("dt", [_vm._v("Github:")]) : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.github_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-github" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.github_url } }, [
-                _vm._v(_vm._s(this.$parent.data.github_url))
-              ])
-            ])
-          : _vm._e()
-      ])
+          ])
+        : _vm._e()
     ])
   ])
 }
@@ -52006,6 +51903,153 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(68)
+/* template */
+var __vue_template__ = __webpack_require__(69)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/Blog.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-78b5237e", Component.options)
+  } else {
+    hotAPI.reload("data-v-78b5237e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {};
+    },
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    },
+
+    // Fetches posts when the component is created.
+    created: function created() {}
+});
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container", attrs: { id: "blog" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(this.$parent.data.blog, function(post) {
+        return _c("div", { key: post.id, staticClass: "row blog-item" }, [
+          _c("div", { staticClass: "col-12 col-md-9" }, [
+            _c("h2", { staticClass: "project-title" }, [
+              _vm._v(_vm._s(post.title))
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "img-fluid",
+              attrs: { src: "/storage/imgs/" + post.image }
+            }),
+            _vm._v(" "),
+            _c("p", { domProps: { innerHTML: _vm._s(post.content) } })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 col-md-3" })
+        ])
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-title" }, [
+      _c("h2", [_vm._v("Blog")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-78b5237e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

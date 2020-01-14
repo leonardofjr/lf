@@ -213,6 +213,10 @@ a:hover {
   background: #777;
 }
 
+.sidebar-bg {
+  background: #000;
+}
+
 body {
   letter-spacing: 1px;
   font-weight: 300;
@@ -296,12 +300,5 @@ html {
 
 #admin-cpanel .admin-sidebar .nav-link {
   color: #fff;
-}
-
-.sidebar-bg {
-  background: black;
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, black), color-stop(100%, black));
-  background: linear-gradient(45deg, black 0%, black 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
 }
 

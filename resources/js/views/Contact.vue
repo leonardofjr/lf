@@ -1,6 +1,5 @@
 <template>
-  <div id="contact" class="row'">
-        <div class="col-sm-12">
+  <div id="contact" class="container">
             <div class="page-title">
                 <h2>Contact Me</h2>
             </div>
@@ -32,7 +31,6 @@
                     <i class="fab fa-github"></i> <a :href="this.$parent.data.github_url">{{this.$parent.data.github_url}}</a>
                 </dd>
             </dl>
-        </div>
     </div>
 </template>
 

@@ -1,11 +1,8 @@
 @import "../../helpers/_variables";
 
 #frontend {
-    padding-top: 100px;
     color: #000;
     background-color: #fff;
-    padding-left: 2.3em;
-    padding-right: 2.3em;
     
 
     a {
@@ -15,6 +12,6 @@
         text-decoration: underline;
     }
     @include breakpoint('lg') {
-         margin-left: 24.6%;
+       //  margin-left: 24.6%;
     }
 }

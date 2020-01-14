@@ -1,6 +1,6 @@
 <template>     
-      <div class="row">
-        <aside class="col-lg-3 nav-bg">
+      <div class="row content">
+        <aside class="sidebar-bg">
           <!-- If user is null -->  
           <div  v-if="!user" class="mr-3 my-3 text-right">
             <a  class="ml-2" href="/admin/login">Login</a> 
@@ -43,7 +43,7 @@
                 
                 <!-- User Name -->
                 <div  class="user-name d-flex justify-content-center">
-                  <router-link to="/"  class="navbar-brand text-uppercase"  exact style="color: #fff; font-weight: 600;">{{data['fname']}} {{data['lname']}}</router-link>
+                  <router-link to="/"  class="navbar-brand text-uppercase"  exact >{{data['fname']}} {{data['lname']}}</router-link>
                 </div>
                 
                 <!-- User Job Title -->
@@ -93,10 +93,10 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="primary-menu nav flex-column">
-                          <router-link to="/about" class="nav-item nav-link" exact>ABOUT</router-link>
-                          <router-link to="/portfolio/" class="nav-item nav-link" exact>PORTFOLIO</router-link>
-                          <router-link to="/skills-and-offer" class="nav-item nav-link">SKILLS AND OFFER</router-link>
-                          <router-link to="/contact" class="nav-item nav-link">CONTACT ME</router-link>
+                          <router-link to="/about" class="nav-item nav-link" exact>About</router-link>
+                          <router-link to="/portfolio/" class="nav-item nav-link" exact>Portfolio</router-link>
+                          <router-link to="/blog" class="nav-item nav-link">Blog</router-link>
+                          <router-link to="/contact" class="nav-item nav-link">Let's Talk</router-link>
                       </div>
                   </div>
               </nav>
@@ -139,7 +139,7 @@
               
           </aside>
 
-          <main id="frontend" class="col-lg-9">
+          <main id="frontend">
                 <transition name="fade">
                   <router-view>
                   
