@@ -14,7 +14,9 @@ Vue.use(VueRouter)
 import App from './views/App'
 import Home from './views/Home'
 import About from './views/About'
-import Portfolio from './views/Portfolio'
+import WebDevelopment from './views/WebDevelopment'
+import LogoDesign from './views/LogoDesign'
+import GraphicDesign from './views/GraphicDesign'
 import Blog from './views/Blog'
 import Contact from './views/Contact'
 
@@ -33,9 +35,21 @@ const router = new VueRouter({
             component : About
         },
         {
-            path: '/portfolio',
-            name: 'portfolio',
-            component: Portfolio,
+            path: '/web-development',
+            name: 'web-development',
+            component: WebDevelopment,
+            meta: { transitionName: 'slide' }
+        },
+        {
+            path: '/logo-design',
+            name: 'logo-design',
+            component: LogoDesign,
+            meta: { transitionName: 'slide' }
+        },
+        {
+            path: '/graphic-design',
+            name: 'graphic-design',
+            component: GraphicDesign,
             meta: { transitionName: 'slide' }
         },
         {

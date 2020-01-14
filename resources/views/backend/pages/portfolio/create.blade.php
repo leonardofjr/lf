@@ -20,7 +20,7 @@
                     <label for="type">Type:</label>
                         <select class="form-control"  name="type" >
                             @foreach($type_dropdown as $type)
-                                    <option value="{{strtolower($type->name)}}">{{$type->name}}</option>
+                                    <option value="{{str_replace(' ', '_', strtolower($type->name))}}">{{$type->name}}</option>
                       
                             @endforeach
                         </select>

@@ -22,9 +22,9 @@
                         <select class="form-control" id="type" name="type" >
                             @foreach($type_dropdown as $type)
                                 @if(strtolower($type) == $data->type)
-                                    <option selected value="{{strtolower($type->name)}}">{{$type->name}}</option>
+                                    <option selected value="{{str_replace(' ', '_', strtolower($type->name))}}">{{$type->name}}</option>
                                 @else
-                                    <option value="{{strtolower($type->name)}}">{{$type->name}}</option>
+                                <option value="{{str_replace(strtolower(' ', '_', $type->name))}}">{{$type->name}}</option>
                                 @endif
                             @endforeach
                         </select>

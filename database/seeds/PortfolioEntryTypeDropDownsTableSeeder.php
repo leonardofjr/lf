@@ -12,9 +12,9 @@ class PortfolioEntryTypeDropDownsTableSeeder extends Seeder
     public function run()
     {
         DB::table('portfolio_entry_type_dropdowns')->insert([
-            ['name' => 'App'],
-            ['name' => 'Website'],
-            ['name' => 'Game'],
+            ['name' => 'Web Development'],
+            ['name' => 'Logo Design'],
+            ['name' => 'Graphic Design'],
         ]);
     }
 }

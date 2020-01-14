@@ -93,10 +93,14 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="primary-menu nav flex-column">
-                          <router-link to="/about" class="nav-item nav-link" exact>About</router-link>
-                          <router-link to="/portfolio/" class="nav-item nav-link" exact>Portfolio</router-link>
-                          <router-link to="/blog" class="nav-item nav-link">Blog</router-link>
-                          <router-link to="/contact" class="nav-item nav-link">Let's Talk</router-link>
+                          <router-link to="/web-development/" class="nav-item nav-link" exact>Web Development</router-link>
+                          <router-link to="/logo-design/" class="nav-item nav-link" exact>Logo Design</router-link>
+                          <router-link to="/graphic-design/" class="nav-item nav-link" exact>Graphic Design</router-link>
+                          <div class="mt-3">
+                            <router-link to="/blog" class="nav-item nav-link">Blog</router-link>
+                            <router-link to="/about" class="nav-item nav-link" exact>About</router-link>
+                            <router-link to="/contact" class="nav-item nav-link">Let's Talk</router-link>
+                          </div>
                       </div>
                   </div>
               </nav>
