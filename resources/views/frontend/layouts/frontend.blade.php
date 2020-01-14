@@ -68,7 +68,11 @@
                 $('aside').addClass('fadeOutNavigation');
                 $('.content').addClass('pushContentToLeft');
         }
+
+
     </script>
+
+
 </html>
 
 

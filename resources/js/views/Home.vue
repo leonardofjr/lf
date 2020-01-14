@@ -1,15 +1,21 @@
 <template>
         <div id="home" class=" row">
+            <div class="loading-overlay">
+                <div class="loading-text text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black">
+                    <h1>Leo Felipa</h1>
+                    <p>Web Developer & Graphic Designer </p>
+                </div>
+            </div>
+
+
             <div class="home-background">
 
             </div>
             <div class="content col-12">
-                <h2><b>Hi!</b> I'm <span class="developer-name">{{this.$parent.data['fname']}}</span>,</h2>
-  
-                <h2 class="pb-5">a freelance web developer specialized<br><strong>in front-end and back-end web development</strong></h2>
                 <div class="home-buttons">
-                <router-link to="/portfolio"><button class="btn btn-secondary">PORTFOLIO</button></router-link>
-                <router-link to="/skills-and-offer"><button class="btn btn-secondary">SKILLS & OFFER</button></router-link><br>
+                <router-link to="/web-development"><button class="btn btn-secondary">Web Development Projects</button></router-link>
+                <router-link to="/logo-design"><button class="btn btn-secondary">Logo Design Projects</button></router-link>
+                <router-link to="/graphic-design"><button class="btn btn-secondary">Graphic Design Projects</button></router-link>
                 </div>
                 <!--
                 <div class="form-inline">
@@ -30,6 +36,20 @@
         },
         mounted() {
 
+            if ($('loading-overlay') != null ) {
+                a();
+            }
+
+            function a() {
+                clearTimeout(a);
+                var a = setTimeout(function() {
+                    $('.loading-overlay').removeClass('loading-overlay-animation')
+                    $('.loading-text').fadeOut(1000, function() {
+                    $('.loading-overlay').addClass('loading-overlay-animation');
+
+                    });
+                }, 1000)
+            }
         },
         
     }
