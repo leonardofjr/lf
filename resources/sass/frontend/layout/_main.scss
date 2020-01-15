@@ -1,17 +1,23 @@
 @import "../../helpers/_variables";
 
-#frontend {
-    color: #000;
-    background-color: #fff;
-    
+main {
 
-    a {
-        color: $primary-color;
+    #content {
+        margin-top: 66px;
+    
+        color: #000;
+        background-color: #fff;
+        
+    
+        a {
+            color: $primary-color;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @include breakpoint('lg') {
+           //  margin-left: 24.6%;
+        }
     }
-    a:hover {
-        text-decoration: underline;
-    }
-    @include breakpoint('lg') {
-       //  margin-left: 24.6%;
-    }
+
 }

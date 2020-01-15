@@ -323,16 +323,17 @@ aside .block-social .block-title {
 
 /** Layout **/
 
-#frontend {
+main #content {
+  margin-top: 66px;
   color: #000;
   background-color: #fff;
 }
 
-#frontend a {
+main #content a {
   color: #000;
 }
 
-#frontend a:hover {
+main #content a:hover {
   text-decoration: underline;
 }
 
@@ -435,7 +436,7 @@ aside {
   z-index: 900;
 }
 
-.top-navbar {
+#top-bar {
   background: white;
   -webkit-box-shadow: 10px 0 10px #aaa;
           box-shadow: 10px 0 10px #aaa;

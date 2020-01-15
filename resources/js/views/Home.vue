@@ -32,7 +32,7 @@
         mounted() {
 
             if ($('loading-overlay') != null ) {
-                $('.top-navbar').addClass('d-none');
+                $('#top-bar').addClass('d-none');
                 loadingOverlay();
             }
             function loadingOverlay() {
@@ -44,7 +44,7 @@
         },
         methods: {
             fadeLoadingOverlay()  {
-                $('.top-navbar').removeClass('d-none');
+                $('#top-bar').removeClass('d-none');
                 $('.loading-overlay').addClass('loading-overlay-animation');
             },
         }

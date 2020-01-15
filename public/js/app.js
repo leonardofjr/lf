@@ -50847,6 +50847,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
@@ -50889,10 +50890,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
+  return _c("main", [
     _c(
       "div",
-      { staticClass: "top-navbar navbar navbar-light  fixed-top d-none" },
+      {
+        staticClass: "navbar navbar-light fixed-top d-none",
+        attrs: { id: "top-bar" }
+      },
       [
         _vm._m(0),
         _vm._v(" "),
@@ -50990,7 +50994,7 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _c("aside", { staticClass: "sidebar-bg" }, [
+    _c("aside", { staticClass: "sidebar-bg", attrs: { id: "sidebar" } }, [
       _c("div", { staticClass: "aside-inner" }, [
         _c("div", { staticClass: "user" }, [
           _c(
@@ -51177,8 +51181,8 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c(
-      "main",
-      { staticClass: "content", attrs: { id: "frontend" } },
+      "section",
+      { attrs: { id: "content" } },
       [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
       1
     )
@@ -51192,7 +51196,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "sidebar-toggler navbar-toggler",
+        staticClass: "navbar-toggler",
         attrs: {
           type: "button",
           "data-toggle": "collapse",
@@ -51320,7 +51324,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
 
         if ($('loading-overlay') != null) {
-            $('.top-navbar').addClass('d-none');
+            $('#top-bar').addClass('d-none');
             loadingOverlay();
         }
         function loadingOverlay() {
@@ -51331,7 +51335,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         fadeLoadingOverlay: function fadeLoadingOverlay() {
-            $('.top-navbar').removeClass('d-none');
+            $('#top-bar').removeClass('d-none');
             $('.loading-overlay').addClass('loading-overlay-animation');
         }
     }

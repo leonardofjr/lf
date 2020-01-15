@@ -1,7 +1,7 @@
 <template>     
-      <div class="row">
-        <div class="top-navbar navbar navbar-light  fixed-top d-none">
-            <button class="sidebar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <main>
+        <div id="top-bar" class="navbar navbar-light fixed-top d-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
                 <ul  class="navbar-nav ml-auto">
@@ -41,7 +41,8 @@
                 </template>
               </ul>
         </div>
-        <aside class="sidebar-bg">
+
+        <aside id="sidebar" class="sidebar-bg">
       
             <div class="aside-inner">
 
@@ -121,15 +122,15 @@
               
           </aside>
 
-          <main id="frontend" class="content">
+          <section id="content">
                 <transition name="fade">
                   <router-view>
                   
                   </router-view>
                   
               </transition>
-          </main>
-      </div>
+          </section>
+      </main>
 </template>
 
 <script>
