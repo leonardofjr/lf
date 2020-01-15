@@ -1,6 +1,6 @@
 <template>     
       <div class="row">
-        <div class="top-navbar navbar navbar-light  fixed-top ">
+        <div class="top-navbar navbar navbar-light  fixed-top d-none">
             <button class="sidebar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

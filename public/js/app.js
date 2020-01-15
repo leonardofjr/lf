@@ -50890,101 +50890,105 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "top-navbar navbar navbar-light  fixed-top " }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "ul",
-        { staticClass: "navbar-nav ml-auto" },
-        [
-          !_vm.user
-            ? [_vm._m(1), _vm._v(" "), _vm._m(2)]
-            : [
-                _c("li", { staticClass: "nav-item dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "nav-link dropdown-toggle",
-                      attrs: {
-                        id: "navbarDropdown",
-                        href: "#",
-                        role: "button",
-                        "data-toggle": "dropdown",
-                        "aria-haspopup": "true",
-                        "aria-expanded": "false"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                          " +
-                          _vm._s(_vm.data["fname"])
-                      ),
-                      _c("span", { staticClass: "caret" })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "dropdown-menu dropdown-menu-right",
-                      attrs: { "aria-labelledby": "navbarDropdown" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "dropdown-item",
-                          attrs: { href: "/admin/profile" }
-                        },
-                        [
-                          _vm._v(
-                            "\n                              Settings\n                          "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass: "dropdown-item",
-                          attrs: {
-                            href: "/logout",
-                            onclick:
-                              "event.preventDefault();\n                                          document.getElementById('logout-form').submit();"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                              Logout\n                          "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "form",
-                        {
-                          staticStyle: { display: "none" },
-                          attrs: {
-                            id: "logout-form",
-                            action: "/logout",
-                            method: "POST"
-                          }
-                        },
-                        [
-                          _c("input", {
-                            attrs: { type: "hidden", name: "_token" },
-                            domProps: { value: _vm.csrf }
-                          })
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ]
-        ],
-        2
-      )
-    ]),
+    _c(
+      "div",
+      { staticClass: "top-navbar navbar navbar-light  fixed-top d-none" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "navbar-nav ml-auto" },
+          [
+            !_vm.user
+              ? [_vm._m(1), _vm._v(" "), _vm._m(2)]
+              : [
+                  _c("li", { staticClass: "nav-item dropdown" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link dropdown-toggle",
+                        attrs: {
+                          id: "navbarDropdown",
+                          href: "#",
+                          role: "button",
+                          "data-toggle": "dropdown",
+                          "aria-haspopup": "true",
+                          "aria-expanded": "false"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                          " +
+                            _vm._s(_vm.data["fname"])
+                        ),
+                        _c("span", { staticClass: "caret" })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "dropdown-menu dropdown-menu-right",
+                        attrs: { "aria-labelledby": "navbarDropdown" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { href: "/admin/profile" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                              Settings\n                          "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: {
+                              href: "/logout",
+                              onclick:
+                                "event.preventDefault();\n                                          document.getElementById('logout-form').submit();"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                              Logout\n                          "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "form",
+                          {
+                            staticStyle: { display: "none" },
+                            attrs: {
+                              id: "logout-form",
+                              action: "/logout",
+                              method: "POST"
+                            }
+                          },
+                          [
+                            _c("input", {
+                              attrs: { type: "hidden", name: "_token" },
+                              domProps: { value: _vm.csrf }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ]
+          ],
+          2
+        )
+      ]
+    ),
     _vm._v(" "),
     _c("aside", { staticClass: "sidebar-bg" }, [
       _c("div", { staticClass: "aside-inner" }, [
@@ -51308,11 +51312,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -51321,19 +51320,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
 
         if ($('loading-overlay') != null) {
-            a();
+            $('.top-navbar').addClass('d-none');
+            loadingOverlay();
         }
+        function loadingOverlay() {
+            $('.loading-overlay').removeClass('loading-overlay-animation');
+            $('.loading-text');
+        }
+    },
 
-        function a() {
-            clearTimeout(a);
-            var a = setTimeout(function () {
-                $('.loading-overlay').removeClass('loading-overlay-animation');
-                $('.loading-text').fadeOut(1000, function () {
-                    $('.loading-overlay').addClass('loading-overlay-animation');
-                });
-            }, 1000);
+    methods: {
+        fadeLoadingOverlay: function fadeLoadingOverlay() {
+            $('.top-navbar').removeClass('d-none');
+            $('.loading-overlay').addClass('loading-overlay-animation');
         }
     }
+
 });
 
 /***/ }),
@@ -51345,51 +51347,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "home-background" }),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "content center-md-content",
-        staticStyle: { animation: "none" }
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "home-buttons text-center" },
-          [
-            _c("router-link", { attrs: { to: "/web-development" } }, [
-              _c("button", { staticClass: "btn btn-secondary" }, [
-                _vm._v("Web Development Projects")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("router-link", { attrs: { to: "/logo-design" } }, [
-              _c("button", { staticClass: "btn btn-secondary" }, [
-                _vm._v("Logo Design Projects")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("router-link", { attrs: { to: "/graphic-design" } }, [
-              _c("button", { staticClass: "btn btn-secondary" }, [
-                _vm._v("Graphic Design Projects")
-              ])
-            ])
-          ],
-          1
-        )
-      ]
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "loading-overlay " }, [
+    _c("div", { staticClass: "loading-overlay " }, [
       _c(
         "div",
         {
@@ -51397,11 +51355,69 @@ var staticRenderFns = [
           staticStyle: { color: "black" }
         },
         [
-          _c("h1", [_vm._v("Leo Felipa")]),
+          _vm._m(0),
           _vm._v(" "),
-          _c("p", [_vm._v("Web Developer & Graphic Designer ")])
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "text-center" },
+            [
+              _c("router-link", { attrs: { to: "/web-development" } }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary mb-4",
+                    on: { click: _vm.fadeLoadingOverlay }
+                  },
+                  [_vm._v("Web Development Projects")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: "/logo-design" } }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary mb-4",
+                    on: { click: _vm.fadeLoadingOverlay }
+                  },
+                  [_vm._v("Logo Design Projects")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: "/graphic-design" } }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary mb-4",
+                    on: { click: _vm.fadeLoadingOverlay }
+                  },
+                  [_vm._v("Graphic Design Projects")]
+                )
+              ])
+            ],
+            1
+          )
         ]
       )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "user-name" }, [
+      _c("h1", [_vm._v("Leo Felipa")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "job-title mb-5" }, [
+      _c("p", [_vm._v("Web Developer & Graphic Designer ")])
     ])
   }
 ]

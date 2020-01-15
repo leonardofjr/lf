@@ -2,27 +2,22 @@
         <div id="home" class="row">
             <div class="loading-overlay ">
                 <div class="loading-text text-center center-md-content" style="color: black">
-                    <h1>Leo Felipa</h1>
-                    <p>Web Developer & Graphic Designer </p>
-                </div>
-            </div>
+                    <div class="user-name">
+                        <h1>Leo Felipa</h1>
+                    </div>
+                    <div class="job-title mb-5">
+                        <p>Web Developer & Graphic Designer </p>
+                    </div>
 
+                    <div class="text-center">
+                        <router-link to="/web-development"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">Web Development Projects</button></router-link>
+                        <router-link to="/logo-design"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">Logo Design Projects</button></router-link>
+                        <router-link to="/graphic-design"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">Graphic Design Projects</button></router-link>
+                    </div>
 
-            <div class="home-background">
-
-            </div>
-            <div class="content center-md-content" style="animation: none;">
-                <div class="home-buttons text-center">
-                    <router-link to="/web-development"><button class="btn btn-secondary">Web Development Projects</button></router-link>
-                    <router-link to="/logo-design"><button class="btn btn-secondary">Logo Design Projects</button></router-link>
-                    <router-link to="/graphic-design"><button class="btn btn-secondary">Graphic Design Projects</button></router-link>
                 </div>
-                <!--
-                <div class="form-inline">
-                    <button class="create-dialog-box-btn btn btn-primary mb-2 col-12 col-lg-5" >Change Name</button>
-                    <div class="col-lg-5 input-dialog-box form-group mb-2"></div>
-                </div>
-                -->
+                
+      
             </div>
         </div>
 </template>
@@ -37,20 +32,22 @@
         mounted() {
 
             if ($('loading-overlay') != null ) {
-                a();
+                $('.top-navbar').addClass('d-none');
+                loadingOverlay();
             }
-
-            function a() {
-                clearTimeout(a);
-                var a = setTimeout(function() {
-                    $('.loading-overlay').removeClass('loading-overlay-animation')
-                    $('.loading-text').fadeOut(1000, function() {
-                    $('.loading-overlay').addClass('loading-overlay-animation');
-
-                    });
-                }, 1000)
+            function loadingOverlay() {
+                $('.loading-overlay').removeClass('loading-overlay-animation')
+                $('.loading-text');
             }
+            
+
         },
+        methods: {
+            fadeLoadingOverlay()  {
+                $('.top-navbar').removeClass('d-none');
+                $('.loading-overlay').addClass('loading-overlay-animation');
+            },
+        }
         
     }
 </script>

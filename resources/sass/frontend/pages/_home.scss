@@ -2,18 +2,11 @@
     color: #fff;
     position: relative;
 
-    .home-background {
+    .loading-overlay {
         width: 100%;
         height: 100vh;
-        height: calc(100vh - 50px);
-
-        background-size: cover;
-        background-image: url('/imgs/toronto-bg.jpg');
     }
 
-    .home-buttons {
-        margin-top: 5em;
-    }
 
 }
 
