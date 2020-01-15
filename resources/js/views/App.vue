@@ -8,8 +8,8 @@
           </div>
             <!-- else if user data is returned -->
             <ul v-else  class="navbar-nav ml-4">
-                <li class="nav-item dropdown">
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <li class="dropdown">
+                      <a id="navbarDropdown" class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                           {{data['fname']}}<span class="caret"></span>
                       </a>
 

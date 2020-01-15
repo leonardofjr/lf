@@ -50926,11 +50926,11 @@ var render = function() {
             )
           ])
         : _c("ul", { staticClass: "navbar-nav ml-4" }, [
-            _c("li", { staticClass: "nav-item dropdown" }, [
+            _c("li", { staticClass: "dropdown" }, [
               _c(
                 "a",
                 {
-                  staticClass: "nav-link dropdown-toggle",
+                  staticClass: "btn btn-primary dropdown-toggle",
                   attrs: {
                     id: "navbarDropdown",
                     href: "#",
