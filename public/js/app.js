@@ -50847,28 +50847,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
@@ -50911,100 +50889,104 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row content" }, [
-    _c("aside", { staticClass: "sidebar-bg" }, [
-      !_vm.user
-        ? _c("div", { staticClass: "mr-3 my-3 text-right" }, [
-            _c("a", { staticClass: "ml-2", attrs: { href: "/admin/login" } }, [
-              _vm._v("Login")
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "ml-2", attrs: { href: "/admin/register" } },
-              [_vm._v("Register")]
-            )
-          ])
-        : _c("ul", { staticClass: "navbar-nav ml-4" }, [
-            _c("li", { staticClass: "dropdown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-primary dropdown-toggle",
-                  attrs: {
-                    id: "navbarDropdown",
-                    href: "#",
-                    role: "button",
-                    "data-toggle": "dropdown",
-                    "aria-haspopup": "true",
-                    "aria-expanded": "false"
-                  }
-                },
-                [
-                  _vm._v("\n                    " + _vm._s(_vm.data["fname"])),
-                  _c("span", { staticClass: "caret" })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "dropdown-menu",
-                  attrs: { "aria-labelledby": "navbarDropdown" }
-                },
-                [
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "top-navbar navbar navbar-light  fixed-top " }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "navbar-nav ml-auto" },
+        [
+          !_vm.user
+            ? [_vm._m(1), _vm._v(" "), _vm._m(2)]
+            : [
+                _c("li", { staticClass: "nav-item dropdown" }, [
                   _c(
                     "a",
                     {
-                      staticClass: "dropdown-item",
-                      attrs: { href: "/admin/profile" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        Settings\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-item",
+                      staticClass: "nav-link dropdown-toggle",
                       attrs: {
-                        href: "/logout",
-                        onclick:
-                          "event.preventDefault();\n                                    document.getElementById('logout-form').submit();"
+                        id: "navbarDropdown",
+                        href: "#",
+                        role: "button",
+                        "data-toggle": "dropdown",
+                        "aria-haspopup": "true",
+                        "aria-expanded": "false"
                       }
                     },
                     [
                       _vm._v(
-                        "\n                        Logout\n                    "
-                      )
+                        "\n                          " +
+                          _vm._s(_vm.data["fname"])
+                      ),
+                      _c("span", { staticClass: "caret" })
                     ]
                   ),
                   _vm._v(" "),
                   _c(
-                    "form",
+                    "div",
                     {
-                      staticStyle: { display: "none" },
-                      attrs: {
-                        id: "logout-form",
-                        action: "/logout",
-                        method: "POST"
-                      }
+                      staticClass: "dropdown-menu dropdown-menu-right",
+                      attrs: { "aria-labelledby": "navbarDropdown" }
                     },
                     [
-                      _c("input", {
-                        attrs: { type: "hidden", name: "_token" },
-                        domProps: { value: _vm.csrf }
-                      })
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item",
+                          attrs: { href: "/admin/profile" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                              Settings\n                          "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item",
+                          attrs: {
+                            href: "/logout",
+                            onclick:
+                              "event.preventDefault();\n                                          document.getElementById('logout-form').submit();"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                              Logout\n                          "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "form",
+                        {
+                          staticStyle: { display: "none" },
+                          attrs: {
+                            id: "logout-form",
+                            action: "/logout",
+                            method: "POST"
+                          }
+                        },
+                        [
+                          _c("input", {
+                            attrs: { type: "hidden", name: "_token" },
+                            domProps: { value: _vm.csrf }
+                          })
+                        ]
+                      )
                     ]
                   )
-                ]
-              )
-            ])
-          ]),
-      _vm._v(" "),
+                ])
+              ]
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("aside", { staticClass: "sidebar-bg" }, [
       _c("div", { staticClass: "aside-inner" }, [
         _c("div", { staticClass: "user" }, [
           _c(
@@ -51067,135 +51049,73 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("nav", { staticClass: "navbar navbar-expand-lg my-3 " }, [
+        _c("nav", { staticClass: "navbar  my-3 " }, [
           _c(
             "div",
-            { staticClass: "py-1 pl-3 social-icons d-block d-lg-none" },
-            [
-              _vm.data.email
-                ? _c("span", { staticClass: "px-1" }, [
-                    _c("a", { attrs: { href: "mailto:" + _vm.data.email } }, [
-                      _c("i", { staticClass: "fas fa-2x fa-envelope" })
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.data.twitter_url
-                ? _c("span", { staticClass: "px-1" }, [
-                    _c("a", { attrs: { href: _vm.data.twitter_url } }, [
-                      _c("i", { staticClass: "fab fa-2x fa-twitter" })
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.data.linkedin_url
-                ? _c("span", { staticClass: "px-1" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "px-1",
-                        attrs: { href: _vm.data.linkedin_url }
-                      },
-                      [_c("i", { staticClass: "fab fa-2x fa-linkedin-in" })]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.data.facebook_url
-                ? _c("span", { staticClass: "px-1" }, [
-                    _c("a", { attrs: { href: _vm.data.facebook_url } }, [
-                      _c("i", { staticClass: "fab fa-2x fa-facebook" })
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.data.github_url
-                ? _c("span", { staticClass: "px-1" }, [
-                    _c("a", { attrs: { href: _vm.data.github_url } }, [
-                      _c("i", { staticClass: "fab fa-2x fa-github" })
-                    ])
-                  ])
-                : _vm._e()
-            ]
-          ),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarNavAltMarkup" }
-            },
+            { staticClass: "primary-menu" },
             [
               _c(
+                "router-link",
+                {
+                  staticClass: "nav-item nav-link",
+                  attrs: { to: "/web-development/", exact: "" }
+                },
+                [_vm._v("Web Development")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item nav-link",
+                  attrs: { to: "/logo-design/", exact: "" }
+                },
+                [_vm._v("Logo Design")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item nav-link",
+                  attrs: { to: "/graphic-design/", exact: "" }
+                },
+                [_vm._v("Graphic Design")]
+              ),
+              _vm._v(" "),
+              _c(
                 "div",
-                { staticClass: "primary-menu nav flex-column" },
+                { staticClass: "mt-3" },
                 [
                   _c(
                     "router-link",
                     {
                       staticClass: "nav-item nav-link",
-                      attrs: { to: "/web-development/", exact: "" }
+                      attrs: { to: "/blog" }
                     },
-                    [_vm._v("Web Development")]
+                    [_vm._v("Blog")]
                   ),
                   _vm._v(" "),
                   _c(
                     "router-link",
                     {
                       staticClass: "nav-item nav-link",
-                      attrs: { to: "/logo-design/", exact: "" }
+                      attrs: { to: "/about", exact: "" }
                     },
-                    [_vm._v("Logo Design")]
+                    [_vm._v("About")]
                   ),
                   _vm._v(" "),
                   _c(
                     "router-link",
                     {
                       staticClass: "nav-item nav-link",
-                      attrs: { to: "/graphic-design/", exact: "" }
+                      attrs: { to: "/contact" }
                     },
-                    [_vm._v("Graphic Design")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "mt-3" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-item nav-link",
-                          attrs: { to: "/blog" }
-                        },
-                        [_vm._v("Blog")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-item nav-link",
-                          attrs: { to: "/about", exact: "" }
-                        },
-                        [_vm._v("About")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-item nav-link",
-                          attrs: { to: "/contact" }
-                        },
-                        [_vm._v("Let's Talk")]
-                      )
-                    ],
-                    1
+                    [_vm._v("Let's Talk")]
                   )
                 ],
                 1
               )
-            ]
+            ],
+            1
           )
         ]),
         _vm._v(" "),
@@ -51254,7 +51174,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "main",
-      { attrs: { id: "frontend" } },
+      { staticClass: "content", attrs: { id: "frontend" } },
       [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
       1
     )
@@ -51268,18 +51188,38 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "navbar-toggler navbar-dark ml-auto",
+        staticClass: "sidebar-toggler navbar-toggler",
         attrs: {
           type: "button",
           "data-toggle": "collapse",
-          "data-target": "#navbarNavAltMarkup",
-          "aria-controls": "navbarNavAltMarkup",
+          "data-target": "#navbarToggleExternalContent",
+          "aria-controls": "navbarToggleExternalContent",
           "aria-expanded": "false",
           "aria-label": "Toggle navigation"
         }
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "ml-2", attrs: { href: "/admin/login" } }, [
+        _vm._v("Login")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "ml-2", attrs: { href: "/admin/register" } }, [
+        _vm._v("Register")
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -51404,15 +51344,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: " row", attrs: { id: "home" } }, [
+  return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "home-background" }),
+    _c("div", { staticClass: "home-background d-none d-lg-block" }),
     _vm._v(" "),
-    _c("div", { staticClass: "content col-12" }, [
+    _c("div", { staticClass: "content center-md-content" }, [
       _c(
         "div",
-        { staticClass: "home-buttons" },
+        { staticClass: "home-buttons text-center" },
         [
           _c("router-link", { attrs: { to: "/web-development" } }, [
             _c("button", { staticClass: "btn btn-secondary" }, [
@@ -51442,18 +51382,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "loading-overlay" }, [
+    return _c("div", { staticClass: "loading-overlay " }, [
       _c(
         "div",
         {
-          staticClass: "loading-text text-center",
-          staticStyle: {
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "black"
-          }
+          staticClass: "loading-text text-center center-md-content",
+          staticStyle: { color: "black" }
         },
         [
           _c("h1", [_vm._v("Leo Felipa")]),

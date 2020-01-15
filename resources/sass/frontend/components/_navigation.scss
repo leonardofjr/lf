@@ -3,13 +3,17 @@
 
 aside {
         color: #000;
+        width: 400px;
+        padding: 0;
+        position: fixed !important;
+        height: 100%;
+        
 
         .navbar {
             border-top: 0;
         }
         .navbar {
             border-top: 2px solid black;
-            padding: 0;
             width: 95%;
         }
 
@@ -45,7 +49,7 @@ aside {
                 max-width: 190px;
             }
             .user-name a {
-                color: #000;
+                color: #fff;
             }
             
         }
@@ -55,10 +59,8 @@ aside {
                 font-size: .7em;
             }
         }
-        @include breakpoint(lg) {
-            width: 400px;
-            position: fixed !important;
-            height: 100%;
+        @include breakpoint(md) {
+
             .primary-menu {
                 margin-left: 3rem;
             }

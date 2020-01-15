@@ -1,21 +1,21 @@
 <template>
-        <div id="home" class=" row">
-            <div class="loading-overlay">
-                <div class="loading-text text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black">
+        <div id="home" class="row">
+            <div class="loading-overlay ">
+                <div class="loading-text text-center center-md-content" style="color: black">
                     <h1>Leo Felipa</h1>
                     <p>Web Developer & Graphic Designer </p>
                 </div>
             </div>
 
 
-            <div class="home-background">
+            <div class="home-background d-none d-lg-block">
 
             </div>
-            <div class="content col-12">
-                <div class="home-buttons">
-                <router-link to="/web-development"><button class="btn btn-secondary">Web Development Projects</button></router-link>
-                <router-link to="/logo-design"><button class="btn btn-secondary">Logo Design Projects</button></router-link>
-                <router-link to="/graphic-design"><button class="btn btn-secondary">Graphic Design Projects</button></router-link>
+            <div class="content center-md-content">
+                <div class="home-buttons text-center">
+                    <router-link to="/web-development"><button class="btn btn-secondary">Web Development Projects</button></router-link>
+                    <router-link to="/logo-design"><button class="btn btn-secondary">Logo Design Projects</button></router-link>
+                    <router-link to="/graphic-design"><button class="btn btn-secondary">Graphic Design Projects</button></router-link>
                 </div>
                 <!--
                 <div class="form-inline">

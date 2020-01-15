@@ -249,6 +249,10 @@ h4 {
 
 aside {
   color: #000;
+  width: 400px;
+  padding: 0;
+  position: fixed !important;
+  height: 100%;
 }
 
 aside .navbar {
@@ -257,7 +261,6 @@ aside .navbar {
 
 aside .navbar {
   border-top: 2px solid black;
-  padding: 0;
   width: 95%;
 }
 
@@ -293,7 +296,7 @@ aside .user .avatar {
 }
 
 aside .user .user-name a {
-  color: #000;
+  color: #fff;
 }
 
 aside .block-social .block-title {
@@ -301,13 +304,7 @@ aside .block-social .block-title {
   font-size: .7em;
 }
 
-@media (min-width: 1200px) {
-  aside {
-    width: 400px;
-    position: fixed !important;
-    height: 100%;
-  }
-
+@media (min-width: 992px) {
   aside .primary-menu {
     margin-left: 3rem;
   }
@@ -361,19 +358,6 @@ footer {
 
 #home .home-buttons {
   margin-top: 5em;
-}
-
-#home .content {
-  position: absolute;
-  -webkit-animation: none;
-          animation: none;
-  text-align: center;
-  width: 50%;
-  height: 50%;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 #contact form input,
@@ -435,34 +419,42 @@ body {
   font-size: 3.5em !important;
 }
 
-@media (min-width: 1200px) {
-  main {
-    height: 100%;
-    width: 100%;
-  }
+main {
+  height: 100%;
+  width: 100%;
+}
 
-  aside {
-    position: absolute;
-    left: -500px;
-    z-index: 900;
-  }
+.content {
+  width: 100%;
+}
 
-  #app {
-    margin-top: 50px;
-  }
+.center-md-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 
-  .top-navbar {
-    display: block !important;
-    background: white;
-    -webkit-box-shadow: 10px 0 10px #aaa;
-            box-shadow: 10px 0 10px #aaa;
-  }
+aside {
+  position: absolute;
+  left: -500px;
+  z-index: 900;
+}
 
-  .content {
-    width: 100%;
-    margin-top: 50px;
-    position: absolute;
-  }
+#app {
+  margin-top: 50px;
+}
+
+.top-navbar {
+  background: white;
+  -webkit-box-shadow: 10px 0 10px #aaa;
+          box-shadow: 10px 0 10px #aaa;
+}
+
+.content {
+  margin-top: 50px;
+  position: absolute;
 }
 
 @-webkit-keyframes fadeInNavigation {

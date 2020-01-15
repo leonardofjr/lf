@@ -15,95 +15,98 @@ body {
     font-size: 3.5em!important;
 }
 
-@include breakpoint(lg) {
     main {
         height: 100%;
         width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+
+
+    .center-md-content {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
     }
 
     aside {
         position: absolute;
         left: -500px;
         z-index: 900;
-    
     }
     #app {
         margin-top: 50px;
     }
     .top-navbar {
-        display: block!important;
         background:white;
         box-shadow: 10px 0 10px #aaa;
     }
     .content {
-        width: 100%;
         margin-top: 50px;
         position: absolute;
     }
 
-}
+    @keyframes fadeInNavigation {
+        0% {left: -400px;}
+        100% {left: 0;}
+    }
+    
+    @keyframes fadeOutNavigation {
+        0% {left: 0;}
+        100% {left: -400px;}
+    }
+    
+    @keyframes pushContentToRight {
+        0% {left: 0}
+        100% {left: 400px;}
+    }
+    
+    @keyframes pushContentToLeft {
+        0% {left: 400px;}
+        100% {left: 0;}
+    }
+    
+    .fadeInNavigation {
+        animation-name: fadeInNavigation;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    
+    .fadeOutNavigation {
+        animation-name: fadeOutNavigation;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    
+    .pushContentToRight {
+        animation-name: pushContentToRight;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    
+    .pushContentToLeft {
+        animation-name: pushContentToLeft;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    
+    .loading-overlay {
+        position: absolute;
+        background: #fff;
+        z-index: 100000;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .loading-overlay-animation {
+        animation-name: loadingOverlayAnimation;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes loadingOverlayAnimation {
+        0% {height: 100%;}
+        100% {height: 0;}
+    }
 
-
-
-@keyframes fadeInNavigation {
-    0% {left: -400px;}
-    100% {left: 0;}
-}
-
-@keyframes fadeOutNavigation {
-    0% {left: 0;}
-    100% {left: -400px;}
-}
-
-@keyframes pushContentToRight {
-    0% {left: 0}
-    100% {left: 400px;}
-}
-
-@keyframes pushContentToLeft {
-    0% {left: 400px;}
-    100% {left: 0;}
-}
-
-.fadeInNavigation {
-    animation-name: fadeInNavigation;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.fadeOutNavigation {
-    animation-name: fadeOutNavigation;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.pushContentToRight {
-    animation-name: pushContentToRight;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.pushContentToLeft {
-    animation-name: pushContentToLeft;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.loading-overlay {
-    position: absolute;
-    background: #fff;
-    z-index: 100000;
-    width: 100%;
-    height: 100%;
-}
-
-.loading-overlay-animation {
-    animation-name: loadingOverlayAnimation;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes loadingOverlayAnimation {
-    0% {height: 100%;}
-    100% {height: 0;}
-}
