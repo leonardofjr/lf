@@ -43,32 +43,49 @@
 
     <script>
         $('.sidebar-toggler').on('click', function() {
-            if (!$('aside').hasClass('fadeInNavigation') && !$('.content').hasClass('pushContentToRight')) {
-                pushElementsLeft();
+            if (!$('aside').hasClass('show') && !$('#frontend').hasClass('show')) {
+                slideInElements();
             } else {
-                pushElementsRight();
+                slideOutElements();
             }
         })
            
-        $('.content').on('click', function() {
-            if ($('aside').hasClass('fadeInNavigation') && $('.content').hasClass('pushContentToRight')) {
-                pushElementsRight();
+        $('#frontend, aside a').on('click', function() {
+            if ($('aside').hasClass('show') && $('#frontend').hasClass('show')) {
+                slideOutElements();
             }
         })
-           
-        function pushElementsLeft() {
-                $('aside').removeClass('fadeOutNavigation');
-                $('.content').removeClass('pushContentToLeft');
-                $('aside').addClass('fadeInNavigation');
-                $('.content').addClass('pushContentToRight');
-        }
-        function pushElementsRight() {
-                $('aside').removeClass('fadeInNavigation');
-                $('.content').removeClass('pushContentToRight');
-                $('aside').addClass('fadeOutNavigation');
-                $('.content').addClass('pushContentToLeft');
+        
+
+        
+        function slideOutElements() {
+            $('aside').removeClass('slide-in-navigation show');
+            $('#frontend').removeClass('slide-in-content show');
+            slideOutNavigation();
+            slideOutContent();
         }
 
+        function slideInElements() {
+            $('aside').removeClass('slide-in-navigation slide-out-navigation show');
+            $('#frontend').removeClass('slide-in-content slide-out-content show');
+            slideInNavigation();
+            slideInContent();
+        }
+
+        function slideOutNavigation() {
+            $('aside').addClass('slide-out-navigation');
+        }
+
+        function slideOutContent() {
+            $('#frontend').addClass('slide-out-content');
+        }
+
+        function slideInNavigation() {
+            $('aside').addClass('slide-in-navigation show');
+        }
+        function slideInContent() {
+            $('#frontend').addClass('slide-in-content show');
+        }
 
     </script>
 

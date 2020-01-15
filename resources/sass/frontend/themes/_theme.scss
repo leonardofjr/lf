@@ -47,46 +47,46 @@ body {
         position: absolute;
     }
 
-    @keyframes fadeInNavigation {
+    @keyframes slideInNavigation {
         0% {left: -400px;}
         100% {left: 0;}
     }
     
-    @keyframes fadeOutNavigation {
+    @keyframes slideOutNavigation {
         0% {left: 0;}
         100% {left: -400px;}
     }
     
-    @keyframes pushContentToRight {
+    @keyframes slideContentIn {
         0% {left: 0}
         100% {left: 400px;}
     }
     
-    @keyframes pushContentToLeft {
+    @keyframes slideContentOut {
         0% {left: 400px;}
         100% {left: 0;}
     }
     
-    .fadeInNavigation {
-        animation-name: fadeInNavigation;
+    .slide-in-navigation {
+        animation-name: slideInNavigation;
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }
     
-    .fadeOutNavigation {
-        animation-name: fadeOutNavigation;
+    .slide-out-navigation {
+        animation-name: slideOutNavigation;
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }
     
-    .pushContentToRight {
-        animation-name: pushContentToRight;
+    .slide-in-content {
+        animation-name: slideContentIn;
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }
     
-    .pushContentToLeft {
-        animation-name: pushContentToLeft;
+    .slide-out-content  {
+        animation-name: slideContentOut;
         animation-duration: 1s;
         animation-fill-mode: forwards;
     }

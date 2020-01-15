@@ -457,7 +457,7 @@ aside {
   position: absolute;
 }
 
-@-webkit-keyframes fadeInNavigation {
+@-webkit-keyframes slideInNavigation {
   0% {
     left: -400px;
   }
@@ -467,7 +467,7 @@ aside {
   }
 }
 
-@keyframes fadeInNavigation {
+@keyframes slideInNavigation {
   0% {
     left: -400px;
   }
@@ -477,7 +477,7 @@ aside {
   }
 }
 
-@-webkit-keyframes fadeOutNavigation {
+@-webkit-keyframes slideOutNavigation {
   0% {
     left: 0;
   }
@@ -487,7 +487,7 @@ aside {
   }
 }
 
-@keyframes fadeOutNavigation {
+@keyframes slideOutNavigation {
   0% {
     left: 0;
   }
@@ -497,7 +497,7 @@ aside {
   }
 }
 
-@-webkit-keyframes pushContentToRight {
+@-webkit-keyframes slideContentIn {
   0% {
     left: 0;
   }
@@ -507,7 +507,7 @@ aside {
   }
 }
 
-@keyframes pushContentToRight {
+@keyframes slideContentIn {
   0% {
     left: 0;
   }
@@ -517,7 +517,7 @@ aside {
   }
 }
 
-@-webkit-keyframes pushContentToLeft {
+@-webkit-keyframes slideContentOut {
   0% {
     left: 400px;
   }
@@ -527,7 +527,7 @@ aside {
   }
 }
 
-@keyframes pushContentToLeft {
+@keyframes slideContentOut {
   0% {
     left: 400px;
   }
@@ -537,36 +537,36 @@ aside {
   }
 }
 
-.fadeInNavigation {
-  -webkit-animation-name: fadeInNavigation;
-          animation-name: fadeInNavigation;
+.slide-in-navigation {
+  -webkit-animation-name: slideInNavigation;
+          animation-name: slideInNavigation;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.fadeOutNavigation {
-  -webkit-animation-name: fadeOutNavigation;
-          animation-name: fadeOutNavigation;
+.slide-out-navigation {
+  -webkit-animation-name: slideOutNavigation;
+          animation-name: slideOutNavigation;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.pushContentToRight {
-  -webkit-animation-name: pushContentToRight;
-          animation-name: pushContentToRight;
+.slide-in-content {
+  -webkit-animation-name: slideContentIn;
+          animation-name: slideContentIn;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.pushContentToLeft {
-  -webkit-animation-name: pushContentToLeft;
-          animation-name: pushContentToLeft;
+.slide-out-content {
+  -webkit-animation-name: slideContentOut;
+          animation-name: slideContentOut;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;

@@ -8,10 +8,10 @@
             </div>
 
 
-            <div class="home-background d-none d-lg-block">
+            <div class="home-background">
 
             </div>
-            <div class="content center-md-content">
+            <div class="content center-md-content" style="animation: none;">
                 <div class="home-buttons text-center">
                     <router-link to="/web-development"><button class="btn btn-secondary">Web Development Projects</button></router-link>
                     <router-link to="/logo-design"><button class="btn btn-secondary">Logo Design Projects</button></router-link>

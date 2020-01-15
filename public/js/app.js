@@ -51347,34 +51347,41 @@ var render = function() {
   return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "home-background d-none d-lg-block" }),
+    _c("div", { staticClass: "home-background" }),
     _vm._v(" "),
-    _c("div", { staticClass: "content center-md-content" }, [
-      _c(
-        "div",
-        { staticClass: "home-buttons text-center" },
-        [
-          _c("router-link", { attrs: { to: "/web-development" } }, [
-            _c("button", { staticClass: "btn btn-secondary" }, [
-              _vm._v("Web Development Projects")
+    _c(
+      "div",
+      {
+        staticClass: "content center-md-content",
+        staticStyle: { animation: "none" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "home-buttons text-center" },
+          [
+            _c("router-link", { attrs: { to: "/web-development" } }, [
+              _c("button", { staticClass: "btn btn-secondary" }, [
+                _vm._v("Web Development Projects")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/logo-design" } }, [
+              _c("button", { staticClass: "btn btn-secondary" }, [
+                _vm._v("Logo Design Projects")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/graphic-design" } }, [
+              _c("button", { staticClass: "btn btn-secondary" }, [
+                _vm._v("Graphic Design Projects")
+              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/logo-design" } }, [
-            _c("button", { staticClass: "btn btn-secondary" }, [
-              _vm._v("Logo Design Projects")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/graphic-design" } }, [
-            _c("button", { staticClass: "btn btn-secondary" }, [
-              _vm._v("Graphic Design Projects")
-            ])
-          ])
-        ],
-        1
-      )
-    ])
+          ],
+          1
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
