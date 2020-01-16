@@ -1,3 +1,9 @@
+/* 
+Developer: Leo Felipa
+Description: This script is written to compliment the functionality of the croppie.js script. It's written in a way that can be applied to all forms in admin/ as long as all the ids and classes follow the same pattern. 
+website: lfelipa.com
+*/ 
+
 const uploadDemoElement = $('#uploadDemo');
 const uploadedImageElement = $('#uploadedImageFile');
 const imageFilePreviewElement = $('#imageFilePreview');
