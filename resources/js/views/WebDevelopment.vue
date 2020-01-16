@@ -27,23 +27,22 @@ export default {
 
         }
     },
+    methods: {
+        getPostBody (post) {
+            this.body = this.stripTags(post);
 
-        methods: {
-            getPostBody (post) {
-                this.body = this.stripTags(post);
+            return this.body.length > 50 ? this.body.substring(0, 50) + '...' : this.body;           
+        },
 
-                return this.body.length > 50 ? this.body.substring(0, 50) + '...' : this.body;           
-            },
-
-            stripTags (text) {
-                return text.replace(/(<([^>]+)>)/ig, '');
-            } 
+        stripTags (text) {
+            return text.replace(/(<([^>]+)>)/ig, '');
+        } 
 
     },
 
     // Fetches posts when the component is created.
     mounted() {
-
+        this.$parent.displayTopbar();
     }
 }
 

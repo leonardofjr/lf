@@ -44,9 +44,10 @@
         },
         methods: {
             fadeLoadingOverlay()  {
-                $('#top-bar').removeClass('d-none');
+                this.$parent.displayTopbar();
                 $('.loading-overlay').addClass('loading-overlay-animation');
             },
+  
         }
         
     }

@@ -10,6 +10,7 @@
                        <img :src="'/storage/imgs/' + post.image" class="img-fluid">
                         <p v-html="excerpt(post.content, 150)"></p>
                         <a href="#">Read more</a>
+                        <hr>
                 </div>
 
             </div>
@@ -32,23 +33,27 @@
             date(input) {
                 let date = new Date(input);
                 var month = new Array();
-                month[0] = "January";
-                month[1] = "February";
-                month[2] = "March";
-                month[3] = "April";
-                month[4] = "May";
-                month[5] = "June";
-                month[6] = "July";
-                month[7] = "August";
-                month[8] = "September";
-                month[9] = "October";
-                month[10] = "November";
-                month[11] = "December";
+                month = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December",
+                ];
+ 
                 return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
+                // output example: January 1, 2050
             },
         },
         mounted() {
-            console.log('Component mounted.')
+              this.$parent.displayTopbar();
         },
         // Fetches posts when the component is created.
         created() {

@@ -50879,7 +50879,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
   },
 
-  methods: {}
+  methods: {
+    displayTopbar: function displayTopbar() {
+      $('#top-bar').removeClass('d-none');
+    }
+  }
 });
 
 /***/ }),
@@ -51335,7 +51339,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         fadeLoadingOverlay: function fadeLoadingOverlay() {
-            $('#top-bar').removeClass('d-none');
+            this.$parent.displayTopbar();
             $('.loading-overlay').addClass('loading-overlay-animation');
         }
     }
@@ -51509,7 +51513,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {};
     },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.$parent.displayTopbar();
     },
 
     // Fetches posts when the component is created.
@@ -51644,7 +51648,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {};
     },
 
-
     methods: {
         getPostBody: function getPostBody(post) {
             this.body = this.stripTags(post);
@@ -51657,7 +51660,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     // Fetches posts when the component is created.
-    mounted: function mounted() {}
+    mounted: function mounted() {
+        this.$parent.displayTopbar();
+    }
 });
 
 /***/ }),
@@ -51827,7 +51832,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     // Fetches posts when the component is created.
-    mounted: function mounted() {}
+    mounted: function mounted() {
+        this.$parent.displayTopbar();
+    }
 });
 
 /***/ }),
@@ -51994,7 +52001,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     // Fetches posts when the component is created.
-    mounted: function mounted() {}
+    mounted: function mounted() {
+        this.$parent.displayTopbar();
+    }
 });
 
 /***/ }),
@@ -52136,6 +52145,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -52151,23 +52161,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         date: function date(input) {
             var date = new Date(input);
             var month = new Array();
-            month[0] = "January";
-            month[1] = "February";
-            month[2] = "March";
-            month[3] = "April";
-            month[4] = "May";
-            month[5] = "June";
-            month[6] = "July";
-            month[7] = "August";
-            month[8] = "September";
-            month[9] = "October";
-            month[10] = "November";
-            month[11] = "December";
+            month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
             return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
+            // output example: January 1, 2050
         }
     },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.$parent.displayTopbar();
     },
 
     // Fetches posts when the component is created.
@@ -52219,7 +52220,9 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Read more")])
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Read more")]),
+                _vm._v(" "),
+                _c("hr")
               ]
             )
           ]
@@ -52343,7 +52346,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {};
     },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.$parent.displayTopbar();
     },
 
     // Fetches posts when the component is created.

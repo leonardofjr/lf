@@ -165,7 +165,9 @@
         });
   },
   methods: {
-
+          displayTopbar() {
+                $('#top-bar').removeClass('d-none');
+            }
   }
 }
 </script>
