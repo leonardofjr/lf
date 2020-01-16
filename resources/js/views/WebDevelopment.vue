@@ -1,17 +1,17 @@
 <template>
     <div id="web_development" class="container">
         <div class="page-title">
-            <h2>Web Development</h2>
+            <h1 class="h1">Web Development</h1>
         </div>
-            <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item" :key="post.id">
+            <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item flex align-items-center" :key="post.id">
                 <template v-if='post.type === "web_development"'>
+                <div class="col-12 col-md-7">
+                       <img :src="'/storage/imgs/' + post.image" class="img-fluid">
+                </div>
                 <div class="col-12 col-md-5">
                         <h2 class="project-title"> <a :href="post.website_url">{{post.title}}</a></h2>
                         <p v-html="post.description"></p>
                        
-                </div>
-                <div class="col-12 col-md-7">
-                       <img :src="'/storage/imgs/' + post.image" class="img-fluid">
                 </div>
                 </template>
             </div>

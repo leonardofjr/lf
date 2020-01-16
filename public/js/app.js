@@ -51677,10 +51677,20 @@ var render = function() {
       _vm._l(this.$parent.data.portfolio, function(post) {
         return _c(
           "div",
-          { key: post.id, staticClass: "row portfolio-item" },
+          {
+            key: post.id,
+            staticClass: "row portfolio-item flex align-items-center"
+          },
           [
             post.type === "web_development"
               ? [
+                  _c("div", { staticClass: "col-12 col-md-7" }, [
+                    _c("img", {
+                      staticClass: "img-fluid",
+                      attrs: { src: "/storage/imgs/" + post.image }
+                    })
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-md-5" }, [
                     _c("h2", { staticClass: "project-title" }, [
                       _c("a", { attrs: { href: post.website_url } }, [
@@ -51690,13 +51700,6 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", {
                       domProps: { innerHTML: _vm._s(post.description) }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 col-md-7" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "/storage/imgs/" + post.image }
                     })
                   ])
                 ]
@@ -51715,7 +51718,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("Web Development")])
+      _c("h1", { staticClass: "h1" }, [_vm._v("Web Development")])
     ])
   }
 ]
@@ -51882,7 +51885,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("Logo Design")])
+      _c("h1", { staticClass: "h1" }, [_vm._v("Logo Design")])
     ])
   }
 ]
@@ -52049,7 +52052,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("Graphic Design")])
+      _c("h1", { staticClass: "h1" }, [_vm._v("Graphic Design")])
     ])
   }
 ]
@@ -52133,12 +52136,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {};
+    },
+
+    methods: {
+        excerpt: function excerpt(input, length) {
+            var output = void 0;
+            output = input.substring(0, length);
+            return output + '...';
+        },
+        date: function date(input) {
+            var date = new Date(input);
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+            return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
+        }
     },
     mounted: function mounted() {
         console.log('Component mounted.');
@@ -52163,22 +52189,41 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _vm._l(this.$parent.data.blog, function(post) {
-        return _c("div", { key: post.id, staticClass: "row blog-item" }, [
-          _c("div", { staticClass: "col-12 col-md-9" }, [
-            _c("h2", { staticClass: "project-title" }, [
-              _vm._v(_vm._s(post.title))
-            ]),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "img-fluid",
-              attrs: { src: "/storage/imgs/" + post.image }
-            }),
-            _vm._v(" "),
-            _c("p", { domProps: { innerHTML: _vm._s(post.content) } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-12 col-md-3" })
-        ])
+        return _c(
+          "div",
+          {
+            key: post.id,
+            staticClass: "d-flex justify-content-center blog-item"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "text-center", staticStyle: { width: "80%" } },
+              [
+                _c("h2", { staticClass: "title" }, [
+                  _vm._v(_vm._s(post.title))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "created-at" }, [
+                  _vm._v(_vm._s(_vm.date(post.created_at)))
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: "/storage/imgs/" + post.image }
+                }),
+                _vm._v(" "),
+                _c("p", {
+                  domProps: {
+                    innerHTML: _vm._s(_vm.excerpt(post.content, 150))
+                  }
+                }),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Read more")])
+              ]
+            )
+          ]
+        )
       })
     ],
     2
@@ -52190,7 +52235,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("Blog")])
+      _c("h1", { staticClass: "h1" }, [_vm._v("Blog")])
     ])
   }
 ]
@@ -52396,7 +52441,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [_vm._v("Contact Me")])
+      _c("h1", { staticClass: "h1" }, [_vm._v("Contact Me")])
     ])
   }
 ]

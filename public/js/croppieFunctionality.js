@@ -24,7 +24,8 @@ $uploadCrop = $(uploadDemoElement).croppie({
     boundary: {
         width: 300,
         height: 300
-    }
+    },
+    enforceBoundary: false
 });
 
 

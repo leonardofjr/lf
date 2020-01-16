@@ -1,7 +1,7 @@
 <template>
   <div id="contact" class="container">
             <div class="page-title">
-                <h2>Contact Me</h2>
+                <h1 class="h1">Contact Me</h1>
             </div>
             <p>I am available for hire and open to any ideas of cooperation.</p>
             <dl class="dl dl-vertical">

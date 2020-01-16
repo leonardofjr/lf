@@ -24,7 +24,7 @@
                                 @if(strtolower($type) == $data->type)
                                     <option selected value="{{str_replace(' ', '_', strtolower($type->name))}}">{{$type->name}}</option>
                                 @else
-                                <option value="{{str_replace(strtolower(' ', '_', $type->name))}}">{{$type->name}}</option>
+                                <option value="{{str_replace(' ', '_', strtolower($type->name))}}">{{$type->name}}</option>
                                 @endif
                             @endforeach
                         </select>
