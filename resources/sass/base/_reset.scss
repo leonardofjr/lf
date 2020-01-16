@@ -24,25 +24,17 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-strong {
-	font-weight: 600;
+
+body, html, #app, #app > .row {
+    height: calc(100% - 33px);
+    
 }
 
-
-
-ul {
-		padding-inline-start: 40px;
-		margin-bottom: 1rem;
-
-}
-
-dl.dl-vertical {
-	  padding-top:1rem;
-
-	dt {
-		float: left;
-	}
-	dd {
-		margin-left: 8rem;
-	}
+body {
+    background-image: $body-img;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: cover;
+    overflow-x: hidden;
+    line-height: 1.5;
 }

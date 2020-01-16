@@ -5,10 +5,17 @@
     transform: translate(-50%, -50%);
   }
 
+  
+
+  .center-md-content {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+}
+
   .img-thumbnail-xs {
     max-width: 150px;
     margin: 5px;
   }
+  
 .user-title-style {
   background: black;
   color: $secondary-color;

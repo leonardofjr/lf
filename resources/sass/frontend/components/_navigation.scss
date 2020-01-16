@@ -1,13 +1,22 @@
 @import "../../helpers/_variables";
 @import "../../helpers/_mixins";
 
+
+#top-bar {
+    background:white;
+    box-shadow: 10px 0 10px #aaa;
+}
+
+
 aside {
         color: #000;
         width: 400px;
         padding: 0;
         position: fixed !important;
         height: 100%;
-        
+        left: -500px;
+        z-index: 900;
+
 
         .navbar {
             border-top: 0;

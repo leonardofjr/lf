@@ -1,7 +1,7 @@
 <template>
     <div id="blog" class="container">
             <div class="page-title">
-                <h1 class="h1">Blog</h1>
+                <h1 >Blog</h1>
             </div>
             <div v-for="post of this.$parent.data.blog" class="d-flex justify-content-center blog-item" :key="post.id" >
                 <div class="text-center" style="width: 80%">

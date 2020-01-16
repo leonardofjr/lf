@@ -1,7 +1,7 @@
 <template>
     <div id="web_development" class="container">
         <div class="page-title">
-            <h1 class="h1">Web Development</h1>
+            <h1>Web Development</h1>
         </div>
             <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item flex align-items-center" :key="post.id">
                 <template v-if='post.type === "web_development"'>

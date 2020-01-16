@@ -1,45 +1,5 @@
-body, html, #app, #app > .row {
-    height: 100%;
-}
-
-body {
-    background-image: $body-img;
-    background-repeat: no-repeat;
-    background-color: #fff;
-    background-size: cover;
-    overflow-x: hidden;
-    line-height: 1.5;
-}
-
-.h1 {
-    font-size: 3.5em!important;
-}
-
-    main {
-        height: 100%;
-        width: 100%;
-    }
-
-    .content {
-        width: 100%;
-    }
 
 
-
-    .center-md-content {
-        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-    }
-
-    aside {
-        position: absolute;
-        left: -500px;
-        z-index: 900;
-    }
-
-    #top-bar {
-        background:white;
-        box-shadow: 10px 0 10px #aaa;
-    }
 
     @keyframes slideInNavigation {
         0% {left: -400px;}
