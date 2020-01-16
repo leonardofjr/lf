@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Portfolio;
 use App\Http\Controllers\HelperMethodsController;
+use App\Http\Requests\PortfolioEntryRequest;
 use Storage;
 use Auth;
 use Carbon\Carbon;
@@ -68,7 +69,7 @@ class PortfolioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PortfolioEntryRequest $request)
     {
         if ($request->hasFile('uploadedImageFile') ) {
             // Storing File into variable and storing file in the the storage public folder
@@ -141,13 +142,12 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PortfolioEntryRequest $request, $id)
     {
         if ($request->hasFile('uploadedImageFile')) {
             // Searching by Users corresponding id
             $portfolio = Portfolio::findOrFail($id);
        
-        
             // Getting current file name
             $current_file = $portfolio->image;
                 

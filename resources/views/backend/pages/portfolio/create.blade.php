@@ -11,9 +11,13 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" class="form-control" name="title" >
-                   <div class="my-3 d-none alert alert-warning error error-title" role="alert">
-                    </div>
+                    <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" >
+            
+                    @if ($errors->has('title'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('title') }}</strong>
+                        </span>
+                    @endif
                 </div>
 
                 <div class="form-group">
@@ -24,8 +28,7 @@
                       
                             @endforeach
                         </select>
-                   <div class="my-3 d-none alert alert-warning error error-type" role="alert">
-                    </div>
+
                 </div>
                 <!-- File Selector -->
                 <div class="logoPreviewContainer">
@@ -42,28 +45,26 @@
                                 
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea  id="article-ckeditor" type="text" class="form-control"  name="description" ></textarea>
-                    <div class="my-3 d-none alert alert-warning error error-description" role="alert">
-                    </div>
+                    <textarea  id="article-ckeditor" type="text" class="form-control {{ $errors->has('description') ? 'is-invalid' : ''}}"  name="description" ></textarea>
+            
+                    @if ($errors->has('description'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('description') }}</strong>
+                        </span>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label for="website_url">Website Url:</label>
-                    <input type="text" class="form-control" name="website_url" >
-                   <div class="my-3 d-none alert alert-warning error error-website-url" role="alert">
-                    </div>
-                </div>     
-                @if(!$skill_set == '[]')          
+                    <input type="text" class="form-control {{ $errors->has('website_url') ? 'is-invalid' : ''}}" name="website_url" >
 
-                @else 
-                    <div>Project Technologies:</div>
-                    @foreach ($skill_set as $skill_set_item )
-                        <div class="form-group">
-                            <label for="{{$skill_set_item->name}}">{{$skill_set_item->name}}</label>
-                            <input type="checkbox" id="{{$skill_set_item->name}}" value="{{$skill_set_item->name}}" name="technologies[]">
-                        </div>
-                    @endforeach
-                @endif
+                    @if ($errors->has('website_url'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('website_url') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
             
