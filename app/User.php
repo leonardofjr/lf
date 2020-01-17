@@ -28,8 +28,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'linkedin_url', 
         'twitter_url', 
         'github_url', 
-        'skills_and_offer',
-        'skill_set'
     ];
 
     /**
