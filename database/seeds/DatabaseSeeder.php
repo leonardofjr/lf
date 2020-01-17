@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(PortfolioEntryTypeDropDownsTableSeeder::class);
         $this->call(BlogSeeder::class);
+        $this->call(PortfolioSeeder::class);
         $this->call(UserSeeder::class);
     }
 }

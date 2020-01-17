@@ -37,7 +37,6 @@
               
                 <div class="form-group">
                     <input type="file" id="uploadedImageFile" name="uploadedImageFile" accept="image/*">
-                    <div class="my-3 d-none alert alert-warning error error-profile-image" role="alert"></div>
                 </div>
 
 
