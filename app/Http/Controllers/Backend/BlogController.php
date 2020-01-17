@@ -8,6 +8,7 @@ use App\User;
 use App\Blog;
 use Auth;
 use Carbon\Carbon;
+use Storage;
 use App\Http\Requests\BlogValidationRequest;
 
 class BlogController extends Controller
@@ -56,11 +57,24 @@ class BlogController extends Controller
      */
     public function store(BlogValidationRequest $request)
     {
-        $user_id = Auth::id();
-        $blog = new Blog;
+   
         if ($request) {
+            $user_id = Auth::id();
+            $blog = new Blog;
+
+            // Storing File into variable and storing file in the the storage public folder
+ 
+            // Getting current file name
+            $temp_filename = explode('/', Storage::allFiles('temp/')[0])[1];
+            $temp_file_location = Storage::allFiles('temp/')[0];
+
+            // Storing new File using laravels file storage
+            $new_file = Storage::move($temp_file_location, 'imgs/' . $temp_filename );
+
+            // Preparing updated data to database
             $blog->user_id = $user_id;
             $blog->title = $request->input('title');
+            $blog->image = $temp_filename;
             $blog->content = $request->input('content');
             $blog->save();
             return redirect('/admin/blog');
@@ -107,18 +121,41 @@ class BlogController extends Controller
      */
     public function update(BlogValidationRequest $request, $blog_post_id)
     {  
-        if ($request) {
-
         $blog_post = Blog::findOrFail($blog_post_id);
+
+        if ($request->hasFile('uploadedImageFile')) {
+
+        // Getting current file name
+        $current_file = $blog_post->image;
+            
+        // Removing file from storage
+        Storage::delete('imgs/' . $current_file);
+
+        // Storing new File using laravels file storage            
+        $temp_filename = time() . '.png';
+        $temp_file_location = Storage::allFiles('temp/')[0];
+
+        // Storing new File using laravels file storage
+        $new_file = Storage::move($temp_file_location, 'imgs/' . $temp_filename );
+
+          // Preparing updated data to database
         $blog_post->title = $request->input('title');
+        $blog_post->image = $temp_filename;
         $blog_post->content = $request->input('content');
         $blog_post->updated_at = Carbon::now();
         $blog_post->save();
 
         return redirect('/admin/blog');
+
         }
         else {
-            return redirect()->back();
+            // Preparing updated data to database
+            $blog_post->title = $request->input('title');
+            $blog_post->content = $request->input('content');
+            $blog_post->updated_at = Carbon::now();
+            $blog_post->save();
+    
+            return redirect('/admin/blog');
         }
 
         

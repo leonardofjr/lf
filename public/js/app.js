@@ -51639,6 +51639,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -51682,33 +51686,40 @@ var render = function() {
       _vm._l(this.$parent.data.portfolio, function(post) {
         return _c(
           "div",
-          {
-            key: post.id,
-            staticClass: "row portfolio-item flex align-items-center"
-          },
+          { key: post.id },
           [
             post.type === "web_development"
               ? [
-                  _c("div", { staticClass: "col-12 col-md-7" }, [
-                    _c("img", {
-                      staticClass: "img-fluid",
-                      attrs: { src: "/storage/imgs/" + post.image }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 col-md-5" }, [
-                    _c("h2", { staticClass: "project-title" }, [
-                      _c("a", { attrs: { href: post.website_url } }, [
-                        _vm._v(_vm._s(post.title))
+                  _c(
+                    "div",
+                    {
+                      staticClass: "row portfolio-item flex align-items-center"
+                    },
+                    [
+                      _c("div", { staticClass: "col-12 col-md-7" }, [
+                        _c("img", {
+                          staticClass: "img-fluid",
+                          attrs: { src: "/storage/imgs/" + post.image }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-12 col-md-5" }, [
+                        _c("h2", { staticClass: "project-title" }, [
+                          _c("a", { attrs: { href: post.website_url } }, [
+                            _vm._v(_vm._s(post.title))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", {
+                          domProps: { innerHTML: _vm._s(post.description) }
+                        })
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", {
-                      domProps: { innerHTML: _vm._s(post.description) }
-                    })
-                  ])
+                    ]
+                  )
                 ]
-              : _vm._e()
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._m(1, true)
           ],
           2
         )
@@ -51725,6 +51736,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "page-title" }, [
       _c("h1", [_vm._v("Web Development")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "my-5" }, [_c("hr")])
   }
 ]
 render._withStripped = true
@@ -52146,6 +52163,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -52222,7 +52241,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("a", { attrs: { href: "#" } }, [_vm._v("Read more")]),
                 _vm._v(" "),
-                _c("hr")
+                _vm._m(1, true)
               ]
             )
           ]
@@ -52240,6 +52259,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "page-title" }, [
       _c("h1", [_vm._v("Blog")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "my-5" }, [_c("hr")])
   }
 ]
 render._withStripped = true

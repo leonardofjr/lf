@@ -10,7 +10,9 @@
                        <img :src="'/storage/imgs/' + post.image" class="img-fluid">
                         <p v-html="excerpt(post.content, 150)"></p>
                         <a href="#">Read more</a>
-                        <hr>
+                        <div class="my-5">
+                            <hr>
+                        </div>
                 </div>
 
             </div>
