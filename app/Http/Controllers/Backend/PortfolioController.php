@@ -31,7 +31,7 @@ class PortfolioController extends Controller
                 'id' => $item->id,
                 'title' => $item->title,
                 'author' => $user->fname,
-                'created_at' => (new Carbon($item->created_at))->format('M/d/Y'),
+                'created_at' => (new Carbon($item->created_at))->format('M d, Y'),
                 'type' => $item->type,
             ];
        }
@@ -39,7 +39,6 @@ class PortfolioController extends Controller
 
        return view('backend.pages.portfolio.index')->with([
             'data' => $data,
-            'skill_set' => json_decode($user->skill_set),
        ]);
     }
 

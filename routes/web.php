@@ -60,6 +60,7 @@ Route::group(['middleware' => 'verified', 'prefix' => 'admin/blog'], function() 
     Route::post('store', 'Backend\BlogController@store');
 });
 
+
 Route::post('upload-cropped-image', 'HelperMethodsController@uploadCroppedImage');
 Route::post('post-portfolio-entry', 'Backend\PortfolioController@store');
 Route::put('update-portfolio-entry/{id}', 'Backend\PortfolioController@update');

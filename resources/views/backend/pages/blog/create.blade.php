@@ -11,7 +11,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" >
+                    <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" value="{{ old('title') }}">
             
                     @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                 <!-- File Selector END -->      
                 <div class="form-group">
                     <label for="content">Content:</label>
-                    <textarea  id="article-ckeditor" type="text" class="form-control {{ $errors->has('content') ? 'is-invalid' : ''}}"  name="content" ></textarea>
+                    <textarea  id="article-ckeditor" type="text" class="form-control {{ $errors->has('content') ? 'is-invalid' : ''}}"  name="content" value="{{ old('content') }}"></textarea>
                    
                     @if ($errors->has('content'))
                         <span class="invalid-feedback" role="alert">

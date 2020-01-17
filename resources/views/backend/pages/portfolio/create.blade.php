@@ -11,7 +11,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" >
+                    <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" value="{{ old('title') }}">
             
                     @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                                 
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea  id="article-ckeditor" type="text" class="form-control {{ $errors->has('description') ? 'is-invalid' : ''}}"  name="description" ></textarea>
+                    <textarea  id="article-ckeditor" type="text" class="form-control {{ $errors->has('description') ? 'is-invalid' : ''}}"  name="description" value="{{ old('description') }}"></textarea>
             
                     @if ($errors->has('description'))
                         <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
 
                 <div class="form-group">
                     <label for="website_url">Website Url:</label>
-                    <input type="text" class="form-control {{ $errors->has('website_url') ? 'is-invalid' : ''}}" name="website_url" >
+                    <input type="text" class="form-control {{ $errors->has('website_url') ? 'is-invalid' : ''}}" name="website_url" value="{{ old('website_url') }}">
 
                     @if ($errors->has('website_url'))
                         <span class="invalid-feedback" role="alert">

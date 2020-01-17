@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Blog;
 use Auth;
+use Carbon\Carbon;
 use App\Http\Requests\BlogValidationRequest;
 
 class BlogController extends Controller
@@ -22,12 +23,12 @@ class BlogController extends Controller
         $blog = $user->blog;
         $data = [];
 
-        foreach($blog as $i => $blogItem) {
+        foreach($blog as $i => $item) {
             $data[$i] = [
-                'id' => $blogItem->id,
-                'title' => $blogItem->title,
+                'id' => $item->id,
+                'title' => $item->title,
                 'author' => $user->fname,
-                'created_at' => $blogItem->created_at,
+                'created_at' => (new Carbon($item->created_at))->format('M d, Y'),
             ];
         };
         return view('backend.pages.blog.index')->with('data', $data);
@@ -58,9 +59,14 @@ class BlogController extends Controller
         $user_id = Auth::id();
         $blog = new Blog;
         if ($request) {
+            $blog->user_id = $user_id;
             $blog->title = $request->input('title');
             $blog->content = $request->input('content');
-
+            $blog->save();
+            return redirect('/admin/blog');
+        }
+        else {
+            return redirect()->back();
         }
 
     }
@@ -99,9 +105,23 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(BlogValidationRequest $request, $blog_post_id)
+    {  
+        if ($request) {
+
+        $blog_post = Blog::findOrFail($blog_post_id);
+        $blog_post->title = $request->input('title');
+        $blog_post->content = $request->input('content');
+        $blog_post->updated_at = Carbon::now();
+        $blog_post->save();
+
+        return redirect('/admin/blog');
+        }
+        else {
+            return redirect()->back();
+        }
+
+        
     }
 
     /**
@@ -110,8 +130,15 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($blog_post_id)
+    {   
+        if ($blog_post_id) {
+            $blog_post = Blog::findOrFail($blog_post_id);
+            $blog_post->delete();
+            return redirect('/admin/blog');
+        } else {
+            return;
+        }
+
     }
 }
