@@ -57,7 +57,6 @@ class PortfolioController extends Controller
        // Passing in array of $langauges to View
         return view('backend.pages.portfolio.create')->with([
             'type_dropdown' => $type_dropdown,
-            'skill_set' => json_decode($user->skill_set),
         ]);
     }
 
@@ -87,7 +86,6 @@ class PortfolioController extends Controller
             $portfolio->title = $request->title;
             $portfolio->type = $request->type;
             $portfolio->website_url = $request->website_url;
-            $portfolio->technologies = json_encode($request->technologies);
             $portfolio->description = $request->description;
             $portfolio->image = $temp_filename;
 
@@ -130,7 +128,6 @@ class PortfolioController extends Controller
         return view('backend.pages.portfolio.edit')->with([
             'data' => $portfolio,
             'type_dropdown' => $type_dropdown,
-            'skill_set' => json_decode($user->skill_set),
             ]);
     }
 
@@ -166,7 +163,6 @@ class PortfolioController extends Controller
             $portfolio->image = $temp_filename;
             $portfolio->website_url = $request->website_url;
             $portfolio->type = $request->type;
-            $portfolio->technologies = json_encode($request->technologies);
 
             // Saving data to database
             $portfolio->save();
@@ -184,7 +180,6 @@ class PortfolioController extends Controller
             $portfolio->description = $request->description;
             $portfolio->website_url = $request->website_url;
             $portfolio->type = $request->type;
-            $portfolio->technologies = json_encode($request->technologies);
             // Saving data to database
             $portfolio->save();
             // Responding by sending redirect value 
