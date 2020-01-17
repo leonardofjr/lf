@@ -57,11 +57,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="skills-and-offer-ckeditor">Skills & Offer:</label>
-                        <textarea id="skills-and-offer-ckeditor" class="form-control " name="skills_and_offer">{{$data->skills_and_offer}}</textarea>
-                    </div>
-
-                    <div class="form-group">
                         <label for="phone">Phone:</label>
                     <input type="tel" class="form-control {{ $errors->has('phone') ? 'is-invalid' : ''}}" id="phone" name="phone" value="{{$data->phone}}" >
 

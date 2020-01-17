@@ -24,8 +24,9 @@ class UserSeeder extends Seeder
 
             <p>I&#39;ve spent the last years immersed in learning Frontend &amp; Backend Web Development, both through codeschool.com and a certification program locally.</p>
             
-            <p>If I&#39;m not coding I&#39;m either tinkering with my Arduino, working out at my local gym, or painting portraits.</p>',
-            'skills_and_offer' => '<p>I am a full-stack web developer with over three years of experience.</p>
+            <p>If I&#39;m not coding I&#39;m either tinkering with my Arduino, working out at my local gym, or painting portraits.</p>
+            
+            <p>I am a full-stack web developer with over three years of experience.</p>
 
             <p>I have maintained, developed and launched multiple projects from scratch, carrying the development of its&#39; back-end and front-end codebases.</p>
             

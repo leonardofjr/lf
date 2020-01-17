@@ -63,7 +63,6 @@ class UserSettingController extends Controller
             // Preparing updated data to database
             $user->profile_image = 'logo.png';
             $user->bio = $request->bio;
-            $user->skills_and_offer = $request->skills_and_offer;
             $user->lname = $request->lname;
             $user->fname = $request->fname;
             $user->phone = $request->phone;
@@ -84,7 +83,6 @@ class UserSettingController extends Controller
          
             // Updating Database
             $user->bio = $request->bio;
-            $user->skills_and_offer = $request->skills_and_offer;
             $user->fname = $request->fname;
             $user->lname = $request->lname;
             $user->phone = $request->phone;
