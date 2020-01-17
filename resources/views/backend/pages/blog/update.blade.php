@@ -12,9 +12,12 @@
                  <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
                     <label for="title">Title:</label>
-                <input type="text" class="form-control" name="title" value="{{$data->title}}">
-                   <div class="my-3 d-none alert alert-warning error error-title" role="alert">
-                    </div>
+                <input type="text" class="form-control  {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" value="{{$data->title}}">
+                    @if ($errors->has('title'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('title') }}</strong>
+                        </span>
+                    @endif
                 </div>
                 
 
@@ -33,9 +36,13 @@
                                 
                 <div class="form-group">
                     <label for="content">Content:</label>
-                    <textarea  id="article-ckeditor" type="text" id="summernote" class="form-control" id="content" name="content">{{$data->content}} </textarea>
-                    <div class="my-3 d-none alert alert-warning error error-content" role="alert">
-                    </div>
+                    <textarea  id="article-ckeditor" type="text" id="summernote" class="form-control  {{ $errors->has('content') ? 'is-invalid' : ''}}" name="content">{{$data->content}} </textarea>
+                   
+                    @if ($errors->has('content'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('content') }}</strong>
+                        </span>
+                    @endif
                 </div>
 
                 <button type="submit" class="btn btn-primary">Edit</button>

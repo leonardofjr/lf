@@ -7,13 +7,17 @@
             <!-- Including Croppie Upload Modal -->
             @include('backend.components.croppieUploadModal')
 
-            <form class="col-10" method="POST" enctype="multipart/form-data" action="/post-portfolio-entry">
+            <form class="col-10" method="POST" enctype="multipart/form-data" action="store">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" class="form-control" name="title" >
-                   <div class="my-3 d-none alert alert-warning error error-title" role="alert">
-                    </div>
+                    <input type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" >
+            
+                    @if ($errors->has('title'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('title') }}</strong>
+                        </span>
+                    @endif
                 </div>
 
                 <!-- File Selector -->
@@ -26,10 +30,14 @@
                 </div>
                 <!-- File Selector END -->      
                 <div class="form-group">
-                    <label for="description">Description:</label>
-                    <textarea  id="article-ckeditor" type="text" class="form-control"  name="description" ></textarea>
-                    <div class="my-3 d-none alert alert-warning error error-description" role="alert">
-                    </div>
+                    <label for="content">Content:</label>
+                    <textarea  id="article-ckeditor" type="text" class="form-control {{ $errors->has('content') ? 'is-invalid' : ''}}"  name="content" ></textarea>
+                   
+                    @if ($errors->has('content'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('content') }}</strong>
+                        </span>
+                    @endif
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>

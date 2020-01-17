@@ -16,11 +16,23 @@
 
                     <div class="form-group">
                         <label for="fname">First Name:</label>
-                        <input type="text" class="form-control" id="fname" name="fname" value="{{$data->fname}}" >
+                        <input type="text" class="form-control {{ $errors->has('fname') ? 'is-invalid' : ''}}" id="fname" name="fname" value="{{$data->fname}}" >
+
+                        @if ($errors->has('fname'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('fname') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="lname">Last Name:</label>
-                        <input type="text" class="form-control" id="lname" name="lname" value="{{$data->lname}}" >
+                        <input type="text" class="form-control {{ $errors->has('lname') ? 'is-invalid' : ''}}" id="lname" name="lname" value="{{$data->lname}}" >
+
+                        @if ($errors->has('lname'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('lname') }}</strong>
+                            </span>
+                       @endif
                     </div>
 
                     <div class="logoPreviewContainer">
@@ -36,22 +48,38 @@
                     </div>
                     <div class="form-group">
                         <label for="bio-ckeditor">Bio:</label>
-                        <textarea id="bio-ckeditor" class="form-control" name="bio">{{$data->bio}}</textarea>
-                        <div class="my-3 d-none alert alert-warning error error-bio" role="alert"></div>
+                        <textarea id="bio-ckeditor" class="form-control {{ $errors->has('bio') ? 'is-invalid' : ''}}" name="bio">{{$data->bio}}</textarea>
+                        @if ($errors->has('bio'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('bio') }}</strong>
+                            </span>
+                        @endif
                     </div>
 
                     <div class="form-group">
                         <label for="skills-and-offer-ckeditor">Skills & Offer:</label>
-                        <textarea id="skills-and-offer-ckeditor" class="form-control" name="skills_and_offer">{{$data->skills_and_offer}}</textarea>
+                        <textarea id="skills-and-offer-ckeditor" class="form-control " name="skills_and_offer">{{$data->skills_and_offer}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone:</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" value="{{$data->phone}}" >
+                    <input type="tel" class="form-control {{ $errors->has('phone') ? 'is-invalid' : ''}}" id="phone" name="phone" value="{{$data->phone}}" >
+
+                    @if ($errors->has('phone'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('phone') }}</strong>
+                        </span>
+                    @endif
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{$data->email}}" >
+                        <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}" id="email" name="email" value="{{$data->email}}" >
+
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                          @endif
                     </div>
 
                     <div class="form-group">

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserSettingsRequest extends FormRequest
+class BlogValidationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,8 @@ class UserSettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            'bio' => 'required',
-        ];
-    }
-    public function messages()
-    {
-        return [
-            'bio.required' => 'Bio field is required',
+            'title' => 'required',
+            'content' => 'required',
         ];
     }
 }

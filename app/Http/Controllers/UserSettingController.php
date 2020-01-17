@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserSettingsRequest;
+use App\Http\Requests\ProfileValidationRequest;
 use App\User;
 use Storage;
 use Illuminate\Support\Facades\Schema;
@@ -37,7 +37,7 @@ class UserSettingController extends Controller
         return response()->json($user);
     }
 
-    function updateUserSettings(Request $request, $id)
+    function updateUserSettings(ProfileValidationRequest $request, $id)
     {
         if ($request->hasFile('uploadedImageFile')) {
 

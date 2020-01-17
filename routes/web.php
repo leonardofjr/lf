@@ -55,8 +55,9 @@ Route::group(['middleware' => 'verified', 'prefix' => 'admin/portfolio'], functi
 // ** Blog Routes //
 Route::group(['middleware' => 'verified', 'prefix' => 'admin/blog'], function() {
     Route::get('/', 'Backend\BlogController@index')->name('Blog');
-    Route::get('add', 'Backend\BlogController@create')->name('Add Blog Post');
-    Route::get('edit/{id}','Backend\BlogController@edit')->name('Edit Blog Entry');
+    Route::get('add', 'Backend\BlogController@create')->name('Add Post');
+    Route::get('edit/{id}','Backend\BlogController@edit')->name('Edit Post');
+    Route::post('store', 'Backend\BlogController@store');
 });
 
 Route::post('upload-cropped-image', 'HelperMethodsController@uploadCroppedImage');

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Blog;
+use Auth;
+use App\Http\Requests\BlogValidationRequest;
 
 class BlogController extends Controller
 {
@@ -51,9 +53,16 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogValidationRequest $request)
     {
-        //
+        $user_id = Auth::id();
+        $blog = new Blog;
+        if ($request) {
+            $blog->title = $request->input('title');
+            $blog->content = $request->input('content');
+
+        }
+
     }
 
     /**
