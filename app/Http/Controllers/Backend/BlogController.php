@@ -56,11 +56,11 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(BlogValidationRequest $request)
-    {
+{       $user_id = Auth::id();
+        $blog = new Blog;
    
-        if ($request) {
-            $user_id = Auth::id();
-            $blog = new Blog;
+        if ($request->hasFile('uploadedImageFile')) {
+ 
 
             // Storing File into variable and storing file in the the storage public folder
  
@@ -81,7 +81,13 @@ class BlogController extends Controller
             return redirect('/admin/blog');
         }
         else {
-            return redirect()->back();
+            // Preparing updated data to database
+            $blog->user_id = $user_id;
+            $blog->title = $request->input('title');
+            $blog->slug = $request->input('slug');
+            $blog->content = $request->input('content');
+            $blog->save();
+            return redirect('/admin/blog');
         }
 
     }

@@ -52593,10 +52593,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            params: this.$router.currentRoute.params.id
+        };
     },
 
     methods: {
@@ -52615,6 +52618,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
+        console.log(this.$router.currentRoute.params.id);
         this.$parent.displayTopbar();
     },
 
@@ -52644,42 +52648,48 @@ var render = function() {
             staticClass: "d-flex justify-content-center blog-item"
           },
           [
-            _c(
-              "div",
-              { staticClass: "text-center", staticStyle: { width: "80%" } },
-              [
-                _c("h2", { staticClass: "title" }, [
-                  _vm._v(_vm._s(post.title))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "created-at" }, [
-                  _vm._v(_vm._s(_vm.date(post.created_at)))
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/storage/imgs/" + post.image }
-                }),
-                _vm._v(" "),
-                _c("p", {
-                  domProps: {
-                    innerHTML: _vm._s(_vm.excerpt(post.content, 150))
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    on: { click: _vm.$parent.back }
-                  },
-                  [_vm._v("Go Back")]
-                ),
-                _vm._v(" "),
-                _vm._m(1, true)
-              ]
-            )
-          ]
+            _vm.params === post.slug
+              ? [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "text-center",
+                      staticStyle: { width: "80%" }
+                    },
+                    [
+                      _c("h2", { staticClass: "title" }, [
+                        _vm._v(_vm._s(post.title))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "created-at" }, [
+                        _vm._v(_vm._s(_vm.date(post.created_at)))
+                      ]),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "img-fluid",
+                        attrs: { src: "/storage/imgs/" + post.image }
+                      }),
+                      _vm._v(" "),
+                      _c("p", {
+                        domProps: { innerHTML: _vm._s(post.content) }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          on: { click: _vm.$parent.back }
+                        },
+                        [_vm._v("Go Back")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1, true)
+                    ]
+                  )
+                ]
+              : _vm._e()
+          ],
+          2
         )
       })
     ],
