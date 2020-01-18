@@ -9,7 +9,7 @@
                         <p class="created-at">{{date(post.created_at)}}</p>
                        <img :src="'/storage/imgs/' + post.image" class="img-fluid">
                         <p v-html="excerpt(post.content, 150)"></p>
-                        <router-link :to="'blog/post/' + post.slug">Read more</router-link>
+                        <button class="btn btn-primary" v-on:click="$parent.back">Go Back</button >
                         <div class="my-5">
                             <hr>
                         </div>

@@ -18,6 +18,7 @@ import WebDevelopment from './views/WebDevelopment'
 import LogoDesign from './views/LogoDesign'
 import GraphicDesign from './views/GraphicDesign'
 import Blog from './views/Blog'
+import BlogPost from './views/BlogPost'
 import Contact from './views/Contact'
 
 
@@ -56,6 +57,11 @@ const router = new VueRouter({
             path: '/blog',
             name: 'Blog',
             component: Blog,
+        },
+        {
+            path: '/blog/post/:id',
+            name: 'Blog',
+            component: BlogPost,
         },
         {
             path: '/contact',

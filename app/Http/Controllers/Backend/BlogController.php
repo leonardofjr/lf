@@ -74,6 +74,7 @@ class BlogController extends Controller
             // Preparing updated data to database
             $blog->user_id = $user_id;
             $blog->title = $request->input('title');
+            $blog->slug = $request->input('slug');
             $blog->image = $temp_filename;
             $blog->content = $request->input('content');
             $blog->save();
@@ -140,6 +141,7 @@ class BlogController extends Controller
 
           // Preparing updated data to database
         $blog_post->title = $request->input('title');
+        $blog_post->slug = $request->input('slug');
         $blog_post->image = $temp_filename;
         $blog_post->content = $request->input('content');
         $blog_post->updated_at = Carbon::now();
@@ -151,6 +153,7 @@ class BlogController extends Controller
         else {
             // Preparing updated data to database
             $blog_post->title = $request->input('title');
+            $blog_post->slug = $request->input('slug');
             $blog_post->content = $request->input('content');
             $blog_post->updated_at = Carbon::now();
             $blog_post->save();

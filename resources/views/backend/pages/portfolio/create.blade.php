@@ -21,6 +21,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="slug">Slug:</label>
+                    <input type="text" class="form-control {{ $errors->has('slug') ? 'is-invalid' : ''}}" name="slug" value="{{ old('slug') }}">
+            
+                    @if ($errors->has('slug'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('slug') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group">
                     <label for="type">Type:</label>
                         <select class="form-control"  name="type" >
                             @foreach($type_dropdown as $type)

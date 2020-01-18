@@ -10,12 +10,23 @@
             <form class="col-10" id="editWorkForm" method="POST" enctype="multipart/form-data"  action="/api/blog/update/{{$data->id}}">
                 {{ csrf_field() }}
                  <input type="hidden" name="_method" value="PUT">
+
                 <div class="form-group">
                     <label for="title">Title:</label>
                 <input type="text" class="form-control  {{ $errors->has('title') ? 'is-invalid' : ''}}" name="title" value="{{$data->title}}">
                     @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('title') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                
+                <div class="form-group">
+                    <label for="slug">Slug:</label>
+                <input type="text" class="form-control  {{ $errors->has('slug') ? 'is-invalid' : ''}}" name="slug" value="{{$data->slug}}">
+                    @if ($errors->has('slug'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('slug') }}</strong>
                         </span>
                     @endif
                 </div>

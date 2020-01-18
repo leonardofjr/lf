@@ -167,7 +167,10 @@
   methods: {
           displayTopbar() {
                 $('#top-bar').removeClass('d-none');
-            }
+            },
+          back() {
+               this.$router.go(-1);
+            },
   }
 }
 </script>
