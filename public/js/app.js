@@ -50892,6 +50892,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     back: function back() {
       this.$router.go(-1);
+    },
+    excerpt: function excerpt(input, length) {
+      var output = void 0;
+      output = input.substring(0, length);
+      return output + '...';
+    },
+    date: function date(input) {
+      var date = new Date(input);
+      var month = new Array();
+      month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
+      // output example: January 1, 2050
     }
   }
 });
@@ -52181,21 +52194,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {};
     },
 
-    methods: {
-        excerpt: function excerpt(input, length) {
-            var output = void 0;
-            output = input.substring(0, length);
-            return output + '...';
-        },
-        date: function date(input) {
-            var date = new Date(input);
-            var month = new Array();
-            month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-            return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
-            // output example: January 1, 2050
-        }
-    },
+    methods: {},
     mounted: function mounted() {
         this.$parent.displayTopbar();
     },
@@ -52235,7 +52234,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "created-at" }, [
-                  _vm._v(_vm._s(_vm.date(post.created_at)))
+                  _vm._v(_vm._s(_vm.$parent.date(post.created_at)))
                 ]),
                 _vm._v(" "),
                 _c("img", {
@@ -52245,7 +52244,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", {
                   domProps: {
-                    innerHTML: _vm._s(_vm.excerpt(post.content, 150))
+                    innerHTML: _vm._s(_vm.$parent.excerpt(post.content, 150))
                   }
                 }),
                 _vm._v(" "),
@@ -52602,21 +52601,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    methods: {
-        excerpt: function excerpt(input, length) {
-            var output = void 0;
-            output = input.substring(0, length);
-            return output + '...';
-        },
-        date: function date(input) {
-            var date = new Date(input);
-            var month = new Array();
-            month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-            return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
-            // output example: January 1, 2050
-        }
-    },
+    methods: {},
     mounted: function mounted() {
         console.log(this.$router.currentRoute.params.id);
         this.$parent.displayTopbar();
@@ -52662,7 +52647,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "created-at" }, [
-                        _vm._v(_vm._s(_vm.date(post.created_at)))
+                        _vm._v(_vm._s(_vm.$parent.date(post.created_at)))
                       ]),
                       _vm._v(" "),
                       _c("img", {

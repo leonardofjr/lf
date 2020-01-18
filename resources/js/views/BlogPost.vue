@@ -7,7 +7,7 @@
                 <template v-if="params === post.slug">
                     <div class="text-center" style="width: 80%">
                             <h2 class="title">{{post.title}}</h2>
-                            <p class="created-at">{{date(post.created_at)}}</p>
+                            <p class="created-at">{{$parent.date(post.created_at)}}</p>
                             <img :src="'/storage/imgs/' + post.image" class="img-fluid">
                             <p v-html="post.content"></p>
                             <button class="btn btn-primary" v-on:click="$parent.back">Go Back</button >
@@ -28,32 +28,7 @@
             }
         },
         methods: {
-            excerpt(input, length) {
-                let output;
-                output = input.substring(0, length)
-                return output + '...';
-            },
-            date(input) {
-                let date = new Date(input);
-                var month = new Array();
-                month = [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December",
-                ];
- 
-                return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
-                // output example: January 1, 2050
-            },
+
         },
         mounted() {
             console.log(this.$router.currentRoute.params.id);

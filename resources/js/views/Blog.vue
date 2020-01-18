@@ -6,9 +6,9 @@
             <div v-for="post of this.$parent.data.blog" class="d-flex justify-content-center blog-item" :key="post.id" >
                 <div class="text-center" style="width: 80%">
                         <h2 class="title">{{post.title}}</h2>
-                        <p class="created-at">{{date(post.created_at)}}</p>
+                        <p class="created-at">{{$parent.date(post.created_at)}}</p>
                        <img :src="'/storage/imgs/' + post.image" class="img-fluid">
-                        <p v-html="excerpt(post.content, 150)"></p>
+                        <p v-html="$parent.excerpt(post.content, 150)"></p>
                         <router-link :to="'blog/post/' + post.slug">Read more</router-link>
                         <div class="my-5">
                             <hr>
@@ -27,32 +27,7 @@
             }
         },
         methods: {
-            excerpt(input, length) {
-                let output;
-                output = input.substring(0, length)
-                return output + '...';
-            },
-            date(input) {
-                let date = new Date(input);
-                var month = new Array();
-                month = [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December",
-                ];
- 
-                return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
-                // output example: January 1, 2050
-            },
+
         },
         mounted() {
               this.$parent.displayTopbar();

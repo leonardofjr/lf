@@ -171,6 +171,33 @@
           back() {
                this.$router.go(-1);
             },
+
+          excerpt(input, length) {
+              let output;
+              output = input.substring(0, length)
+              return output + '...';
+          },
+          date(input) {
+              let date = new Date(input);
+              var month = new Array();
+              month = [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December",
+              ];
+
+              return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
+              // output example: January 1, 2050
+          },
   }
 }
 </script>
