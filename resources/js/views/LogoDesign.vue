@@ -1,21 +1,16 @@
 <template>
     <div id="logo_design" class="container">
         <div class="page-title">
-            <h1>Logo Design</h1>
+            <h1 class="display-4">Logo Design</h1>
         </div>
-            <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item" :key="post.id">
-                <template v-if='post.type === "logo_design"'>
-                <div class="col-12 col-md-5">
-                        <h2 class="project-title"> <a :href="post.website_url">{{post.title}}</a></h2>
-                        <p v-html="post.description"></p>
-                       
-                </div>
-                <div class="col-12 col-md-7">
-                       <img :src="'/storage/imgs/' + post.image" class="img-fluid">
-                </div>
-                </template>
+        <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item" :key="post.id">
+            <template v-if='post.type === "logo_design"'>
+            <div class="col-12 col-md-4">
+                    <img :src="'/storage/imgs/' + post.image" class="img-fluid">
             </div>
+            </template>
         </div>
+    </div>
 </template>
 <script>
 

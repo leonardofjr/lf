@@ -25,6 +25,7 @@ class BlogValidationRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'slug' => 'required',
             'content' => 'required',
         ];
     }

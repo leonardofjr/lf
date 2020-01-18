@@ -20,18 +20,6 @@
                     @endif
                 </div>
 
-                
-                <div class="form-group">
-                    <label for="slug">Slug:</label>
-                    <input type="text" class="form-control {{ $errors->has('slug') ? 'is-invalid' : ''}}" name="slug" value="{{ old('slug') }}">
-            
-                    @if ($errors->has('slug'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('slug') }}</strong>
-                        </span>
-                    @endif
-                </div>
-
                 <!-- File Selector -->
                 <div class="logoPreviewContainer">
                     <img id="imageFilePreview" class="img-thumbnail" src='https://via.placeholder.com/300x300' style="display:none; max-width: 300px;" alt="preview" />

@@ -25,7 +25,6 @@ class PortfolioValidationRequest extends FormRequest
     {
            return [
                 'title' => 'required|min:2|max:100',
-                'slug' => 'required',
                 'description' => 'required',
                 'website_url' => 'required',
         ];
