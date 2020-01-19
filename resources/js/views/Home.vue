@@ -3,7 +3,7 @@
             <div class="loading-overlay ">
                 <div class="loading-text text-center center-md-content" style="color: black">
                     <div class="user-name">
-                        <h1>Leo Felipa</h1>
+                        <h1 class="display-4">Leo Felipa</h1>
                     </div>
                     <div class="job-title mb-5">
                         <p>Web Developer & Graphic Designer </p>

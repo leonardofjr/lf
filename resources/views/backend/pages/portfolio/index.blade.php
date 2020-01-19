@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{$item['title']}}</td>
                     <td>{{$item['author']}}</td>
-                    <td>{{$item['type']}}</td>
+                    <td>{{ucwords(str_replace('_', ' ',$item['type']))}}</td>
                     <td>{{$item['created_at']}}</td>
                     <td><a href="/admin/portfolio/edit/{{$item['id']}}" class="fas fa-edit"></a></td>
                     <td>

@@ -51440,7 +51440,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "user-name" }, [
-      _c("h1", [_vm._v("Leo Felipa")])
+      _c("h1", { staticClass: "display-4" }, [_vm._v("Leo Felipa")])
     ])
   },
   function() {
@@ -51571,7 +51571,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h2", [
+      _c("h2", { staticClass: "display-4" }, [
         _vm._v("Web Developer & Graphic Designer"),
         _c("br"),
         _vm._v(" experienced in creating CRUD applications.")
@@ -52235,7 +52235,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h1", [_vm._v("Blog")])
+      _c("h1", { staticClass: "display-4" }, [_vm._v("Blog")])
     ])
   },
   function() {
@@ -52635,7 +52635,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
-      _c("h1", [_vm._v("Contact Me")])
+      _c("h1", { staticClass: "display-4" }, [_vm._v("Contact Me")])
     ])
   }
 ]

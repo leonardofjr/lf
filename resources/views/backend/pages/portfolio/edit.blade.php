@@ -24,10 +24,10 @@
                     <label for="type">Type:</label>
                         <select class="form-control" id="type" name="type" >
                             @foreach($type_dropdown as $type)
-                                @if(strtolower($type) == $data->type)
-                                    <option selected value="{{str_replace(' ', '_', strtolower($type->name))}}">{{$type->name}}</option>
+                                @if($type == $data->type)
+                                <option  selected value="{{$type->name}}">{{ucwords(str_replace('_', ' ', strtolower($type->name)))}}</option>
                                 @else
-                                <option value="{{str_replace(' ', '_', strtolower($type->name))}}">{{$type->name}}</option>
+                                <option  value="{{$type->name}}">{{ucwords(str_replace('_', ' ', strtolower($type->name)))}}</option>
                                 @endif
                             @endforeach
                         </select>
