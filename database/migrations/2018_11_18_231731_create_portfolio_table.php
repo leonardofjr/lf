@@ -19,7 +19,7 @@ class CreatePortfolioTable extends Migration
             $table->text('type');
             $table->text('website_url');
             $table->text('description');
-            $table->string('image')->default('');
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -27,7 +27,6 @@ class PortfolioSeeder extends Seeder
                 <li>CSS3</li>
                 <li>JavaScript</li>
             </ul>',
-            'image' => '1579151841.png',
         ]);      
 
         Portfolio::create([
@@ -46,7 +45,6 @@ class PortfolioSeeder extends Seeder
                 <li>JavaScript</li>
                 <li>Vue.js</li>
             </ul>',
-            'image' => '1579297874.png',
         ]);      
         Portfolio::create([
             'user_id' => 1,
@@ -64,7 +62,6 @@ class PortfolioSeeder extends Seeder
                 <li>JavaScript</li>
                 <li>Vue.js</li>
             </ul>',
-            'image' => '1579306599.png',
         ]);      
         Portfolio::create([
             'user_id' => 1,
@@ -82,7 +79,6 @@ class PortfolioSeeder extends Seeder
                 <li>JavaScript</li>
                 <li>Vue.js</li>
             </ul>',
-            'image' => '1579306615.png',
         ]);      
     }
 }

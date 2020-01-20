@@ -6,7 +6,7 @@
         <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item" :key="post.id">
             <template v-if='post.type === "logo_design"'>
             <div class="col-12 col-md-4">
-                    <img :src="'/storage/imgs/' + post.image" class="img-fluid">
+                            <img :src="post.image ? '/storage/imgs/'+ post.image : 'https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected'" class="img-fluid">
             </div>
             </template>
         </div>

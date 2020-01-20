@@ -7,7 +7,7 @@
                 <template v-if='post.type === "web_development"'>
                     <div class="row portfolio-item flex align-items-center">
                         <div class="col-12 col-md-7">
-                            <img :src="'/storage/imgs/' + post.image" class="img-fluid">
+                            <img :src="post.image ? '/storage/imgs/'+ post.image : 'https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected'" class="img-fluid">
                         </div>
                         <div class="col-12 col-md-5">
                                 <h2 class="project-title h3"> <a :href="post.website_url">{{post.title}}</a></h2>

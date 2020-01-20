@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('image')->default('');
+            $table->string('image')->nullable();
             $table->text('content');
             $table->timestamps();
         });
