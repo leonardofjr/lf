@@ -36,4 +36,32 @@ body {
     background-size: cover;
     overflow-x: hidden;
     line-height: 1.5;
+
 }
+
+.page {
+    margin-top: 56px;
+
+}
+
+.job-title {
+    white-space: nowrap;
+}
+.btns-wrapper {
+    bottom: 0;
+    width: 100%;
+    transform: translateY(75vh);
+}
+
+.home-btns-animation {
+    animation-name: slideInHomeBtns;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes slideInHomeBtns {
+    0% { transform: translateY(75vh); }
+    100% { transform: translateY(0vh); }
+}
+

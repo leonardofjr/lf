@@ -200,6 +200,54 @@ body {
   line-height: 1.5;
 }
 
+.page {
+  margin-top: 56px;
+}
+
+.job-title {
+  white-space: nowrap;
+}
+
+.btns-wrapper {
+  bottom: 0;
+  width: 100%;
+  -webkit-transform: translateY(75vh);
+          transform: translateY(75vh);
+}
+
+.home-btns-animation {
+  -webkit-animation-name: slideInHomeBtns;
+          animation-name: slideInHomeBtns;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideInHomeBtns {
+  0% {
+    -webkit-transform: translateY(75vh);
+            transform: translateY(75vh);
+  }
+
+  100% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+
+@keyframes slideInHomeBtns {
+  0% {
+    -webkit-transform: translateY(75vh);
+            transform: translateY(75vh);
+  }
+
+  100% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+
 /*** Hyperlinks ***/
 
 a {
@@ -256,6 +304,21 @@ h5,
 h6 {
   margin-bottom: .5rem;
   line-height: 1.2;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.7em;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 2.4em;
+  font-weight: 300;
 }
 
 /** Components **/

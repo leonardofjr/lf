@@ -200,6 +200,54 @@ body {
   line-height: 1.5;
 }
 
+.page {
+  margin-top: 56px;
+}
+
+.job-title {
+  white-space: nowrap;
+}
+
+.btns-wrapper {
+  bottom: 0;
+  width: 100%;
+  -webkit-transform: translateY(75vh);
+          transform: translateY(75vh);
+}
+
+.home-btns-animation {
+  -webkit-animation-name: slideInHomeBtns;
+          animation-name: slideInHomeBtns;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideInHomeBtns {
+  0% {
+    -webkit-transform: translateY(75vh);
+            transform: translateY(75vh);
+  }
+
+  100% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+
+@keyframes slideInHomeBtns {
+  0% {
+    -webkit-transform: translateY(75vh);
+            transform: translateY(75vh);
+  }
+
+  100% {
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+
 /*** Hyperlinks ***/
 
 a {
@@ -258,6 +306,21 @@ h6 {
   line-height: 1.2;
 }
 
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.7em;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 2.4em;
+  font-weight: 300;
+}
+
 /** Components **/
 
 #top-bar {
@@ -278,7 +341,7 @@ h6 {
 aside {
   color: #000;
   width: 400px;
-  padding: 0;
+  padding-top: 5rem;
   position: fixed !important;
   height: 100%;
   left: -500px;
@@ -348,7 +411,6 @@ aside .block-social .block-title {
 /** Layout **/
 
 main #content {
-  margin-top: 56px;
   color: #000;
   background-color: #fff;
 }
@@ -373,9 +435,46 @@ footer {
   position: relative;
 }
 
-#home .loading-overlay {
+#home .content-wrapper {
   width: 100%;
   height: 100vh;
+}
+
+.loading-overlay {
+  position: absolute;
+  background: #000;
+  z-index: 100000;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-overlay-animation {
+  -webkit-animation-name: loadingOverlayAnimation;
+          animation-name: loadingOverlayAnimation;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes loadingOverlayAnimation {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes loadingOverlayAnimation {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0;
+  }
 }
 
 #contact form input,
@@ -531,42 +630,5 @@ footer {
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-.loading-overlay {
-  position: absolute;
-  background: #fff;
-  z-index: 100000;
-  width: 100%;
-  height: 100%;
-}
-
-.loading-overlay-animation {
-  -webkit-animation-name: loadingOverlayAnimation;
-          animation-name: loadingOverlayAnimation;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes loadingOverlayAnimation {
-  0% {
-    height: 100%;
-  }
-
-  100% {
-    height: 0;
-  }
-}
-
-@keyframes loadingOverlayAnimation {
-  0% {
-    height: 100%;
-  }
-
-  100% {
-    height: 0;
-  }
 }
 

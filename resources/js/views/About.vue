@@ -1,5 +1,5 @@
 <template>
-        <section id="about" class="container">
+        <section id="about" class="container page">
             <div class="page-title">
                 <h2 class="display-4" >Web Developer & Graphic Designer<br> experienced in creating CRUD applications.</h2>
             </div>

@@ -34146,6 +34146,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -34153,19 +34154,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
 
-        if ($('loading-overlay') != null) {
+        if ($('.loading-overlay') != null) {
+            $('body').removeClass('overflow-auto');
             $('#top-bar').addClass('d-none');
-            loadingOverlay();
-        }
-        function loadingOverlay() {
-            $('.loading-overlay').removeClass('loading-overlay-animation');
-            $('.loading-text');
+            $('body').addClass('overflow-hidden');
+            $('.loading-overlay').addClass('loading-overlay-animation');
+            $('.btns-wrapper').addClass('home-btns-animation');
         }
     },
 
     methods: {
         fadeLoadingOverlay: function fadeLoadingOverlay() {
             this.$parent.displayTopbar();
+            $('body').removeClass('overflow-hidden');
+            $('body').addClass('overflow-auto');
             $('.loading-overlay').addClass('loading-overlay-animation');
         }
     }
@@ -34181,11 +34183,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
-    _c("div", { staticClass: "loading-overlay " }, [
+    _c("div", { staticClass: "loading-overlay " }),
+    _vm._v(" "),
+    _c("div", { staticClass: "content-wrapper" }, [
       _c(
         "div",
         {
-          staticClass: "loading-text text-center center-md-content",
+          staticClass: "content text-center center-md-content",
           staticStyle: { color: "black" }
         },
         [
@@ -34195,40 +34199,61 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "text-center" },
+            { staticClass: "text-center btns-wrapper" },
             [
-              _c("router-link", { attrs: { to: "/web-development" } }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary mb-4",
-                    on: { click: _vm.fadeLoadingOverlay }
-                  },
-                  [_vm._v("Web Development Projects")]
-                )
-              ]),
+              _c(
+                "router-link",
+                {
+                  staticClass: "d-block d-md-inline-block",
+                  attrs: { to: "/web-development" }
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary mb-4",
+                      on: { click: _vm.fadeLoadingOverlay }
+                    },
+                    [_vm._v("Web Development")]
+                  )
+                ]
+              ),
               _vm._v(" "),
-              _c("router-link", { attrs: { to: "/logo-design" } }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary mb-4",
-                    on: { click: _vm.fadeLoadingOverlay }
-                  },
-                  [_vm._v("Logo Design Projects")]
-                )
-              ]),
+              _c(
+                "router-link",
+                {
+                  staticClass: "d-block d-md-inline-block",
+                  attrs: { to: "/logo-design" }
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary mb-4",
+                      on: { click: _vm.fadeLoadingOverlay }
+                    },
+                    [_vm._v("Logo Design")]
+                  )
+                ]
+              ),
               _vm._v(" "),
-              _c("router-link", { attrs: { to: "/graphic-design" } }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary mb-4",
-                    on: { click: _vm.fadeLoadingOverlay }
-                  },
-                  [_vm._v("Graphic Design Projects")]
-                )
-              ])
+              _c(
+                "router-link",
+                {
+                  staticClass: "d-block d-md-inline-block",
+                  attrs: { to: "/graphic-design" }
+                },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary mb-4",
+                      on: { click: _vm.fadeLoadingOverlay }
+                    },
+                    [_vm._v("Graphic Design")]
+                  )
+                ]
+              )
             ],
             1
           )
@@ -34354,19 +34379,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "container", attrs: { id: "about" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", [
-      _c("div", { domProps: { innerHTML: _vm._s(this.$parent.data.bio) } })
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _c("div", {
-        domProps: { innerHTML: _vm._s(this.$parent.data.skills_and_offer) }
-      })
-    ])
-  ])
+  return _c(
+    "section",
+    { staticClass: "container page", attrs: { id: "about" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", [
+        _c("div", { domProps: { innerHTML: _vm._s(this.$parent.data.bio) } })
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        _c("div", {
+          domProps: { innerHTML: _vm._s(this.$parent.data.skills_and_offer) }
+        })
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -34505,7 +34534,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container", attrs: { id: "web_development" } },
+    { staticClass: "container page", attrs: { id: "web_development" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -34685,7 +34714,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container", attrs: { id: "logo_design" } },
+    { staticClass: "container page", attrs: { id: "logo_design" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -34837,7 +34866,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container", attrs: { id: "graphic_design" } },
+    { staticClass: "container page", attrs: { id: "graphic_design" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -34982,7 +35011,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container", attrs: { id: "blog" } },
+    { staticClass: "container page", attrs: { id: "blog" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -35160,7 +35189,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container", attrs: { id: "blog" } },
+    { staticClass: "container page", attrs: { id: "blog" } },
     [
       _vm._m(0),
       _vm._v(" "),
@@ -35355,82 +35384,90 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container", attrs: { id: "contact" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("p", [
-      _vm._v("I am available for hire and open to any ideas of cooperation.")
-    ]),
-    _vm._v(" "),
-    _c("dl", { staticClass: "dl dl-vertical" }, [
-      this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
+  return _c(
+    "div",
+    { staticClass: "container page", attrs: { id: "contact" } },
+    [
+      _vm._m(0),
       _vm._v(" "),
-      this.$parent.data.email
-        ? _c("dd", { staticClass: "mb-5" }, [
-            _c("i", { staticClass: "fas fa-envelope" }),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "mailto:" + this.$parent.data.email } }, [
-              _vm._v(_vm._s(this.$parent.data.email))
+      _c("p", [
+        _vm._v("I am available for hire and open to any ideas of cooperation.")
+      ]),
+      _vm._v(" "),
+      _c("dl", { staticClass: "dl dl-vertical" }, [
+        this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.email
+          ? _c("dd", { staticClass: "mb-5" }, [
+              _c("i", { staticClass: "fas fa-envelope" }),
+              _vm._v(" "),
+              _c(
+                "a",
+                { attrs: { href: "mailto:" + this.$parent.data.email } },
+                [_vm._v(_vm._s(this.$parent.data.email))]
+              )
             ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.twitter_url ? _c("dt", [_vm._v("Twitter:")]) : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.twitter_url
-        ? _c("dd", [
-            _c("i", { staticClass: "fab fa-twitter" }),
-            _vm._v(" "),
-            _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
-              _vm._v(_vm._s(this.$parent.data.twitter_url))
-            ]),
-            _c("br")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.linkedin_url
-        ? _c("dt", [_vm._v("Linkedin:")])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.linkedin_url
-        ? _c("dd", [
-            _c("i", { staticClass: "fab fa-linkedin-in" }),
-            _vm._v(" "),
-            _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
-              _vm._v(_vm._s(this.$parent.data.linkedin_url))
-            ]),
-            _c("br")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.facebook_url
-        ? _c("dt", [_vm._v("Facebook:")])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.facebook_url
-        ? _c("dd", [
-            _c("i", { staticClass: "fab fa-facebook" }),
-            _vm._v(" "),
-            _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
-              _vm._v(_vm._s(this.$parent.data.facebook_url))
-            ]),
-            _c("br")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.github_url ? _c("dt", [_vm._v("Github:")]) : _vm._e(),
-      _vm._v(" "),
-      this.$parent.data.github_url
-        ? _c("dd", [
-            _c("i", { staticClass: "fab fa-github" }),
-            _vm._v(" "),
-            _c("a", { attrs: { href: this.$parent.data.github_url } }, [
-              _vm._v(_vm._s(this.$parent.data.github_url))
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.twitter_url
+          ? _c("dt", [_vm._v("Twitter:")])
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.twitter_url
+          ? _c("dd", [
+              _c("i", { staticClass: "fab fa-twitter" }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
+                _vm._v(_vm._s(this.$parent.data.twitter_url))
+              ]),
+              _c("br")
             ])
-          ])
-        : _vm._e()
-    ])
-  ])
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.linkedin_url
+          ? _c("dt", [_vm._v("Linkedin:")])
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.linkedin_url
+          ? _c("dd", [
+              _c("i", { staticClass: "fab fa-linkedin-in" }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
+                _vm._v(_vm._s(this.$parent.data.linkedin_url))
+              ]),
+              _c("br")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.facebook_url
+          ? _c("dt", [_vm._v("Facebook:")])
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.facebook_url
+          ? _c("dd", [
+              _c("i", { staticClass: "fab fa-facebook" }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
+                _vm._v(_vm._s(this.$parent.data.facebook_url))
+              ]),
+              _c("br")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.github_url ? _c("dt", [_vm._v("Github:")]) : _vm._e(),
+        _vm._v(" "),
+        this.$parent.data.github_url
+          ? _c("dd", [
+              _c("i", { staticClass: "fab fa-github" }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: this.$parent.data.github_url } }, [
+                _vm._v(_vm._s(this.$parent.data.github_url))
+              ])
+            ])
+          : _vm._e()
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
