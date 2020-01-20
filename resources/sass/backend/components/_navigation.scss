@@ -1,0 +1,22 @@
+
+
+  #admin-cpanel .admin-sidebar {
+    
+    .navbar-brand {
+        color: #fff;
+    }
+    .nav {
+        padding: 0;
+        list-style-type: none;
+    }
+    .nav-link {
+        color: $adminSidebarFontColor;
+
+    }
+
+    @include breakpoint(md) {
+        width: 25%;
+    }
+
+}
+

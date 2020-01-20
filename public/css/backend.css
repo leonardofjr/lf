@@ -248,6 +248,10 @@ body {
   }
 }
 
+.sidebar-bg {
+  background: #000;
+}
+
 /*** Hyperlinks ***/
 
 a {
@@ -261,10 +265,6 @@ a:hover {
 
 .dropdown-menu-bg {
   background: #777;
-}
-
-.sidebar-bg {
-  background: #000;
 }
 
 body {
@@ -323,6 +323,25 @@ h3 {
 
 /** Components **/
 
+#admin-cpanel .admin-sidebar .navbar-brand {
+  color: #fff;
+}
+
+#admin-cpanel .admin-sidebar .nav {
+  padding: 0;
+  list-style-type: none;
+}
+
+#admin-cpanel .admin-sidebar .nav-link {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  #admin-cpanel .admin-sidebar {
+    width: 25%;
+  }
+}
+
 /** Layout **/
 
 /** Pages **/
@@ -345,6 +364,10 @@ html {
   height: 100%;
 }
 
+#admin-cpanel .admin-sidebar {
+  height: 100%;
+}
+
 #admin-cpanel #avatarPreview,
 #admin-cpanel #imgPreview {
   max-width: 300px;
@@ -353,22 +376,5 @@ html {
 #admin-cpanel .content {
   height: 100%;
   overflow-y: scroll;
-}
-
-#admin-cpanel .admin-sidebar {
-  height: 100%;
-}
-
-#admin-cpanel .admin-sidebar .navbar-brand {
-  color: #fff;
-}
-
-#admin-cpanel .admin-sidebar .nav {
-  padding: 0;
-  list-style-type: none;
-}
-
-#admin-cpanel .admin-sidebar .nav-link {
-  color: #fff;
 }
 

@@ -30,15 +30,11 @@
     <body class="container-fluid">
         <main id="admin-cpanel" >
             <div class="row">
-                <aside class="col-md-2  admin-sidebar sidebar-bg">
-                    <nav class="d-lg-block navbar navbar-expand-lg navbar-light">
+                <aside class="col-4 col-md-2  admin-sidebar sidebar-bg">
+                    <nav>
                         <a class="navbar-brand" href="{{ url('/') }}">
                             {{ config('app.name', 'Laravel') }}
                         </a>                        
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}">Profile</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}">Blog</a></li>
@@ -54,12 +50,11 @@
                                     </form>
                                 </li>
                             </ul>
-                        </div>
                     </nav>
                 </aside>
    
 
-                <section class="col-lg-10 content">
+                <section class="col-8 col-md-10 content">
         @endauth
                     @yield('content')
                 </section>

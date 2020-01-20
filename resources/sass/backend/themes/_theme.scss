@@ -1,7 +1,7 @@
 @import '../../helpers/_variables.scss';
 
 // Global Classes
-body, html {
+body, html  {
     height: 100%;
     overflow-y: hidden;
 }
@@ -10,6 +10,9 @@ body, html {
     color: #000;
     height: 100%;
     .row {
+        height: 100%;
+    }
+    .admin-sidebar {
         height: 100%;
     }
     // 
@@ -22,21 +25,3 @@ body, html {
     overflow-y: scroll;
 }
 // Admin Sidebar Setttings
-#admin-cpanel .admin-sidebar {
-    height: 100%;
-
-    
-    .navbar-brand {
-        color: #fff;
-    }
-    .nav {
-        padding: 0;
-        list-style-type: none;
-    }
-    .nav-link {
-        color: $adminSidebarFontColor;
-
-    }
-
-}
-
