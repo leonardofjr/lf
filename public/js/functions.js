@@ -7,14 +7,21 @@ Website: lfelipa.com
 /*** Event Listeners ***/
 
 // The following will be excuted when the window is resized.
-$(window).resize(function(e) {
-    // If the window.width is greater than 800 then the following if statement will be executed.
+$(document).ready(function() {
     if ($(window).width() > 800) {
         $('#content').addClass('frontend-lg');
-    } else {
-        $('#content').removeClass('frontend-lg');
-    }
+    } 
+
+    $(window).resize(function(e) {
+        // If the window.width is greater than 800 then the following if statement will be executed.
+        if ($(window).width() > 800) {
+            $('#content').addClass('frontend-lg');
+        } else {
+            $('#content').removeClass('frontend-lg');
+        }
+    })
 })
+
 
 // This function will be excuted when the #nav-toggler is clicked.
 $('.navbar-toggler').on('click', function() {

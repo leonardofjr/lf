@@ -1,23 +1,20 @@
 <template>     
       <main>
         <div id="top-bar" class="navbar navbar-light fixed-top d-none">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-                <ul  class="navbar-nav ml-auto">
+            
+                <div class="dropdown">
                 <!-- If user is null -->  
                 <template  v-if="!user" class="mr-3 my-3 text-right">
-                    <li class="nav-item">
-                          <a  class="ml-2" href="/admin/login">Login</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a  class="ml-2" href="/admin/register">Register</a>
-                    </li>
+                        <a href="/admin/login">Login</a> 
+                        <a href="/admin/register">Register</a>
                 </template>
 
                 <!-- else if user data is returned -->
                 <template v-else  >
-                      <li class="nav-item dropdown">
+
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 {{data['fname']}}<span class="caret"></span>
                             </a>
@@ -36,11 +33,10 @@
                                   <input type="hidden" name="_token" :value="csrf">
                                 </form>
                             </div>
-                        </li>
-        
+
                 </template>
-              </ul>
-        </div>
+              </div>
+</div>
 
         <aside id="sidebar" class="sidebar-bg">
       
@@ -122,7 +118,7 @@
               
           </aside>
 
-          <section id="content">
+          <section id="content" class="container-fluid" style="position: absolute">
                 <transition name="fade">
                   <router-view>
                   

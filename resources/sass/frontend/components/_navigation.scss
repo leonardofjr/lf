@@ -5,6 +5,12 @@
 #top-bar {
     background:white;
     box-shadow: 10px 0 10px #aaa;
+    height:56px;
+    a {
+        color: #999;
+    } :hover {
+        color: #000;
+    }
 }
 
 

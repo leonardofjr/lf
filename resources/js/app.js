@@ -4,11 +4,22 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import Bootstrap from './bootstrap.js';
+import JQuery from 'jquery';
+
+window.$ = window.JQuery =  JQuery; 
+import'popper.js';
+import'bootstrap';
+import'bootstrap/dist/css/bootstrap.min.css';
+
+
+window.axios = require('axios');
+
+Vue.prototype.$http = window.axios;
+
+
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 Vue.use(VueRouter)
 
 import App from './views/App'

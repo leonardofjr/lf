@@ -264,6 +264,15 @@ h6 {
   background: white;
   -webkit-box-shadow: 10px 0 10px #aaa;
           box-shadow: 10px 0 10px #aaa;
+  height: 56px;
+}
+
+#top-bar a {
+  color: #999;
+}
+
+#top-bar :hover {
+  color: #000;
 }
 
 aside {
@@ -339,7 +348,7 @@ aside .block-social .block-title {
 /** Layout **/
 
 main #content {
-  margin-top: 66px;
+  margin-top: 56px;
   color: #000;
   background-color: #fff;
 }
