@@ -10,7 +10,7 @@
 
 
         
-                <form id="setupPageForm" class="col-10" method="POST" enctype="multipart/form-data" action="/update-user-settings/{{$id}}">
+                <form class="col-10" method="POST" enctype="multipart/form-data" action="/api/user/update/{{$id}}">
                     <input name="_method" type="hidden" value="PUT">
                     {{ csrf_field() }}
 

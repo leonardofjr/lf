@@ -12,7 +12,6 @@ class HelperMethodsController extends Controller
 {
     
     private const TEMP_DIRECTORY = 'temp/';
-    private const LOGO_DIRECTORY = 'logo/';
     
     // Helper Functions
 
@@ -86,8 +85,5 @@ class HelperMethodsController extends Controller
 
     public function emptyTempDirectory() {
         Storage::deleteDirectory(HelperMethodsController::TEMP_DIRECTORY);
-    }
-    public function emptyLogoDirectory() {
-        Storage::deleteDirectory(UserSettingController::LOGO_DIRECTORY);
     }
 }

@@ -7,7 +7,7 @@
             <!-- Including Croppie Upload Modal -->
             @include('backend.components.croppieUploadModal')
 
-            <form class="col-10" method="POST" enctype="multipart/form-data" action="/post-portfolio-entry">
+            <form class="col-10" method="POST" enctype="multipart/form-data" action="/api/portfolio/store">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title:</label>

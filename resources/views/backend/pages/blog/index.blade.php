@@ -21,7 +21,7 @@
                     <td>{{$item['created_at']}}</td>
                     <td><a href="/admin/blog/edit/{{$item['id']}}" class="fas fa-edit"></a></td>
                     <td>
-                        <form class="d-inline-block" action="/api/blog/delete/{{$item['id']}}" method="post">
+                        <form class="d-inline-block" action="/api/blog/destroy/{{$item['id']}}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                                 <button type="submit" class="fas fa-trash"></button>

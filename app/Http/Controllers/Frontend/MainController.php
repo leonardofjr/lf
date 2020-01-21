@@ -25,15 +25,11 @@ class MainController extends Controller
             $user_id = 1;
         }
         $user = User::find($user_id);
-        $user->logged_in =  Auth::user();
-        $portfolio = Portfolio::get()->where('user_id', $user_id);
-        $photos = [];
-        foreach($portfolio as $i => $item) {
-            $photos[$i] = $item;
-            $photos[$i]->portfolio_entries = $item->portfolio_entries;
-        }
-        $user->portfolio = $photos;
-        return response()-json($user);
+        $user->logged_in =  (Auth::user() ? true : false);
+        $user->portfolio;
+        $user->blog;
+
+        return response()->json($user);
     }
 
     /**

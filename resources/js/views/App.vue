@@ -142,7 +142,7 @@
   created() {
         axios({
           method: 'get',
-          url: this.web_url + 'get-user-settings',
+          url: this.web_url + 'api/user',
         })
         .then(response => {
           console.log(response);

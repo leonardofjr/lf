@@ -16,14 +16,3 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-    // **  Routes //
-Route::get('get-portfolio-entries', 'PortfolioController@getPortfolioEntries');
-Route::get('portfolio/{id}', 'PortfolioController@getPortfolioEntriesById');
-
-Route::put('blog/update/{blog_post_id}', 'Backend\BlogController@update');
-Route::delete('blog/delete/{blog_post_id}', 'Backend\BlogController@destroy');
-
-// **  Routes //
-// **  Routes //
-//Route::get('get-user-settings', 'UserSettingController@getUserSettings');

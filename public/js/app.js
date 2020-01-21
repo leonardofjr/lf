@@ -34261,7 +34261,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     axios({
       method: 'get',
-      url: this.web_url + 'get-user-settings'
+      url: this.web_url + 'api/user'
     }).then(function (response) {
       console.log(response);
       if (!response.data['logged_in']) {

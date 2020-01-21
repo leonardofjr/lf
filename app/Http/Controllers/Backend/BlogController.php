@@ -113,7 +113,7 @@ class BlogController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         $blog = Blog::findOrFail($id);
-        return view('backend.pages.blog.update')->with([
+        return view('backend.pages.blog.edit')->with([
                 'data' => $blog,
             ]);
     }
