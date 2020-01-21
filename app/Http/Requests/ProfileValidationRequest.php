@@ -24,8 +24,8 @@ class ProfileValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'fname' => 'required',
-            'lname' => 'required',
+            'fname' => 'required|min:2|max:60',
+            'lname' => 'required|min:2|max:60',
             'bio' => 'required',
             'phone' => 'required',
             'email' => 'required',

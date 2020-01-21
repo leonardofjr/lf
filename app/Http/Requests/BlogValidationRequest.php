@@ -24,7 +24,7 @@ class BlogValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|min:2|max:60',
             'slug' => 'required',
             'content' => 'required',
         ];

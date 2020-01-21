@@ -76,4 +76,13 @@
         <script defer type="text/javascript" src="/js/croppieFunctionality.js"></script>
     @endif
 
+
+    @if (Request::is('admin/blog/*'))
+        <script type="text/javascript">
+            $('input[name="title"]').keyup( function() {
+                $('input[name="slug"]').val($(this).val().replace(/ /g,"_").replace(/[$-/:-?{-~!"^`\[\]]/g, '').toLowerCase());
+            })
+        </script>
+    @endif
+
 </html>
