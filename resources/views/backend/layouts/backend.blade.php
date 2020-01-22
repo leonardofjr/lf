@@ -35,12 +35,12 @@
                             <div id="profile-img-container">
                                 <img id="profile-img" src="" alt="" class="img-thumbnail rounded-circle">
                             </div>
-                            <div id="profile-user-name">
-                                    {{ config('app.name', 'Laravel') }}
+                            <div id="profile-username" class="d-none d-md-block">
                             </div>
                         </div>
                         <script type="text/javascript">
                             const profileImageElement = document.getElementById('profile-img');
+                            const profileUsernameElement = document.getElementById('profile-username');
 
                             function getUserData(method, url, body) {
                                 // Creating an instance of XMLHttpRequest
@@ -65,6 +65,7 @@
                                     profileImageElement.src = '/imgs/logo.png' 
                                 } else {
                                     profileImageElement.src = '/storage/logo/' + data.profile_image;
+                                    profileUsernameElement.innerHTML = data.fname + ' ' + data.lname;
                                 }
                             }
 

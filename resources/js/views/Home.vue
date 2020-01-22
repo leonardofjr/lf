@@ -5,7 +5,7 @@
                 <div class="content-wrapper">
                     <div class="content text-center center-md-content" style="color: black">
                         <div class="user-name">
-                            <h1 class="display-4">Leo Felipa</h1>
+                            <h1 class="display-4">{{this.$parent.data.fname + ' ' + this.$parent.data.lname}}</h1>
                         </div>
                         <div class="job-title mb-5">
                             <p>Web Developer & Graphic Designer </p>
