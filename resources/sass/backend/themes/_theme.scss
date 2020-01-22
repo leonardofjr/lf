@@ -7,17 +7,24 @@ body, html  {
 }
 #admin-cpanel {
     background: white;
-    color: #000;
     height: 100%;
     .row {
         height: 100%;
     }
     .admin-sidebar {
         height: 100%;
+        color: #fff;
     }
     // 
-    #avatarPreview, #imgPreview {
-        max-width: 300px;
+    #profile-img {
+        width: 100%;
+        max-width: 200px;
+    }
+    #profile-user-name {
+        text-align: center;
+    }
+    #profile-img-container {
+        text-align: center;;
     }
 }
 #admin-cpanel .content {

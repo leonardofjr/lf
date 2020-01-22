@@ -30,53 +30,50 @@
     <body class="container-fluid">
         <main id="admin-cpanel" >
             <div class="row">
-                <aside class="col-2 col-md-2  admin-sidebar sidebar-bg">
-                    <nav>
+                <aside class="col-2 col-md-2  admin-sidebar sidebar-bg ">
+                        <div id="nav-top" class="mt-3 mb-5">
+                            <div id="profile-img-container">
+                                <img id="profile-img" src="" alt="" class="img-thumbnail rounded-circle">
+                            </div>
+                            <div id="profile-user-name">
+                                    {{ config('app.name', 'Laravel') }}
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            const profileImageElement = document.getElementById('profile-img');
 
-                        <div class="py-4">
-                            <img id="profile-img" src="" alt="" class="img-thumbnail rounded-circle">
-                        <div class="text-center">
-                            <script type="text/javascript">
-                                const profileImageElement = document.getElementById('profile-img');
-
-                                function getUserData(method, url, body) {
-                                    // Creating an instance of XMLHttpRequest
-                                    let xhttp = new XMLHttpRequest();
-                                    // Configuring Request
-                                    xhttp.open(method, url, false);
-                                    //Sending request over network
-                                    xhttp.send(body);
-                                    // This will be called after response is received
-                                    if (xhttp.status !== 200) {
-                                    
-                                    } else {
-                                        // Parsing response
-                                        const res = JSON.parse(xhttp.responseText);
-                                        updatingUserDomElements(res);
-                                    }
+                            function getUserData(method, url, body) {
+                                // Creating an instance of XMLHttpRequest
+                                let xhttp = new XMLHttpRequest();
+                                // Configuring Request
+                                xhttp.open(method, url, false);
+                                //Sending request over network
+                                xhttp.send(body);
+                                // This will be called after response is received
+                                if (xhttp.status !== 200) {
+                                
+                                } else {
+                                    // Parsing response
+                                    const res = JSON.parse(xhttp.responseText);
+                                    updatingUserDomElements(res);
                                 }
-        
+                            }
 
-                                function updatingUserDomElements(data) {
-                                    if (!data.profile_image) {
-                                        profileImageElement.src = '/imgs/logo.png' 
-                                    } else {
-                                        profileImageElement.src = '/storage/logo/' + data.profile_image;
-                                    }
+
+                            function updatingUserDomElements(data) {
+                                if (!data.profile_image) {
+                                    profileImageElement.src = '/imgs/logo.png' 
+                                } else {
+                                    profileImageElement.src = '/storage/logo/' + data.profile_image;
                                 }
+                            }
 
-                                getUserData('GET', '/api/user', null)
-           
+                            getUserData('GET', '/api/user', null)
+    
 
 
-                            </script>
-                            <a class="navbar-brand d-none d-md-block" href="{{ url('/') }}">
-                                {{ config('app.name', 'Laravel') }}
-                            <!-- <img v-if="this.data.profile_image" :src='"/storage/logo/" + this.data.profile_image' alt="" class="avatar img-fluid rounded-circle mt-4"> -->
-                            </a>
-                       </div>
-        
-                    </div>                
+                        </script>
+                        <nav class="d-flex justify-content-center">
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}"><i class="d-md-none fas fa-user-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-user-edit"></i> <span class="d-none d-md-inline-block">Profile</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}"><i class="d-md-none fas fa-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-edit"></i> <span class="d-none d-md-inline-block">Blog</span></a></li>
@@ -92,7 +89,7 @@
                                     </form>
                                 </li>
                             </ul>
-                    </nav>
+                         </nav>
                 </aside>
    
 

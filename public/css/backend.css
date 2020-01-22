@@ -356,7 +356,6 @@ html {
 
 #admin-cpanel {
   background: white;
-  color: #000;
   height: 100%;
 }
 
@@ -366,11 +365,20 @@ html {
 
 #admin-cpanel .admin-sidebar {
   height: 100%;
+  color: #fff;
 }
 
-#admin-cpanel #avatarPreview,
-#admin-cpanel #imgPreview {
-  max-width: 300px;
+#admin-cpanel #profile-img {
+  width: 100%;
+  max-width: 200px;
+}
+
+#admin-cpanel #profile-user-name {
+  text-align: center;
+}
+
+#admin-cpanel #profile-img-container {
+  text-align: center;
 }
 
 #admin-cpanel .content {
