@@ -1,7 +1,7 @@
 @extends('backend.layouts.backend')
 @section('content')
-        <h2>{{\Request::route()->getName()}}<a class="btn-primary btn mx-4" href="{{route('Add Portfolio Entry')}}">Add Portfolio Entry</a></h2>
-          <div class="col-10">
+        <h2>{{\Request::route()->getName()}}<a class="btn-primary btn mx-4" href="{{route('Add Project')}}">Add Project</a></h2>
+          <div class="d-none d-md-block col-md-10">
             <table class="table">
                 <thead>
                 <tr>
@@ -20,17 +20,43 @@
                     <td>{{$item['author']}}</td>
                     <td>{{ucwords(str_replace('_', ' ',$item['type']))}}</td>
                     <td>{{$item['created_at']}}</td>
-                    <td><a href="/admin/portfolio/edit/{{$item['id']}}" class="fas fa-edit"></a></td>
+                    <td><a href="/admin/portfolio/edit/{{$item['id']}}" class="">Edit</a></td>
                     <td>
                         <form id="deleteWorkForm" class="d-inline-block" action="/api/portfolio/destroy/{{$item['id']}}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                                <button type="submit" class="fas fa-trash"></button>
+                                <button type="submit" class="">Trash</button>
                         </form>
                     </td>
                 </tr>
               @endforeach
             <tbody>
         </table>
-</div>
+      </div>
+      <div class="d-md-none col-md-10">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Title</th>
+
+                </tr>
+                </thead>
+            <tbody>
+              @foreach($data as $item)
+                <tr>
+                    <td>{{$item['title']}}<br>
+                      <div class="text-right">
+                        <a href="/admin/portfolio/edit/{{$item['id']}}" class="">Edit</a>
+                        <form id="deleteWorkForm" class="d-inline-block" action="/api/portfolio/destroy/{{$item['id']}}" method="post">
+                          {{ csrf_field() }}
+                          {{ method_field('DELETE') }}
+                              <button type="submit" class="">Trash</button>
+                        </form>
+                    </div>
+                    </td>
+                </tr>
+              @endforeach
+            <tbody>
+        </table>
+      </div>
 @endsection

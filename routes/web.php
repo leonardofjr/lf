@@ -52,8 +52,8 @@ Route::group(['middleware' => 'verified', 'prefix' => 'api/user/'], function() {
 // ** Portfolio Admin Routes //
 Route::group(['middleware' => 'verified', 'prefix' => 'admin/portfolio'], function() {
     Route::get('/', 'Backend\PortfolioController@index')->name('Portfolio');
-    Route::get('add', 'Backend\PortfolioController@create')->name('Add Portfolio Entry');
-    Route::get('edit/{id}','Backend\PortfolioController@edit')->name('Edit Portfolio Entry');
+    Route::get('add', 'Backend\PortfolioController@create')->name('Add Project');
+    Route::get('edit/{id}','Backend\PortfolioController@edit')->name('Edit Project');
 });
 
 // ** Portfolio API Routes //

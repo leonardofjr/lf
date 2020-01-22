@@ -16,7 +16,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css" />
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="/css/backend.css">
 
     </head>
@@ -30,20 +30,48 @@
     <body class="container-fluid">
         <main id="admin-cpanel" >
             <div class="row">
-                <aside class="col-4 col-md-2  admin-sidebar sidebar-bg">
+                <aside class="col-2 col-md-2  admin-sidebar sidebar-bg">
                     <nav>
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
-                        </a>                        
+
+                        <div class="py-4">
+                            <img id="profile-img" src="" alt="" class="img-thumbnail rounded-circle">
+                        <div class="text-center">
+                            <script type="text/javascript">
+                                const profileImageElement = document.getElementById('profile-img');
+
+                                function getUserData(method, url, data) {
+                                    let xhttp = new XMLHttpRequest();
+                                    xhttp.open(method, url, false);
+                                    xhttp.send(data);
+
+                                    const res = JSON.parse(xhttp.responseText);
+
+                                    if (!res.profile_image) {
+                                        profileImageElement.src = '/imgs/logo.png' 
+                                    } else {
+                                        profileImageElement.src = '/storage/logo/' + res.profile_image;
+                                    }
+                                }
+
+                                getUserData('GET', '/api/user', null)
+
+                            </script>
+                            <a class="navbar-brand d-none d-md-block" href="{{ url('/') }}">
+                                {{ config('app.name', 'Laravel') }}
+                            <!-- <img v-if="this.data.profile_image" :src='"/storage/logo/" + this.data.profile_image' alt="" class="avatar img-fluid rounded-circle mt-4"> -->
+                            </a>
+                       </div>
+        
+                    </div>                
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}">Profile</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}"><i class="fas fa-user-edit"></i> <span class="d-none d-md-inline-block">Profile</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}"><i class="fas fa-edit"></i> <span class="d-none d-md-inline-block">Blog</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}"><i class="fas fa-folder-plus"></i> <span class="d-none d-md-inline-block">Portfolio</span></a></li>
                                 <li class="nav-item" class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                                    document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i><span class="d-none d-md-inline-block">
+                                        {{ __('Logout') }}</span>
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -54,7 +82,7 @@
                 </aside>
    
 
-                <section class="col-8 col-md-10 content">
+                <section class="col-10 col-md-10 content">
         @endauth
                     @yield('content')
                 </section>
@@ -84,5 +112,6 @@
             })
         </script>
     @endif
+    
 
 </html>

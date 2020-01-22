@@ -32,7 +32,7 @@ class UserControlPanelController extends Controller
         return view('backend.pages.profile.edit')->with([
             'data' => $user,
             'id' => $user_id
-            ]);
+        ]);
     }
     /**
      * Show the form for creating a new resource.
