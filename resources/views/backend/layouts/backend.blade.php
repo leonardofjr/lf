@@ -61,12 +61,15 @@
 
 
                             function updatingUserDomElements(data) {
-                                if (!data.profile_image) {
-                                    profileImageElement.src = '/imgs/logo.png' 
-                                } else {
-                                    profileImageElement.src = '/storage/logo/' + data.profile_image;
+                                if (data) {
                                     profileUsernameElement.innerHTML = data.fname + ' ' + data.lname;
+                                    if (!data.profile_image) {
+                                    profileImageElement.src = '/imgs/logo.png' 
+                                    } else {
+                                        profileImageElement.src = '/storage/logo/' + data.profile_image;
+                                    }
                                 }
+       
                             }
 
                             getUserData('GET', '/api/user', null)
