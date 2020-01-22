@@ -39,21 +39,35 @@
                             <script type="text/javascript">
                                 const profileImageElement = document.getElementById('profile-img');
 
-                                function getUserData(method, url, data) {
+                                function getUserData(method, url, body) {
+                                    // Creating an instance of XMLHttpRequest
                                     let xhttp = new XMLHttpRequest();
+                                    // Configuring Request
                                     xhttp.open(method, url, false);
-                                    xhttp.send(data);
+                                    //Sending request over network
+                                    xhttp.send(body);
+                                    // This will be called after response is received
+                                    if (xhttp.status !== 200) {
+                                    
+                                    } else {
+                                        // Parsing response
+                                        const res = JSON.parse(xhttp.responseText);
+                                        updatingUserDomElements(res);
+                                    }
+                                }
+        
 
-                                    const res = JSON.parse(xhttp.responseText);
-
-                                    if (!res.profile_image) {
+                                function updatingUserDomElements(data) {
+                                    if (!data.profile_image) {
                                         profileImageElement.src = '/imgs/logo.png' 
                                     } else {
-                                        profileImageElement.src = '/storage/logo/' + res.profile_image;
+                                        profileImageElement.src = '/storage/logo/' + data.profile_image;
                                     }
                                 }
 
                                 getUserData('GET', '/api/user', null)
+           
+
 
                             </script>
                             <a class="navbar-brand d-none d-md-block" href="{{ url('/') }}">
@@ -64,14 +78,14 @@
         
                     </div>                
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}"><i class="fas fa-user-edit"></i> <span class="d-none d-md-inline-block">Profile</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}"><i class="fas fa-edit"></i> <span class="d-none d-md-inline-block">Blog</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}"><i class="fas fa-folder-plus"></i> <span class="d-none d-md-inline-block">Portfolio</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}"><i class="d-md-none fas fa-user-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-user-edit"></i> <span class="d-none d-md-inline-block">Profile</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}"><i class="d-md-none fas fa-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-edit"></i> <span class="d-none d-md-inline-block">Blog</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}"><i class="d-md-none fas fa-folder-plus fa-2x"></i><i class="d-none d-md-inline-block fas fa-folder-plus"></i> <span class="d-none d-md-inline-block">Portfolio</span></a></li>
                                 <li class="nav-item" class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i><span class="d-none d-md-inline-block">
-                                        {{ __('Logout') }}</span>
+                                                    document.getElementById('logout-form').submit();"><i class="d-md-none fas fa-sign-out-alt fa-2x"></i><i class="d-none d-md-inline-block fas fa-sign-out-alt"></i>
+                                                    <span class="d-none d-md-inline-block">{{ __(' Logout') }}</span>
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
