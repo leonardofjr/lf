@@ -4,7 +4,7 @@
                 <h2>{{\Request::route()->getName()}}<a class="btn-primary btn mx-4" href="{{route('Add Post')}}">Add Post</a></h2>
             </header>
             <div class="d-none d-md-block col-md-10">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th scope="col">Title</th>

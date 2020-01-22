@@ -75,7 +75,6 @@ class PortfolioController extends Controller
         $portfolio->type = $request->type;
         $portfolio->website_url = $request->website_url;
         $portfolio->description = $request->description;
-        $portfolio->save();
 
 
         if ($request->hasFile('uploadedImageFile') ) {
@@ -94,6 +93,7 @@ class PortfolioController extends Controller
             return redirect('/admin/portfolio');
             
         }   else {
+            $portfolio->save();
             return redirect('/admin/portfolio');
         }
     }

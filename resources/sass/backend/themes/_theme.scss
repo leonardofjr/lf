@@ -6,7 +6,7 @@ body, html  {
     overflow-y: hidden;
 }
 #admin-cpanel {
-    background: white;
+    background: #f7f7f7;
     height: 100%;
     .row {
         height: 100%;
@@ -30,5 +30,28 @@ body, html  {
 #admin-cpanel .content {
     height: 100%;
     overflow-y: scroll;
+
+    .page-title-header {
+        
+    }
+
+    table {
+        a {
+            color: #000;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #fff;
+        }
+        button[type="submit"] {
+            background: none;
+            color: rgb(200, 0, 0);
+            border: none;
+            text-decoration: underline;
+        }
+        button[type="submit"]:hover {
+            color: rgb(255, 0, 0);
+        }
+    }
 }
 // Admin Sidebar Setttings

@@ -355,7 +355,7 @@ html {
 }
 
 #admin-cpanel {
-  background: white;
+  background: #f7f7f7;
   height: 100%;
 }
 
@@ -384,5 +384,25 @@ html {
 #admin-cpanel .content {
   height: 100%;
   overflow-y: scroll;
+}
+
+#admin-cpanel .content table a {
+  color: #000;
+  text-decoration: underline;
+}
+
+#admin-cpanel .content table a:hover {
+  color: #fff;
+}
+
+#admin-cpanel .content table button[type="submit"] {
+  background: none;
+  color: #c80000;
+  border: none;
+  text-decoration: underline;
+}
+
+#admin-cpanel .content table button[type="submit"]:hover {
+  color: red;
 }
 
