@@ -1,5 +1,10 @@
 <template>     
       <main>
+        <div id="phone-btn" class="d-md-none">
+            <a :href='"tel://" + data.phone' >
+              <img src="imgs/phone-icon.png">
+            </a>
+        </div>
         <div id="top-bar" class="navbar navbar-light fixed-top d-none">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>

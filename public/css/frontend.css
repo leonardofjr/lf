@@ -423,6 +423,19 @@ main #content a:hover {
   text-decoration: underline;
 }
 
+#phone-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: .8rem;
+  z-index: 800;
+}
+
+#phone-btn img {
+  width: 100%;
+  max-width: 120px;
+}
+
 footer {
   margin: 2em 0;
   text-align: center;
