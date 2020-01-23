@@ -98,7 +98,10 @@
    
 
                 <section class="col-10 col-md-10 content">
-        @endauth
+                    
+        @else   
+                <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+    @endauth
                     @yield('content')
                 </section>
              </div>
