@@ -1,6 +1,5 @@
 @extends('backend.layouts.backend')
 @section('content')
-
             <!-- Including Croppie Upload Modal -->
             @include('backend.components.croppieUploadModal')
 
@@ -10,7 +9,7 @@
 
 
         
-                <form class="col-10" method="POST" enctype="multipart/form-data" action="/api/user/update/{{$id}}">
+                <form class="col-10" method="POST" enctype="multipart/form-data" action="/api/users/update/{{$data->id}}">
                     <input name="_method" type="hidden" value="PUT">
                     {{ csrf_field() }}
 
@@ -36,6 +35,9 @@
                     </div>
 
                     <div class="logoPreviewContainer">
+                        <?php 
+                        $a = str_split($data->profile_image, 2);    
+                        ?>
                         <img id="imageFilePreview" class="img-thumbnail" src='{{$data->profile_image ? asset("storage/user/imgs/$data->profile_image") : asset("imgs/logo.png") }}' style="max-width: 300px;" alt="preview" />
                      </div>
               
@@ -99,6 +101,5 @@
                 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                 <script text="type/javascript">
                     CKEDITOR.replace( 'bio-ckeditor' );
-                    CKEDITOR.replace( 'skills-and-offer-ckeditor' );
                 </script>
 @endsection

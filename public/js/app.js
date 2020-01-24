@@ -34434,7 +34434,7 @@ var render = function() {
                     ? _c("img", {
                         staticClass: "avatar img-fluid rounded-circle mt-4",
                         attrs: {
-                          src: "/storage/logo/" + this.data.profile_image,
+                          src: "/storage/user/imgs/" + this.data.profile_image,
                           alt: ""
                         }
                       })

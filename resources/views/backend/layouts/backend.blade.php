@@ -66,7 +66,7 @@
                                     if (!data.profile_image) {
                                     profileImageElement.src = '/imgs/logo.png' 
                                     } else {
-                                        profileImageElement.src = '/storage/logo/' + data.profile_image;
+                                        profileImageElement.src = '/storage/user/imgs/' + data.profile_image;
                                     }
                                 }
        
@@ -82,7 +82,7 @@
                                 <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}"><i class="d-md-none fas fa-user-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-user-edit"></i> <span class="d-none d-md-inline-block">Profile</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}"><i class="d-md-none fas fa-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-edit"></i> <span class="d-none d-md-inline-block">Blog</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}"><i class="d-md-none fas fa-folder-plus fa-2x"></i><i class="d-none d-md-inline-block fas fa-folder-plus"></i> <span class="d-none d-md-inline-block">Portfolio</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('Users')}}"><i class="d-md-none fas fa-folder-plus fa-2x"></i><i class="d-none d-md-inline-block fas fa-folder-plus"></i> <span class="d-none d-md-inline-block">Users</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{route('Users')}}"><i class="fas fa-users"></i> <span class="d-none d-md-inline-block">Users</span></a></li>
                                 <li class="nav-item" class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -118,7 +118,7 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    @if (Request::is('admin/profile') || Request::is('admin/portfolio/*') || Request::is('admin/blog/*'))
+    @if (Request::is('admin/profile') || Request::is('admin/portfolio/*') || Request::is('admin/blog/*') || Request::is('admin/users/*'))
         <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.js"></script>
         <script defer type="text/javascript" src="/js/croppieFunctionality.js"></script>
     @endif

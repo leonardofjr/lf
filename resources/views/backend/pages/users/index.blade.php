@@ -24,8 +24,8 @@
                     @foreach($user->roles as $role) 
                        <td>{{ucfirst($role->name)}}</td>
                     @endforeach
-                    <td><a href="/admin/users/edit/{{$user['id']}}" class="">Edit</a></td>
-                    <td>
+                        <td><a href="/admin/users/edit/{{$user['id']}}" class="">Edit</a></td>
+                        <td>
                         <form id="deleteWorkForm" class="d-inline-block" action="/api/users/destroy/{{$user->id}}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
@@ -50,8 +50,8 @@
                 <tr>
                     <td>{{$user->title}}<br>
                       <div class="text-right">
-                        <a href="/admin/portfolio/edit/{{$user->id}}" class="">Edit</a>
-                        <form id="deleteWorkForm" class="d-inline-block" action="/api/portfolio/destroy/{{$user->id}}" method="post">
+                        <a href="/admin/users/edit/{{$user->id}}" class="">Edit</a>
+                        <form id="deleteWorkForm" class="d-inline-block" action="/api/users/destroy/{{$user->id}}" method="post">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
                               <button type="submit" class="">Trash</button>

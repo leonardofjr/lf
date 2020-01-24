@@ -57,7 +57,7 @@ Route::group(['middleware' => 'verified', 'prefix' => 'admin/users'], function()
 });
 
 // ** Users API Routes //
-Route::group(['middleware' => 'verified', 'prefix' => 'api/portfolio'], function() {
+Route::group(['middleware' => 'verified', 'prefix' => 'api/users'], function() {
     Route::post('store', 'Backend\UsersController@store');
     Route::put('update/{id}', 'Backend\UsersController@update');
     Route::delete('destroy/{id}', 'Backend\UsersController@destroy');
