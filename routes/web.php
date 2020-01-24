@@ -49,6 +49,21 @@ Route::group(['middleware' => 'verified', 'prefix' => 'api/user/'], function() {
     Route::put('update/{id}', 'Backend\UserControlPanelController@update');
 });
 
+// ** Users Admin Routes //
+Route::group(['middleware' => 'verified', 'prefix' => 'admin/users'], function() {
+    Route::get('/', 'Backend\UsersController@index')->name('Users');
+    Route::get('add', 'Backend\UsersController@create')->name('Add Project');
+    Route::get('edit/{id}','Backend\UsersController@edit')->name('Edit Project');
+});
+
+// ** Users API Routes //
+Route::group(['middleware' => 'verified', 'prefix' => 'api/portfolio'], function() {
+    Route::post('store', 'Backend\UsersController@store');
+    Route::put('update/{id}', 'Backend\UsersController@update');
+    Route::delete('destroy/{id}', 'Backend\UsersController@destroy');
+});
+
+
 // ** Portfolio Admin Routes //
 Route::group(['middleware' => 'verified', 'prefix' => 'admin/portfolio'], function() {
     Route::get('/', 'Backend\PortfolioController@index')->name('Portfolio');
