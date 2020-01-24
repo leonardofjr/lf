@@ -77,6 +77,14 @@
           transform: translate(-2em, 0);
 }
 
+.lf-black-bg {
+  background: black;
+}
+
+.lf-sm-logo {
+  max-width: 200px;
+}
+
 /** Base **/
 
 html,

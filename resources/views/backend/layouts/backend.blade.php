@@ -100,7 +100,7 @@
                 <section class="col-10 col-md-10 content">
                     
         @else   
-                <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+                <div class="d-flex justify-content-center align-items-center lf-black-bg" style="height: 100vh">
     @endauth
                     @yield('content')
                 </section>

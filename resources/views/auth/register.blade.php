@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header text-center h2">{{ __('Register') }}
                     <div>
-                        <img src="imgs/logo.png" class="img" alt="">
+                        <img src="/imgs/logo.png" class="lf-sm-logo" alt="">
                     </div>
                 </div>
 
@@ -76,6 +76,9 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-link" href="/login">Login to existing account?</a>
                 </div>
             </div>
         </div>

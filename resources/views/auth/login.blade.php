@@ -4,9 +4,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center h2">{{ __('Welcome') }}
+                <div class="card-header text-center h2 ">{{ __('Welcome') }}
                 <div>
-                    <img src="imgs/logo.png" class="img" alt="">
+                    <img src="/imgs/logo.png" class="lf-sm-logo" alt="">
                 </div>
                 </div>
                 <div class="card-body">
@@ -65,6 +65,8 @@
                     <a class="btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
+                    <a class="btn btn-link" href="/register">Sign up</a>
+
                 @endif
             </div>
             </div>
