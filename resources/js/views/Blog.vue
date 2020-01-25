@@ -7,7 +7,7 @@
                 <div class="text-center" style="width: 80%">
                         <h2 class="title">{{post.title}}</h2>
                         <p class="created-at">{{$parent.date(post.created_at)}}</p>
-                       <img :src="'/storage/imgs/' + post.image" class="img-fluid">
+                       <img :src="'/storage/' + post.image" class="img-fluid">
                         <p v-html="$parent.excerpt(post.content, 150)"></p>
                         <router-link :to="'blog/post/' + post.slug">Read more</router-link>
                         <div class="my-5">

@@ -66,7 +66,7 @@
                                     if (!data.profile_image) {
                                     profileImageElement.src = '/imgs/logo.png' 
                                     } else {
-                                        profileImageElement.src = '/storage/user/imgs/' + data.profile_image;
+                                        profileImageElement.src = '/storage/' + data.profile_image;
                                     }
                                 }
        
@@ -77,12 +77,17 @@
 
 
                         </script>
+
                         <nav class="d-flex justify-content-center">
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link" href="{{route('Profile')}}"><i class="d-md-none fas fa-user-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-user-edit"></i> <span class="d-none d-md-inline-block">Profile</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Blog')}}"><i class="d-md-none fas fa-edit fa-2x"></i><i class="d-none d-md-inline-block fas fa-edit"></i> <span class="d-none d-md-inline-block">Blog</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('Portfolio')}}"><i class="d-md-none fas fa-folder-plus fa-2x"></i><i class="d-none d-md-inline-block fas fa-folder-plus"></i> <span class="d-none d-md-inline-block">Portfolio</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('Users')}}"><i class="fas fa-users"></i> <span class="d-none d-md-inline-block">Users</span></a></li>
+                               <!-- Display if user has the necessary role -->
+                                @if (Auth::user()->hasRole('admin'))
+                                     <li class="nav-item"><a class="nav-link" href="{{route('Users')}}"><i class="fas fa-users"></i> <span class="d-none d-md-inline-block">Users</span></a></li>
+                                @endif
+
                                 <li class="nav-item" class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

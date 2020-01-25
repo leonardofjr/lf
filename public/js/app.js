@@ -34434,7 +34434,7 @@ var render = function() {
                     ? _c("img", {
                         staticClass: "avatar img-fluid rounded-circle mt-4",
                         attrs: {
-                          src: "/storage/user/imgs/" + this.data.profile_image,
+                          src: "/storage/" + this.data.profile_image,
                           alt: ""
                         }
                       })
@@ -35133,7 +35133,7 @@ var render = function() {
                           staticClass: "img-fluid",
                           attrs: {
                             src: post.image
-                              ? "/storage/imgs/" + post.image
+                              ? "/storage/" + post.image
                               : "https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected"
                           }
                         })
@@ -35311,7 +35311,7 @@ var render = function() {
                       staticClass: "img-fluid",
                       attrs: {
                         src: post.image
-                          ? "/storage/imgs/" + post.image
+                          ? "/storage/" + post.image
                           : "https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected"
                       }
                     })
@@ -35467,7 +35467,7 @@ var render = function() {
                       staticClass: "img-fluid",
                       attrs: {
                         src: post.image
-                          ? "/storage/imgs/" + post.image
+                          ? "/storage/" + post.image
                           : "https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected"
                       }
                     })
@@ -35626,7 +35626,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("img", {
                   staticClass: "img-fluid",
-                  attrs: { src: "/storage/imgs/" + post.image }
+                  attrs: { src: "/storage/" + post.image }
                 }),
                 _vm._v(" "),
                 _c("p", {
@@ -35747,9 +35747,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -35809,7 +35806,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("img", {
                         staticClass: "img-fluid",
-                        attrs: { src: "/storage/imgs/" + post.image }
+                        attrs: { src: "/storage/" + post.image }
                       }),
                       _vm._v(" "),
                       _c("p", {
@@ -35823,9 +35820,7 @@ var render = function() {
                           on: { click: _vm.$parent.back }
                         },
                         [_vm._v("Go Back")]
-                      ),
-                      _vm._v(" "),
-                      _vm._m(1, true)
+                      )
                     ]
                   )
                 ]
@@ -35846,12 +35841,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "page-title" }, [
       _c("h1", [_vm._v("Blog")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "my-5" }, [_c("hr")])
   }
 ]
 render._withStripped = true

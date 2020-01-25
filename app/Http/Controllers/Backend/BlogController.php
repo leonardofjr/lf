@@ -55,41 +55,32 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(BlogValidationRequest $request)
 {       $user_id = Auth::id();
         $blog = new Blog;
-   
-        if ($request->hasFile('uploadedImageFile')) {
- 
 
-            // Storing File into variable and storing file in the the storage public folder
- 
-            // Getting current file name
-            $temp_filename = explode('/', Storage::allFiles('temp/')[0])[1];
+        // Preparing updated data to database
+        $blog->user_id = $user_id;
+        $blog->title = $request->input('title');
+        $blog->slug = $request->input('slug');
+        $blog->content = $request->input('content');
+
+
+        if ($request->hasFile('uploadedImageFile')) {
+            // Generating filename
+            $new_filename_generated =  md5(rand()) . '.png';
+            $new_file_directory = 'users/' . Auth::Id() . '/imgs/';
+           
             $temp_file_location = Storage::allFiles('temp/')[0];
 
             // Storing new File using laravels file storage
-            $new_file = Storage::move($temp_file_location, 'imgs/' . $temp_filename );
-
-            // Preparing updated data to database
-            $blog->user_id = $user_id;
-            $blog->title = $request->input('title');
-            $blog->slug = $request->input('slug');
-            $blog->image = $temp_filename;
-            $blog->content = $request->input('content');
-            $blog->save();
-            return redirect('/admin/blog');
+            $new_file = Storage::move($temp_file_location, $new_file_directory . $new_filename_generated);
+            $blog->image = $new_file_directory . $new_filename_generated;
         }
-        else {
-            // Preparing updated data to database
-            $blog->user_id = $user_id;
-            $blog->title = $request->input('title');
-            $blog->slug = $request->input('slug');
-            $blog->content = $request->input('content');
-            $blog->save();
-            return redirect('/admin/blog');
-        }
-
+        
+        $blog->save();
+        return redirect('/admin/blog');
     }
 
     /**
@@ -130,43 +121,36 @@ class BlogController extends Controller
     {  
         $blog_post = Blog::findOrFail($blog_post_id);
 
-        if ($request->hasFile('uploadedImageFile')) {
-
-        // Getting current file name
-        $current_file = $blog_post->image;
-            
-        // Removing file from storage
-        Storage::delete('imgs/' . $current_file);
-
-        // Storing new File using laravels file storage            
-        $temp_filename = time() . '.png';
-        $temp_file_location = Storage::allFiles('temp/')[0];
-
-        // Storing new File using laravels file storage
-        $new_file = Storage::move($temp_file_location, 'imgs/' . $temp_filename );
-
-          // Preparing updated data to database
+        // Preparing updated data to database
         $blog_post->title = $request->input('title');
         $blog_post->slug = $request->input('slug');
-        $blog_post->image = $temp_filename;
         $blog_post->content = $request->input('content');
-        $blog_post->updated_at = Carbon::now();
+
+
+        if ($request->hasFile('uploadedImageFile')) {
+
+            // Getting current file name
+            $current_filename = $blog_post->image;
+            
+            if( $current_filename) {
+                // Removing current stored file and directories from storage
+                Storage::disk('public')->delete($current_filename);
+
+            }
+
+            // Generating filename
+            $new_filename_generated =  md5(rand()) . '.png';
+            $new_file_directory = 'users/' . Auth::Id() . '/imgs/';
+           
+            $temp_file_location = Storage::allFiles('temp/')[0];
+
+            // Storing new File using laravels file storage
+            $new_file = Storage::move($temp_file_location, $new_file_directory . $new_filename_generated);
+            $blog_post->image = $new_file_directory . $new_filename_generated;
+        }
+        
         $blog_post->save();
-
         return redirect('/admin/blog');
-
-        }
-        else {
-            // Preparing updated data to database
-            $blog_post->title = $request->input('title');
-            $blog_post->slug = $request->input('slug');
-            $blog_post->content = $request->input('content');
-            $blog_post->updated_at = Carbon::now();
-            $blog_post->save();
-    
-            return redirect('/admin/blog');
-        }
-
         
     }
 
@@ -180,6 +164,10 @@ class BlogController extends Controller
     {   
         if ($blog_post_id) {
             $blog_post = Blog::findOrFail($blog_post_id);
+            // Storing Filename in variable
+             $filename = $blog_post->image;
+            // Deleteing File
+             Storage::delete($filename);
             $blog_post->delete();
             return redirect('/admin/blog');
         } else {
@@ -188,3 +176,4 @@ class BlogController extends Controller
 
     }
 }
+

@@ -35,10 +35,7 @@
                     </div>
 
                     <div class="logoPreviewContainer">
-                        <?php 
-                        $a = str_split($data->profile_image, 2);    
-                        ?>
-                        <img id="imageFilePreview" class="img-thumbnail" src='{{$data->profile_image ? asset("storage/user/imgs/$data->profile_image") : asset("imgs/logo.png") }}' style="max-width: 300px;" alt="preview" />
+                        <img id="imageFilePreview" class="img-thumbnail" src='{{$data->profile_image ? asset("storage/$data->profile_image") : asset("imgs/logo.png") }}' style="max-width: 300px;" alt="preview" />
                      </div>
               
                     <div class="form-group">

@@ -50,10 +50,10 @@ Route::group(['middleware' => 'verified', 'prefix' => 'api/user/'], function() {
 });
 
 // ** Users Admin Routes //
-Route::group(['middleware' => 'verified', 'prefix' => 'admin/users'], function() {
+Route::group(['middleware' => ['verified', 'roles'],'roles' => ['admin'], 'prefix' => 'admin/users'], function() {
     Route::get('/', 'Backend\UsersController@index')->name('Users');
-    Route::get('add', 'Backend\UsersController@create')->name('Add Project');
-    Route::get('edit/{id}','Backend\UsersController@edit')->name('Edit Project');
+    Route::get('add', 'Backend\UsersController@create')->name('Add User');
+    Route::get('edit/{id}','Backend\UsersController@edit')->name('Edit User');
 });
 
 // ** Users API Routes //

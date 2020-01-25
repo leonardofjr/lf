@@ -70,6 +70,8 @@ class PortfolioController extends Controller
     public function store(PortfolioValidationRequest $request)
     {
         $portfolio = new Portfolio();
+
+        // Preparing updated data to database
         $portfolio->user_id = Auth::id();
         $portfolio->title = $request->title;
         $portfolio->type = $request->type;
@@ -77,25 +79,20 @@ class PortfolioController extends Controller
         $portfolio->description = $request->description;
 
 
-        if ($request->hasFile('uploadedImageFile') ) {
-            // Storing File into variable and storing file in the the storage public folder
- 
-            // Getting current file name
-            $temp_filename = explode('/', Storage::allFiles('temp/')[0])[1];
+        if ($request->hasFile('uploadedImageFile')) {
+            // Generating filename
+            $new_filename_generated =  md5(rand()) . '.png';
+            $new_file_directory = 'users/' . Auth::Id() . '/imgs/';
+            
             $temp_file_location = Storage::allFiles('temp/')[0];
-            
-            // Storing new File using laravels file storage
-            $new_file = Storage::move($temp_file_location, 'imgs/' . $temp_filename );
-            $portfolio->image = $temp_filename;
-            $portfolio->save();
 
-            // Responding by sending redirect value 
-            return redirect('/admin/portfolio');
-            
-        }   else {
-            $portfolio->save();
-            return redirect('/admin/portfolio');
+            // Storing new File using laravels file storage
+            $new_file = Storage::move($temp_file_location, $new_file_directory . $new_filename_generated);
+            $portfolio->image = $new_file_directory . $new_filename_generated;
         }
+        
+        $portfolio->save();
+        return redirect('/admin/portfolio');
     }
 
     /**
@@ -137,50 +134,40 @@ class PortfolioController extends Controller
     public function update(PortfolioValidationRequest $request, $id)
     {
         // Searching by Users corresponding id
-        $portfolio = Portfolio::findOrFail($id);
+        $portfolio_post = Portfolio::findOrFail($id);
+
+        // Preparing updated data to database
+        $portfolio_post->user_id = Auth::id();
+        $portfolio_post->title = $request->title;
+        $portfolio_post->type = $request->type;
+        $portfolio_post->website_url = $request->website_url;
+        $portfolio_post->description = $request->description;
+
+
         if ($request->hasFile('uploadedImageFile')) {
 
-       
             // Getting current file name
-            $current_file = $portfolio->image;
-                
-            // Removing file from storage
-            Storage::delete('imgs/' . $current_file);
+            $current_filename = $portfolio_post->image;
+            
+            if( $current_filename) {
+                // Removing current stored file and directories from storage
+                Storage::disk('public')->delete($current_filename);
+            }
 
-            // Storing new File using laravels file storage            
-            $temp_filename = time() . '.png';
+            // Generating filename
+            $new_filename_generated =  md5(rand()) . '.png';
+            $new_file_directory = 'users/' . Auth::Id() . '/imgs/';
+            
             $temp_file_location = Storage::allFiles('temp/')[0];
 
             // Storing new File using laravels file storage
-            $new_file = Storage::move($temp_file_location, 'imgs/' . $temp_filename );
-
-            // Preparing updated data to database
-            $portfolio->title = $request->title;
-            $portfolio->description = $request->description;
-            $portfolio->image = $temp_filename;
-            $portfolio->website_url = $request->website_url;
-            $portfolio->type = $request->type;
-
-            // Saving data to database
-            $portfolio->save();
-            // Updating Portfolio Photo Table 
-
-            // Responding by sending redirect value 
-            return redirect('/admin/portfolio');
-
+            $new_file = Storage::move($temp_file_location, $new_file_directory . $new_filename_generated);
+            $portfolio_post->image = $new_file_directory . $new_filename_generated;
         }
-        else {
-             // Preparing updated data to database
-            $portfolio->title = $request->title;
-            $portfolio->description = $request->description;
-            $portfolio->website_url = $request->website_url;
-            $portfolio->type = $request->type;
-            // Saving data to database
-            $portfolio->save();
-            // Responding by sending redirect value 
-            return redirect('/admin/portfolio');
+        
+        $portfolio_post->save();
+        return redirect('/admin/portfolio');
 
-        }
     }
 
     /**
@@ -196,9 +183,9 @@ class PortfolioController extends Controller
         // Storing Filename in variable
         $filename = $portfolio->image;
         // Deleteing File
-        Storage::delete('imgs/' . $filename);
+        Storage::delete($filename);
         
-       $portfolio->delete();
+         $portfolio->delete();
        return redirect('admin/portfolio');
     }
 }

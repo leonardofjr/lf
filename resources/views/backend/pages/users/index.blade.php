@@ -1,7 +1,7 @@
 @extends('backend.layouts.backend')
 @section('content')
           <header class="page-title-header mb-5">
-               <h2>{{\Request::route()->getName()}}<a class="btn-primary btn mx-4" href="{{route('Add Project')}}">Add Project</a></h2>
+               <h2>{{\Request::route()->getName()}}<a class="btn-primary btn mx-4" href="{{route('Add User')}}">Add User</a></h2>
           </header>
           <div class="d-none d-md-block col-md-10">
             <table class="table table-striped">

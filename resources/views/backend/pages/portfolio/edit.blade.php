@@ -33,7 +33,7 @@
 
                 <!-- File Selector -->
                 <div class="logoPreviewContainer">
-                    <img id="imageFilePreview" class="img-thumbnail" src='{{asset("storage/imgs/" . $data->image)}}' style='max-width: 300px;{{$data->image ? "" : "display:none;"}}' max-width: 300px;" alt="preview" />
+                    <img id="imageFilePreview" class="img-thumbnail" src='{{asset("storage/" . $data->image)}}' style='max-width: 300px;{{$data->image ? "" : "display:none;"}}' max-width: 300px;" alt="preview" />
                 </div>
               
                 <div class="form-group">
