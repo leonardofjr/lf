@@ -36,6 +36,7 @@ Route::post('admin/password/reset', 'Auth\ResetPasswordController@reset');
 // ** Main Frontend Controller //
 Route::group(['prefix' => 'api'], function() {
     Route::get('/user', 'Frontend\MainController@index');
+    Route::post('/mail', 'MailController@sendMail');
 });
 
 // ** Admin User Root Route //

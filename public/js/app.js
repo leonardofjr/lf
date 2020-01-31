@@ -35941,17 +35941,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
-        return {};
+        return {
+            root: 'http://localhost:8000'
+        };
     },
     mounted: function mounted() {
         this.$parent.displayTopbar();
     },
 
     // Fetches posts when the component is created.
-    created: function created() {}
+    created: function created() {},
+
+    methods: {
+        sendMessage: function sendMessage() {
+            axios({
+                url: this.root + '/api/mail',
+                method: 'post',
+                headers: {
+                    'X-CSRF-TOKEN': this.$parent.csrf
+                },
+                data: {
+                    name: 'Leo'
+                }
+            }).then(function (response) {
+                if (response.status === 200) {
+                    console.log(response.data.message);
+                    return response;
+                }
+            }).catch(function (error) {
+                return error;
+            });
+        }
+    }
+
 });
 
 /***/ }),
@@ -35972,77 +36016,102 @@ var render = function() {
         _vm._v("I am available for hire and open to any ideas of cooperation.")
       ]),
       _vm._v(" "),
-      _c("dl", { staticClass: "dl dl-vertical" }, [
-        this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group text-center" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: { click: _vm.sendMessage }
+              },
+              [_vm._v("Send")]
+            )
+          ])
+        ]),
         _vm._v(" "),
-        this.$parent.data.email
-          ? _c("dd", { staticClass: "mb-5" }, [
-              _c("i", { staticClass: "fas fa-envelope" }),
-              _vm._v(" "),
-              _c(
-                "a",
-                { attrs: { href: "mailto:" + this.$parent.data.email } },
-                [_vm._v(_vm._s(this.$parent.data.email))]
-              )
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.twitter_url
-          ? _c("dt", [_vm._v("Twitter:")])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.twitter_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-twitter" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
-                _vm._v(_vm._s(this.$parent.data.twitter_url))
-              ]),
-              _c("br")
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.linkedin_url
-          ? _c("dt", [_vm._v("Linkedin:")])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.linkedin_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-linkedin-in" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
-                _vm._v(_vm._s(this.$parent.data.linkedin_url))
-              ]),
-              _c("br")
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.facebook_url
-          ? _c("dt", [_vm._v("Facebook:")])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.facebook_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-facebook" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
-                _vm._v(_vm._s(this.$parent.data.facebook_url))
-              ]),
-              _c("br")
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.github_url ? _c("dt", [_vm._v("Github:")]) : _vm._e(),
-        _vm._v(" "),
-        this.$parent.data.github_url
-          ? _c("dd", [
-              _c("i", { staticClass: "fab fa-github" }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: this.$parent.data.github_url } }, [
-                _vm._v(_vm._s(this.$parent.data.github_url))
-              ])
-            ])
-          : _vm._e()
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("dl", { staticClass: "dl dl-vertical" }, [
+            this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.email
+              ? _c("dd", { staticClass: "mb-5" }, [
+                  _c("i", { staticClass: "fas fa-envelope" }),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { attrs: { href: "mailto:" + this.$parent.data.email } },
+                    [_vm._v(_vm._s(this.$parent.data.email))]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.twitter_url
+              ? _c("dt", [_vm._v("Twitter:")])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.twitter_url
+              ? _c("dd", [
+                  _c("i", { staticClass: "fab fa-twitter" }),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
+                    _vm._v(_vm._s(this.$parent.data.twitter_url))
+                  ]),
+                  _c("br")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.linkedin_url
+              ? _c("dt", [_vm._v("Linkedin:")])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.linkedin_url
+              ? _c("dd", [
+                  _c("i", { staticClass: "fab fa-linkedin-in" }),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
+                    _vm._v(_vm._s(this.$parent.data.linkedin_url))
+                  ]),
+                  _c("br")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.facebook_url
+              ? _c("dt", [_vm._v("Facebook:")])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.facebook_url
+              ? _c("dd", [
+                  _c("i", { staticClass: "fab fa-facebook" }),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
+                    _vm._v(_vm._s(this.$parent.data.facebook_url))
+                  ]),
+                  _c("br")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.github_url
+              ? _c("dt", [_vm._v("Github:")])
+              : _vm._e(),
+            _vm._v(" "),
+            this.$parent.data.github_url
+              ? _c("dd", [
+                  _c("i", { staticClass: "fab fa-github" }),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: this.$parent.data.github_url } }, [
+                    _vm._v(_vm._s(this.$parent.data.github_url))
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
       ])
     ]
   )
@@ -36054,6 +36123,45 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-title" }, [
       _c("h1", { staticClass: "display-4" }, [_vm._v("Contact Me")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", name: "name", placeholder: "Your Name" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", name: "email", placeholder: "Email" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("textarea", {
+        staticClass: "form-control",
+        attrs: {
+          rows: "10",
+          type: "text",
+          id: "message",
+          name: "message",
+          placeholder: "Message"
+        }
+      })
     ])
   }
 ]
