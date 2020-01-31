@@ -28,7 +28,9 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.sendMail')
-        ->with(['data' => $this->data]);
+        return $this->from('leo@lfelipa.com')->markdown('emails.sendMail', [
+            'data' => $this->data
+        ]);
+     
     }
 }
