@@ -10,22 +10,20 @@
                         <input class="form-control" type="text" name="name" placeholder="Your Name">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="email" placeholder="Email">
+                        <input class="form-control" type="email" name="email" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" rows="10" type="text" id="message" name="message" placeholder="Message"></textarea>
                     </div>
-                    <div class="form-group text-center">
+                    <div class="form-group">
                         <button class="btn btn-primary" v-on:click="sendMessage">Send</button>
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <template v-if="this.$parent.data.phone && this.$parent.data.city && this.$parent.data.province">
+                    <p>{{this.$parent.data.city}}, {{$parent.data.province}}, <br>{{this.$parent.data.phone}}</p>
+                    </template>
                     <dl class="dl dl-vertical">
-                        <!-- If email is not null -->
-                        <dt v-if="this.$parent.data.email">Email:</dt>
-                        <dd v-if="this.$parent.data.email" class="mb-5">
-                        <i class="fas fa-envelope"></i> <a :href="'mailto:' + this.$parent.data.email">{{this.$parent.data.email}}</a>
-                        </dd>
                         <!-- If twitter_url is not null -->
                         <dt v-if="this.$parent.data.twitter_url">Twitter:</dt>
                         <dd v-if="this.$parent.data.twitter_url">
@@ -57,7 +55,7 @@
     export default {
         data() {
             return {
-                root: 'http://localhost:8000'
+                root: 'http://localhost:8000',
             }
         },
         mounted() {
@@ -77,7 +75,9 @@
                         'X-CSRF-TOKEN' : this.$parent.csrf,
                     },
                     data: {
-                        name: 'Leo',
+                        name: $('input[name="name"]').val(),
+                        email: $('input[name="email"]').val(),
+                        message: $('textarea[name="message"]').val(),
                     },
                 })
                 .then((response) => {

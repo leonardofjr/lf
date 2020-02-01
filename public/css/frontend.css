@@ -418,6 +418,10 @@ aside .block-social .block-title {
 
 /** Layout **/
 
+html {
+  overflow-x: hidden;
+}
+
 main #content {
   color: #000;
   background-color: #fff;

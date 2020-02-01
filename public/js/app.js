@@ -34772,13 +34772,17 @@ var render = function() {
           staticStyle: { color: "black" }
         },
         [
-          _c("div", { staticClass: "user-name" }, [
-            _c("h1", { staticClass: "display-4" }, [
-              _vm._v(
-                _vm._s(this.$parent.data.fname + " " + this.$parent.data.lname)
-              )
-            ])
-          ]),
+          this.$parent.data.fname && this.$parent.data.lname
+            ? _c("div", { staticClass: "user-name" }, [
+                _c("h1", { staticClass: "display-4" }, [
+                  _vm._v(
+                    _vm._s(
+                      this.$parent.data.fname + " " + this.$parent.data.lname
+                    )
+                  )
+                ])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _vm._m(0),
           _vm._v(" "),
@@ -35958,8 +35962,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -35983,7 +35985,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     'X-CSRF-TOKEN': this.$parent.csrf
                 },
                 data: {
-                    name: 'Leo'
+                    name: $('input[name="name"]').val(),
+                    email: $('input[name="email"]').val(),
+                    message: $('textarea[name="message"]').val()
                 }
             }).then(function (response) {
                 if (response.status === 200) {
@@ -36024,7 +36028,7 @@ var render = function() {
           _vm._v(" "),
           _vm._m(3),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group text-center" }, [
+          _c("div", { staticClass: "form-group" }, [
             _c(
               "button",
               {
@@ -36036,82 +36040,96 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-md-4" }, [
-          _c("dl", { staticClass: "dl dl-vertical" }, [
-            this.$parent.data.email ? _c("dt", [_vm._v("Email:")]) : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.email
-              ? _c("dd", { staticClass: "mb-5" }, [
-                  _c("i", { staticClass: "fas fa-envelope" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { attrs: { href: "mailto:" + this.$parent.data.email } },
-                    [_vm._v(_vm._s(this.$parent.data.email))]
-                  )
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.twitter_url
-              ? _c("dt", [_vm._v("Twitter:")])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.twitter_url
-              ? _c("dd", [
-                  _c("i", { staticClass: "fab fa-twitter" }),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: this.$parent.data.twitter_url } }, [
-                    _vm._v(_vm._s(this.$parent.data.twitter_url))
-                  ]),
-                  _c("br")
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.linkedin_url
-              ? _c("dt", [_vm._v("Linkedin:")])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.linkedin_url
-              ? _c("dd", [
-                  _c("i", { staticClass: "fab fa-linkedin-in" }),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: this.$parent.data.linkedin_url } }, [
-                    _vm._v(_vm._s(this.$parent.data.linkedin_url))
-                  ]),
-                  _c("br")
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.facebook_url
-              ? _c("dt", [_vm._v("Facebook:")])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.facebook_url
-              ? _c("dd", [
-                  _c("i", { staticClass: "fab fa-facebook" }),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: this.$parent.data.facebook_url } }, [
-                    _vm._v(_vm._s(this.$parent.data.facebook_url))
-                  ]),
-                  _c("br")
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.github_url
-              ? _c("dt", [_vm._v("Github:")])
-              : _vm._e(),
-            _vm._v(" "),
-            this.$parent.data.github_url
-              ? _c("dd", [
-                  _c("i", { staticClass: "fab fa-github" }),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: this.$parent.data.github_url } }, [
-                    _vm._v(_vm._s(this.$parent.data.github_url))
+        _c(
+          "div",
+          { staticClass: "col-md-4" },
+          [
+            this.$parent.data.phone &&
+            this.$parent.data.city &&
+            this.$parent.data.province
+              ? [
+                  _c("p", [
+                    _vm._v(
+                      _vm._s(this.$parent.data.city) +
+                        ", " +
+                        _vm._s(_vm.$parent.data.province) +
+                        ", "
+                    ),
+                    _c("br"),
+                    _vm._v(_vm._s(this.$parent.data.phone))
                   ])
-                ])
-              : _vm._e()
-          ])
-        ])
+                ]
+              : _vm._e(),
+            _vm._v(" "),
+            _c("dl", { staticClass: "dl dl-vertical" }, [
+              this.$parent.data.twitter_url
+                ? _c("dt", [_vm._v("Twitter:")])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.twitter_url
+                ? _c("dd", [
+                    _c("i", { staticClass: "fab fa-twitter" }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { attrs: { href: this.$parent.data.twitter_url } },
+                      [_vm._v(_vm._s(this.$parent.data.twitter_url))]
+                    ),
+                    _c("br")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.linkedin_url
+                ? _c("dt", [_vm._v("Linkedin:")])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.linkedin_url
+                ? _c("dd", [
+                    _c("i", { staticClass: "fab fa-linkedin-in" }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { attrs: { href: this.$parent.data.linkedin_url } },
+                      [_vm._v(_vm._s(this.$parent.data.linkedin_url))]
+                    ),
+                    _c("br")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.facebook_url
+                ? _c("dt", [_vm._v("Facebook:")])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.facebook_url
+                ? _c("dd", [
+                    _c("i", { staticClass: "fab fa-facebook" }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { attrs: { href: this.$parent.data.facebook_url } },
+                      [_vm._v(_vm._s(this.$parent.data.facebook_url))]
+                    ),
+                    _c("br")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.github_url
+                ? _c("dt", [_vm._v("Github:")])
+                : _vm._e(),
+              _vm._v(" "),
+              this.$parent.data.github_url
+                ? _c("dd", [
+                    _c("i", { staticClass: "fab fa-github" }),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: this.$parent.data.github_url } }, [
+                      _vm._v(_vm._s(this.$parent.data.github_url))
+                    ])
+                  ])
+                : _vm._e()
+            ])
+          ],
+          2
+        )
       ])
     ]
   )
@@ -36143,7 +36161,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "form-group" }, [
       _c("input", {
         staticClass: "form-control",
-        attrs: { type: "text", name: "email", placeholder: "Email" }
+        attrs: { type: "email", name: "email", placeholder: "Email" }
       })
     ])
   },

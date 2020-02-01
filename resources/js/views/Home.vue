@@ -4,7 +4,7 @@
                 </div>
                 <div class="content-wrapper">
                     <div class="content text-center center-md-content" style="color: black">
-                        <div class="user-name">
+                        <div class="user-name" v-if="this.$parent.data.fname && this.$parent.data.lname">
                             <h1 class="display-4">{{this.$parent.data.fname + ' ' + this.$parent.data.lname}}</h1>
                         </div>
                         <div class="job-title mb-5">
