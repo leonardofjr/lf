@@ -9,7 +9,7 @@ const uploadedImageElement = $('#uploadedImageFile');
 const imageFilePreviewElement = $('#imageFilePreview');
 const cropBtnElement = $('#cropBtn');
 const croppieModal = $('#croppieModal');
-const croppieModalCloseBtn = $('.close, .closeBtn');
+const croppieModalCloseBtn = $('.close, .closeBtn, #croppieModal');
 const csrfTokenElement = $('meta[name="csrf-token"]').attr('content');
 let currentImage = imageFilePreviewElement.attr('src');
 

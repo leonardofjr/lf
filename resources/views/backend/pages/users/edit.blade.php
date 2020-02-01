@@ -34,27 +34,6 @@
                        @endif
                     </div>
 
-                    <div class="logoPreviewContainer">
-                        <img id="imageFilePreview" class="img-thumbnail" src='{{$data->profile_image ? asset("storage/$data->profile_image") : asset("imgs/logo.png") }}' style="max-width: 300px;" alt="preview" />
-                     </div>
-              
-                    <div class="form-group">
-                        <input type="file" id="uploadedImageFile" name="uploadedImageFile" accept="image/*">
-                        <div class="my-3 d-none alert alert-warning error error-profile-image" role="alert"></div>
-                    </div>
-
-                    <div class="my-3 d-none alert alert-warning error error-image" role="alert">
-                    </div>
-                    <div class="form-group">
-                        <label for="bio-ckeditor">Bio:</label>
-                        <textarea id="bio-ckeditor" class="form-control {{ $errors->has('bio') ? 'is-invalid' : ''}}" name="bio">{{$data->bio}}</textarea>
-                        @if ($errors->has('bio'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('bio') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-
                     <div class="form-group">
                         <label for="phone">Phone:</label>
                     <input type="tel" class="form-control {{ $errors->has('phone') ? 'is-invalid' : ''}}" id="phone" name="phone" value="{{$data->phone}}" >
@@ -74,6 +53,28 @@
                                 <strong>{{ $errors->first('email') }}</strong>
                             </span>
                           @endif
+                    </div>
+
+                    <div class="logoPreviewContainer">
+                        <img id="imageFilePreview" class="img-thumbnail" src='{{$data->profile_image ? asset("storage/$data->profile_image") : asset("imgs/logo.png") }}' style="max-width: 300px;" alt="preview" />
+                     </div>
+              
+                    <div class="form-group">
+                        <input type="file" id="uploadedImageFile" name="uploadedImageFile" accept="image/*">
+                        <div class="my-3 d-none alert alert-warning error error-profile-image" role="alert"></div>
+                    </div>
+
+                    <div class="my-3 d-none alert alert-warning error error-image" role="alert">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio-ckeditor">Bio:</label>
+                        <textarea id="bio-ckeditor" class="form-control {{ $errors->has('bio') ? 'is-invalid' : ''}}" name="bio">{{$data->bio}}</textarea>
+                        @if ($errors->has('bio'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('bio') }}</strong>
+                            </span>
+                        @endif
                     </div>
 
                     <div class="form-group">
