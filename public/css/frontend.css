@@ -21,15 +21,6 @@
   margin: 5px;
 }
 
-.user-title-style {
-  background: black;
-  color: #ffc909;
-  width: 60%;
-  margin: auto;
-  letter-spacing: 3px;
-  padding: 2px;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   -webkit-transition-duration: 0.3s;
@@ -79,6 +70,13 @@
 
 .lf-black-bg {
   background: black;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(30%, #111111), color-stop(50%, #111111), color-stop(70%, #111111), to(#1d1d1d));
+  background: linear-gradient(90deg, black 0%, #111111 30%, #111111 50%, #111111 70%, #1d1d1d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#1d1d1d",GradientType=1);
+}
+
+.lf-white-bg {
+  background: white;
 }
 
 .lf-sm-logo {
@@ -256,10 +254,6 @@ body {
   }
 }
 
-.sidebar-bg {
-  background: #000;
-}
-
 /*** Hyperlinks ***/
 
 a {
@@ -352,39 +346,41 @@ h4 {
 
 aside {
   color: #000;
-  width: 400px;
+  width: 360px;
   padding-top: 5rem;
   position: fixed !important;
   height: 100%;
   left: -500px;
   z-index: 900;
+  -webkit-box-shadow: 10px 10px 10px #ddd;
+          box-shadow: 10px 10px 10px #ddd;
 }
 
 aside .navbar {
-  border-top: 0;
-}
-
-aside .navbar {
-  border-top: 2px solid black;
   width: 95%;
 }
 
-aside .nav .nav-link {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-
 aside a {
-  color: #999;
+  color: #ccc;
 }
 
 aside a:hover {
-  color: #fff;
+  color: #999;
 }
 
 aside .router-link-active {
   font-weight: 600;
-  color: #fff;
+  color: #000;
+}
+
+aside .primary-menu {
+  margin-bottom: 1rem;
+  padding-bottom: 0.2rem !important;
+}
+
+aside .primary-menu a {
+  padding-bottom: .1rem;
+  padding-top: .1rem;
 }
 
 aside .primary-menu .nav-item:hover:after,
@@ -397,16 +393,25 @@ aside .navbar-toggler {
 }
 
 aside .user .avatar {
-  max-width: 190px;
+  max-width: 120px;
 }
 
 aside .user .user-name a {
-  color: #fff;
+  color: #000;
 }
 
-aside .block-social .block-title {
-  text-transform: uppercase;
-  font-size: .7em;
+aside .user .user-title h2 {
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+aside .block-social a {
+  color: #ccc;
+}
+
+aside .block-social a:hover {
+  color: #999;
 }
 
 @media (min-width: 992px) {
@@ -418,6 +423,16 @@ aside .block-social .block-title {
   aside .primary-menu .nav-item.router-link-active:after {
     content: ' >';
   }
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background: #ddd;
+  color: #000;
 }
 
 /** Layout **/
@@ -445,7 +460,7 @@ main #content a:hover {
 }
 
 #phone-btn {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   margin: .8rem;
@@ -552,7 +567,7 @@ footer {
 
 @-webkit-keyframes slideInNavigation {
   0% {
-    left: -400px;
+    left: -430px;
   }
 
   100% {
@@ -562,7 +577,7 @@ footer {
 
 @keyframes slideInNavigation {
   0% {
-    left: -400px;
+    left: -430px;
   }
 
   100% {
@@ -576,7 +591,7 @@ footer {
   }
 
   100% {
-    left: -400px;
+    left: -430px;
   }
 }
 
@@ -586,7 +601,7 @@ footer {
   }
 
   100% {
-    left: -400px;
+    left: -430px;
   }
 }
 
@@ -596,7 +611,7 @@ footer {
   }
 
   100% {
-    left: 400px;
+    left: 430px;
   }
 }
 
@@ -606,13 +621,13 @@ footer {
   }
 
   100% {
-    left: 400px;
+    left: 430px;
   }
 }
 
 @-webkit-keyframes slideContentOut {
   0% {
-    left: 400px;
+    left: 430px;
   }
 
   100% {
@@ -622,7 +637,7 @@ footer {
 
 @keyframes slideContentOut {
   0% {
-    left: 400px;
+    left: 430px;
   }
 
   100% {

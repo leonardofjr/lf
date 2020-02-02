@@ -34425,7 +34425,7 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _c("aside", { staticClass: "sidebar-bg", attrs: { id: "sidebar" } }, [
+    _c("aside", { staticClass: "lf-white-bg", attrs: { id: "sidebar" } }, [
       _c("div", { staticClass: "aside-inner" }, [
         _c("div", { staticClass: "user" }, [
           _c(
@@ -34445,7 +34445,7 @@ var render = function() {
                         }
                       })
                     : _c("img", {
-                        staticClass: "avatar img-fluid rounded-circle mt-4",
+                        staticClass: "avatar img-fluid rounded-circle",
                         attrs: { src: "/imgs/logo.png", alt: "" }
                       })
                 ]
@@ -34479,7 +34479,7 @@ var render = function() {
             { staticClass: "user-title" },
             [
               _c("router-link", { attrs: { to: "/" } }, [
-                _c("h2", { staticClass: "user-title-style text-center h5 " }, [
+                _c("h2", { staticClass: "user-title-style " }, [
                   _vm._v("Web Developer")
                 ])
               ])
@@ -35142,7 +35142,7 @@ var render = function() {
                     [
                       _c("div", { staticClass: "col-12 col-md-7" }, [
                         _c("img", {
-                          staticClass: "img-fluid",
+                          staticClass: "img-fluid mb-5 mb-md-0",
                           attrs: {
                             src: post.image
                               ? "/storage/" + post.image

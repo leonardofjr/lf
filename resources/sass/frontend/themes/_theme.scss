@@ -2,22 +2,22 @@
 
 
     @keyframes slideInNavigation {
-        0% {left: -400px;}
+        0% {left: -430px;}
         100% {left: 0;}
     }
     
     @keyframes slideOutNavigation {
         0% {left: 0;}
-        100% {left: -400px;}
+        100% {left: -430px;}
     }
     
     @keyframes slideContentIn {
         0% {left: 0}
-        100% {left: 400px;}
+        100% {left: 430px;}
     }
     
     @keyframes slideContentOut {
-        0% {left: 400px;}
+        0% {left: 430px;}
         100% {left: 0;}
     }
     

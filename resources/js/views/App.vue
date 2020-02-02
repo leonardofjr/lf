@@ -44,7 +44,7 @@
               </div>
 </div>
 
-        <aside id="sidebar" class="sidebar-bg">
+        <aside id="sidebar" class="lf-white-bg">
       
             <div class="aside-inner">
 
@@ -54,7 +54,7 @@
                 <div class="user-avatar d-flex justify-content-center">
                     <router-link to="/"  class="navbar-brand"  exact>
                       <img v-if="this.data.profile_image" :src='"/storage/" + this.data.profile_image' alt="" class="avatar img-fluid rounded-circle mt-4">
-                      <img v-else src="/imgs/logo.png" alt="" class="avatar img-fluid rounded-circle mt-4">
+                      <img v-else src="/imgs/logo.png" alt="" class="avatar img-fluid rounded-circle">
                     </router-link>
                 </div>
                 
@@ -66,7 +66,7 @@
                 <!-- User Job Title -->
                 <div class="user-title">
                 <router-link to="/">
-                  <h2 class="user-title-style text-center h5 ">Web Developer</h2>
+                  <h2 class="user-title-style ">Web Developer</h2>
                   </router-link>
                 </div>
               </div>

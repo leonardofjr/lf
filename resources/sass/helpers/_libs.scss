@@ -16,14 +16,7 @@
     margin: 5px;
   }
   
-.user-title-style {
-  background: black;
-  color: $secondary-color;
-  width: 60%;
-  margin: auto;
-  letter-spacing: 3px;
-  padding: 2px;
-}
+
 
 .fade-enter-active,
  .fade-leave-active {
@@ -62,7 +55,18 @@
 }
 
 .lf-black-bg {
-  background: black;
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 30%, rgba(17,17,17,1) 50%, rgba(17,17,17,1) 70%, rgba(29,29,29,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 30%, rgba(17,17,17,1) 50%, rgba(17,17,17,1) 70%, rgba(29,29,29,1) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 30%, rgba(17,17,17,1) 50%, rgba(17,17,17,1) 70%, rgba(29,29,29,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#1d1d1d",GradientType=1);
+}
+.lf-metal-bg {
+
+	
+}
+.lf-white-bg {
+  background: white;
 }
 
 .lf-sm-logo {

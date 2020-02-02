@@ -30,7 +30,7 @@
     <body class="container-fluid">
         <main id="admin-cpanel" >
             <div class="row">
-                <aside class="col-2 col-md-2  admin-sidebar sidebar-bg ">
+                <aside class="col-2 col-md-2  admin-sidebar lf-black-bg ">
                         <div id="nav-top" class="mt-3 mb-5">
                             <div id="profile-img-container">
                                 <img id="profile-img" src="" alt="" class="img-thumbnail rounded-circle">

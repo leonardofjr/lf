@@ -21,15 +21,6 @@
   margin: 5px;
 }
 
-.user-title-style {
-  background: black;
-  color: #ffc909;
-  width: 60%;
-  margin: auto;
-  letter-spacing: 3px;
-  padding: 2px;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   -webkit-transition-duration: 0.3s;
@@ -79,6 +70,13 @@
 
 .lf-black-bg {
   background: black;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(30%, #111111), color-stop(50%, #111111), color-stop(70%, #111111), to(#1d1d1d));
+  background: linear-gradient(90deg, black 0%, #111111 30%, #111111 50%, #111111 70%, #1d1d1d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#1d1d1d",GradientType=1);
+}
+
+.lf-white-bg {
+  background: white;
 }
 
 .lf-sm-logo {
@@ -256,10 +254,6 @@ body {
   }
 }
 
-.sidebar-bg {
-  background: #000;
-}
-
 /*** Hyperlinks ***/
 
 a {
@@ -331,6 +325,16 @@ h3 {
 
 h4 {
   font-size: 2.0em;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background: #ddd;
+  color: #000;
 }
 
 /** Components **/
