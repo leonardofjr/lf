@@ -23,28 +23,28 @@
                     <template v-if="this.$parent.data.phone && this.$parent.data.city && this.$parent.data.province">
                     <p>{{this.$parent.data.city}}, {{$parent.data.province}}, <br>{{this.$parent.data.phone}}</p>
                     </template>
-                    <dl class="dl dl-vertical">
+                    <div>
+                        <!-- If email is not null -->
+                        <span v-if="this.$parent.data.email" class="px-1">
+                            <a :href="'mailto:' + this.$parent.data.email"><i class="fas fa-2x fa-envelope"></i></a>
+                        </span>
                         <!-- If twitter_url is not null -->
-                        <dt v-if="this.$parent.data.twitter_url">Twitter:</dt>
-                        <dd v-if="this.$parent.data.twitter_url">
-                            <i class="fab fa-twitter"></i> <a :href="this.$parent.data.twitter_url">{{this.$parent.data.twitter_url}}</a><br>
-                        </dd>
+                        <span v-if="this.$parent.data.twitter_url" class="px-1">
+                             <a :href="this.$parent.data.twitter_url"><i class="fab fa-2x fa-twitter"></i></a>
+                        </span>
                         <!-- If linkedin_url is not null -->
-                        <dt  v-if="this.$parent.data.linkedin_url">Linkedin:</dt>
-                        <dd v-if="this.$parent.data.linkedin_url">
-                            <i class="fab fa-linkedin-in"></i> <a :href="this.$parent.data.linkedin_url">{{this.$parent.data.linkedin_url}}</a><br>
-                        </dd>
+                        <span v-if="this.$parent.data.linkedin_url" class="px-1">
+                             <a :href="this.$parent.data.linkedin_url"><i class="fab fa-2x fa-linkedin-in"></i></a>
+                        </span>
                         <!-- If facebook_url is not null -->
-                        <dt  v-if="this.$parent.data.facebook_url">Facebook:</dt>
-                        <dd v-if="this.$parent.data.facebook_url"><i class="fab fa-facebook">
-                            </i> <a :href="this.$parent.data.facebook_url">{{this.$parent.data.facebook_url}}</a><br>
-                        </dd>
+                        <span v-if="this.$parent.data.facebook_url" class="px-1">
+                             <a :href="this.$parent.data.facebook_url"><i class="fab fa-2x fa-facebook"></i></a>
+                        </span>
                         <!-- If github_url is not null -->
-                        <dt v-if="this.$parent.data.github_url">Github:</dt>
-                        <dd v-if="this.$parent.data.github_url">
-                            <i class="fab fa-github"></i> <a :href="this.$parent.data.github_url">{{this.$parent.data.github_url}}</a>
-                        </dd>
-                    </dl>
+                        <span v-if="this.$parent.data.github_url" class="px-1">
+                             <a :href="this.$parent.data.github_url"><i class="fab fa-2x fa-github"></i></a>
+                        </span>
+                    </div>
                 </div>
             </div>
 

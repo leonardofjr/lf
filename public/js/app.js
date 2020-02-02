@@ -36061,68 +36061,51 @@ var render = function() {
                 ]
               : _vm._e(),
             _vm._v(" "),
-            _c("dl", { staticClass: "dl dl-vertical" }, [
-              this.$parent.data.twitter_url
-                ? _c("dt", [_vm._v("Twitter:")])
+            _c("div", [
+              this.$parent.data.email
+                ? _c("span", { staticClass: "px-1" }, [
+                    _c(
+                      "a",
+                      { attrs: { href: "mailto:" + this.$parent.data.email } },
+                      [_c("i", { staticClass: "fas fa-2x fa-envelope" })]
+                    )
+                  ])
                 : _vm._e(),
               _vm._v(" "),
               this.$parent.data.twitter_url
-                ? _c("dd", [
-                    _c("i", { staticClass: "fab fa-twitter" }),
-                    _vm._v(" "),
+                ? _c("span", { staticClass: "px-1" }, [
                     _c(
                       "a",
                       { attrs: { href: this.$parent.data.twitter_url } },
-                      [_vm._v(_vm._s(this.$parent.data.twitter_url))]
-                    ),
-                    _c("br")
+                      [_c("i", { staticClass: "fab fa-2x fa-twitter" })]
+                    )
                   ])
                 : _vm._e(),
               _vm._v(" "),
               this.$parent.data.linkedin_url
-                ? _c("dt", [_vm._v("Linkedin:")])
-                : _vm._e(),
-              _vm._v(" "),
-              this.$parent.data.linkedin_url
-                ? _c("dd", [
-                    _c("i", { staticClass: "fab fa-linkedin-in" }),
-                    _vm._v(" "),
+                ? _c("span", { staticClass: "px-1" }, [
                     _c(
                       "a",
                       { attrs: { href: this.$parent.data.linkedin_url } },
-                      [_vm._v(_vm._s(this.$parent.data.linkedin_url))]
-                    ),
-                    _c("br")
+                      [_c("i", { staticClass: "fab fa-2x fa-linkedin-in" })]
+                    )
                   ])
                 : _vm._e(),
               _vm._v(" "),
               this.$parent.data.facebook_url
-                ? _c("dt", [_vm._v("Facebook:")])
-                : _vm._e(),
-              _vm._v(" "),
-              this.$parent.data.facebook_url
-                ? _c("dd", [
-                    _c("i", { staticClass: "fab fa-facebook" }),
-                    _vm._v(" "),
+                ? _c("span", { staticClass: "px-1" }, [
                     _c(
                       "a",
                       { attrs: { href: this.$parent.data.facebook_url } },
-                      [_vm._v(_vm._s(this.$parent.data.facebook_url))]
-                    ),
-                    _c("br")
+                      [_c("i", { staticClass: "fab fa-2x fa-facebook" })]
+                    )
                   ])
                 : _vm._e(),
               _vm._v(" "),
               this.$parent.data.github_url
-                ? _c("dt", [_vm._v("Github:")])
-                : _vm._e(),
-              _vm._v(" "),
-              this.$parent.data.github_url
-                ? _c("dd", [
-                    _c("i", { staticClass: "fab fa-github" }),
-                    _vm._v(" "),
+                ? _c("span", { staticClass: "px-1" }, [
                     _c("a", { attrs: { href: this.$parent.data.github_url } }, [
-                      _vm._v(_vm._s(this.$parent.data.github_url))
+                      _c("i", { staticClass: "fab fa-2x fa-github" })
                     ])
                   ])
                 : _vm._e()
