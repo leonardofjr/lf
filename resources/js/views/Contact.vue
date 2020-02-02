@@ -5,7 +5,7 @@
             </div>
             <p>I am available for hire and open to any ideas of cooperation.</p>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-8">
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" placeholder="Your Name">
                     </div>
@@ -19,7 +19,7 @@
                         <button class="btn btn-primary" v-on:click="sendMessage">Send</button>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-4">
                     <template v-if="this.$parent.data.phone && this.$parent.data.city && this.$parent.data.province">
                     <p>{{this.$parent.data.city}}, {{$parent.data.province}}, <br>{{this.$parent.data.phone}}</p>
                     </template>

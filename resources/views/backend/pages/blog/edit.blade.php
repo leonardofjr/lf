@@ -60,7 +60,5 @@
             </form>
     </form>
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script text="type/javascript">
-        CKEDITOR.replace( 'article-ckeditor' );
-    </script>
+\\
 @endsection

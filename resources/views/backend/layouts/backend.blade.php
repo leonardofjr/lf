@@ -124,6 +124,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     @if (Request::is('admin/profile') || Request::is('admin/portfolio/*') || Request::is('admin/blog/*') || Request::is('admin/users/*'))
+        <!-- CKEDITOR SCRIPT -->
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script text="type/javascript">
+            CKEDITOR.replace( 'article-ckeditor' );
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.js"></script>
         <script defer type="text/javascript" src="/js/croppieFunctionality.js"></script>
     @endif

@@ -62,7 +62,11 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('backend.pages.users.edit')->withData($user);
+        $ca_provinces = \App\CaProvince::all();
+        return view('backend.pages.users.edit')->with([
+            'data' => $user,
+            'ca_provinces' => $ca_provinces,
+        ]);
     }
 
     /**
@@ -80,12 +84,16 @@ class UsersController extends Controller
         $user->bio = $request->bio;
         $user->lname = $request->lname;
         $user->fname = $request->fname;
+        $user->city = $request->city;
+        $user->province = $request->province;
+        $user->postal_code = $request->postal_code;
+        $user->country = $request->country;
         $user->phone = $request->phone;
+        $user->email = $request->email;
         $user->twitter_url = $request->twitter_url;
         $user->facebook_url = $request->facebook_url;
         $user->linkedin_url = $request->linkedin_url;
         $user->github_url = $request->github_url;
-        $user->email = $request->email;
 
         if ($request->hasFile('uploadedImageFile')) {
             // Getting current file name

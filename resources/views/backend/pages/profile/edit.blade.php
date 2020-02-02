@@ -9,14 +9,13 @@
             </header>
 
             <div class="row">
-
                 <div class="col-md-3">
                     <div class="logoPreviewContainer">
                         <img id="imageFilePreview" class="img-thumbnail" src='{{$data->profile_image ? asset("storage/$data->profile_image") : asset("imgs/logo.png") }}' style="max-width: 300px;" alt="preview" />
                      </div>
               
                     <div class="form-group">
-                        <input type="file" id="uploadedImageFile" name="uploadedImageFile" accept="image/*">
+                        <input class="form-control-file" type="file" id="uploadedImageFile" name="uploadedImageFile" accept="image/*">
                         <div class="my-3 d-none alert alert-warning error error-profile-image" role="alert"></div>
                     </div>
 
@@ -63,8 +62,12 @@
                         </div>
                         <div class="col-md-6">
                             <label for="province">Province:</label>
-                            <input type="text" class="form-control {{ $errors->has('province') ? 'is-invalid' : ''}}" id="province" name="province" value="{{$data->province}}" >
-
+                                <select class="form-control {{ $errors->has('province') ? 'is-invalid' : ''}}" id="province" name="province" >
+                                    <option value="">--Select--</option>
+                                    @foreach ($ca_provinces as $ca_province)
+                                        <option {{$ca_province->iso == $data->province ? "selected" : ""}} value="{{$ca_province->iso}}">{{$ca_province->name}}</option>
+                                    @endforeach
+                                </select> 
                             @if ($errors->has('province'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('province') }}</strong>
@@ -87,8 +90,9 @@
 
                         <div class="col-md-6">
                             <label for="country">Country:</label>
-                            <input type="text" class="form-control {{ $errors->has('country') ? 'is-invalid' : ''}}" id="country" name="country" value="{{$data->country}}" >
-
+                            <select class="form-control {{ $errors->has('country') ? 'is-invalid' : ''}}" id="country" name="country" >
+                                <option selected value="canada">Canada</option>
+                            </select> 
                             @if ($errors->has('country'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('country') }}</strong>
@@ -120,8 +124,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="bio-ckeditor">Bio:</label>
-                        <textarea id="bio-ckeditor" class="form-control {{ $errors->has('bio') ? 'is-invalid' : ''}}" name="bio">{{$data->bio}}</textarea>
+                        <label for="article-ckeditor">Bio:</label>
+                        <textarea id="article-ckeditor" class="form-control {{ $errors->has('bio') ? 'is-invalid' : ''}}" name="bio">{{$data->bio}}</textarea>
                         @if ($errors->has('bio'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('bio') }}</strong>
@@ -147,13 +151,5 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
-
-  
             </div>
-                <!-- CKEDITOR SCRIPT -->
-                <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-                <script text="type/javascript">
-                    CKEDITOR.replace( 'bio-ckeditor' );
-                    CKEDITOR.replace( 'skills-and-offer-ckeditor' );
-                </script>
 @endsection

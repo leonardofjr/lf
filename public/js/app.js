@@ -36021,7 +36021,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "col-8" }, [
           _vm._m(1),
           _vm._v(" "),
           _vm._m(2),
@@ -36042,7 +36042,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-md-4" },
+          { staticClass: "col-4" },
           [
             this.$parent.data.phone &&
             this.$parent.data.city &&
