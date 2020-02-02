@@ -73,11 +73,16 @@
               <!-- Navigation Links -->
               <nav class="navbar  my-3 ">            
 
-
                       <div class="primary-menu">
-                          <router-link to="/web-development/" class="nav-item nav-link" exact>Web Development</router-link>
-                          <router-link to="/logo-design/" class="nav-item nav-link" exact>Logo Design</router-link>
-                          <router-link to="/graphic-design/" class="nav-item nav-link" exact>Graphic Design</router-link>
+                          <div>
+                            <router-link to="/work" class="nav-item nav-link">Work</router-link>
+                              <div class="ml-3">
+                                <router-link to="/work/web-development/" class="nav-item nav-link" exact>Web Development</router-link>
+                                <router-link to="/work/logo-design/" class="nav-item nav-link" exact>Logo Design</router-link>
+                                <router-link to="/work/graphic-design/" class="nav-item nav-link" exact>Graphic Design</router-link>
+                              </div>
+                          </div>
+
                           <div class="mt-3">
                             <router-link to="/blog" class="nav-item nav-link">Blog</router-link>
                             <router-link to="/about" class="nav-item nav-link" exact>About</router-link>
@@ -126,7 +131,10 @@
           </aside>
 
           <section id="content" class="container-fluid" style="position: absolute">
-                <transition name="fade">
+                <transition
+                  name="fade"
+                  mode="out-in"
+                >
                   <router-view>
                   
                   </router-view>

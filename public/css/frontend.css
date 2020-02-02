@@ -23,49 +23,17 @@
 
 .fade-enter-active,
 .fade-leave-active {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-property: height, opacity;
-  transition-property: height, opacity;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
-  overflow: hidden;
 }
 
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-}
-
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-property: height, opacity, -webkit-transform;
-  transition-property: height, opacity, -webkit-transform;
-  transition-property: height, opacity, transform;
-  transition-property: height, opacity, transform, -webkit-transform;
-  -webkit-transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-          transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  overflow: hidden;
-}
-
-.slide-left-enter,
-.slide-right-leave-active {
-  opacity: 0;
-  -webkit-transform: translate(2em, 0);
-          transform: translate(2em, 0);
-}
-
-.slide-left-leave-active,
-.slide-right-enter {
-  opacity: 0;
-  -webkit-transform: translate(-2em, 0);
-          transform: translate(-2em, 0);
 }
 
 .lf-black-bg {
@@ -368,11 +336,6 @@ aside a:hover {
   color: #999;
 }
 
-aside .router-link-active {
-  font-weight: 600;
-  color: #000;
-}
-
 aside .primary-menu {
   margin-bottom: 1rem;
   padding-bottom: 0.2rem !important;
@@ -381,11 +344,6 @@ aside .primary-menu {
 aside .primary-menu a {
   padding-bottom: .1rem;
   padding-top: .1rem;
-}
-
-aside .primary-menu .nav-item:hover:after,
-aside .primary-menu .nav-item.router-link-active:after {
-  content: ' ';
 }
 
 aside .navbar-toggler {
@@ -417,11 +375,6 @@ aside .block-social a:hover {
 @media (min-width: 992px) {
   aside .primary-menu {
     margin-left: 3rem;
-  }
-
-  aside .primary-menu .nav-item:hover:after,
-  aside .primary-menu .nav-item.router-link-active:after {
-    content: ' >';
   }
 }
 
@@ -457,6 +410,11 @@ main #content a {
 
 main #content a:hover {
   text-decoration: underline;
+}
+
+main .router-link-active {
+  font-weight: 600;
+  color: #000;
 }
 
 #phone-btn {

@@ -1,10 +1,6 @@
 <template>
     <div id="web_development" class="container page">
-        <div class="page-title">
-            <h1>Web Development</h1>
-            <hr>
-        </div>
-            <div v-for="post of this.$parent.data.portfolio"  :key="post.id">
+            <div v-for="post of this.$parent.$parent.data.portfolio"  :key="post.id">
                 <template v-if='post.type === "web_development"'>
                     <div class="row portfolio-item flex align-items-center">
                         <div class="col-12 col-md-7">
@@ -47,7 +43,7 @@ export default {
 
     // Fetches posts when the component is created.
     mounted() {
-        this.$parent.displayTopbar();
+        this.$parent.$parent.displayTopbar();
     }
 }
 

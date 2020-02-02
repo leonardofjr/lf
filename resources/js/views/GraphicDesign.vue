@@ -1,10 +1,6 @@
 <template>
     <div id="graphic_design" class="container page">
-        <div class="page-title">
-            <h1>Graphic Design</h1>
-            <hr>
-        </div>
-        <div v-for="post of this.$parent.data.portfolio" class="row portfolio-item" :key="post.id">
+        <div v-for="post of this.$parent.$parent.data.portfolio" class="row portfolio-item" :key="post.id">
             <template v-if='post.type === "graphic_design"'>
             <div class="col-12 col-md-4">
                 <img :src="post.image ? '/storage/'+ post.image : 'https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected'" class="img-fluid">
@@ -39,7 +35,7 @@ export default {
 
     // Fetches posts when the component is created.
     mounted() {
-        this.$parent.displayTopbar();
+        this.$parent.$parent.displayTopbar();
 
     }
 }

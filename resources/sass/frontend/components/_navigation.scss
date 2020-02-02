@@ -36,10 +36,7 @@ aside {
         a:hover {
             color: #999;
         }
-        .router-link-active {
-            font-weight: 600;
-            color: #000;
-        }
+
         .primary-menu {
             margin-bottom: 1rem;
             padding-bottom: .2rem!important;
@@ -48,10 +45,6 @@ aside {
                 padding-bottom: .1rem;
                 padding-top: .1rem;
             }
-        }
-        .primary-menu .nav-item:hover:after,
-        .primary-menu .nav-item.router-link-active:after {
-            content: ' ';
         }
 
         .navbar-toggler {
@@ -86,12 +79,6 @@ aside {
             .primary-menu {
                 margin-left: 3rem;
             }
-            .primary-menu .nav-item:hover:after,
-            .primary-menu .nav-item.router-link-active:after {
-                content: ' >';
-            }
-
-            
         }
 }
 

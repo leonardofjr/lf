@@ -13,10 +13,8 @@
 
 
                         <div class="text-center btns-wrapper">
-                        <router-link class="d-block d-md-inline-block" to="/web-development"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">Web Development</button></router-link>
-                        <router-link class="d-block d-md-inline-block" to="/logo-design"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">Logo Design</button></router-link>
-                        <router-link class="d-block d-md-inline-block" to="/graphic-design"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">Graphic Design</button></router-link>
-                </div>
+                            <router-link class="d-block d-md-inline-block" to="/work"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">View work</button></router-link>
+                         </div>
                     </div>
                 </div>
 
@@ -32,7 +30,7 @@
         },
         mounted() {
 
-            if ($('.loading-overlay') != null ) {
+            if ($('.loading-overlay') != null) {
                 $('body').removeClass('overflow-auto');
                 $('#top-bar').addClass('d-none');
                 $('body').addClass('overflow-hidden');

@@ -25,6 +25,7 @@ Vue.use(VueRouter)
 import App from './views/App'
 import Home from './views/Home'
 import About from './views/About'
+import Work from './views/Work'
 import WebDevelopment from './views/WebDevelopment'
 import LogoDesign from './views/LogoDesign'
 import GraphicDesign from './views/GraphicDesign'
@@ -47,27 +48,37 @@ const router = new VueRouter({
             component : About
         },
         {
-            path: '/web-development',
-            name: 'web-development',
-            component: WebDevelopment,
-            meta: { transitionName: 'slide' }
-        },
+            path : '/work',
+            name : 'work',
+            component : Work,
+            children: [
+                {
+                    path: 'web-development',
+                    name: 'web-development',
+                    component: WebDevelopment,
+                },
+                {
+                    path: 'logo-design',
+                    name: 'logo-design',
+                    component: LogoDesign,
+                },
+                
         {
-            path: '/logo-design',
-            name: 'logo-design',
-            component: LogoDesign,
-            meta: { transitionName: 'slide' }
+                    path: 'graphic-design',
+                    name: 'graphic-design',
+                    component: GraphicDesign,
+                },
+            ]
         },
-        {
-            path: '/graphic-design',
-            name: 'graphic-design',
-            component: GraphicDesign,
-            meta: { transitionName: 'slide' }
-        },
+
+
         {
             path: '/blog',
             name: 'Blog',
             component: Blog,
+            children: [
+                
+            ]
         },
         {
             path: '/blog/post/:id',
