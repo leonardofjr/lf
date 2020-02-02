@@ -1,5 +1,6 @@
 body {
-  @include font-settings;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 300;
 
 }
 
@@ -9,7 +10,9 @@ strong {
 	font-weight: 600;
 }
 
-
+p {
+	margin-bottom: .7rem;
+}
 
 ul {
 		padding-inline-start: 40px;
@@ -29,21 +32,23 @@ dl.dl-vertical {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight:500;
   margin-bottom: .5rem;
   line-height: 1.2;
 }
 
 h1 {
 	font-size: 3em;
-	font-weight: 600;
 }
 
 h2 {
 	font-size: 2.7em;
-	font-weight: 300;
 }
 
 h3 {
 	font-size: 2.4em;
-	font-weight: 300;
+}
+
+h4 {
+	font-size: 2.0em;
 }

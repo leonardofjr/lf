@@ -1,7 +1,8 @@
 <template>
         <section id="about" class="container page">
             <div class="page-title">
-                <h2 class="display-4" >Web Developer & Graphic Designer<br> experienced in creating CRUD applications.</h2>
+                <h1 >About</h1>
+                <hr>
             </div>
             <div>
                 <div v-html="this.$parent.data.bio"></div>

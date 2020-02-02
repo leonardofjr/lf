@@ -1,3 +1,4 @@
+<style>@import '/css/frontend.css';</style>
 <template>     
       <main>
         <div id="phone-btn" class="d-md-none">
@@ -85,39 +86,40 @@
                       </div>
               </nav>
 
-              <div class="block-social py-1 pl-3 d-none d-lg-block">
+              <div class="block-social d-flex justify-content-center">
                   <!-- Contact link icons -->
-                  <p class="pb-1 pl-0 block-title">Get In touch</p>
-                  <!-- If email is not null -->
-                  <span v-if="data.email" class="px-1">
-                        <a :href="'mailto:' + data.email">
-                          <i class="fas fa-2x fa-envelope"></i>
-                        </a>
-                    </span>
-                    <!-- If twitter_url is not null -->
-                    <span v-if="data.twitter_url" class="px-1">
-                        <a :href="data.twitter_url">
-                          <i class="fab fa-2x fa-twitter"></i>
+                  <div class="">
+                    <!-- If email is not null -->
+                    <span v-if="data.email" class="px-1">
+                          <a :href="'mailto:' + data.email">
+                            <i class="fas fa-2x fa-envelope"></i>
                           </a>
-                    </span>
-                    <!-- If linkedin_url is not null -->
-                    <span v-if="data.linkedin_url" class="px-1">
-                        <a :href="data.linkedin_url" class="px-1">
-                          <i class="fab fa-2x fa-linkedin-in"></i> 
+                      </span>
+                      <!-- If twitter_url is not null -->
+                      <span v-if="data.twitter_url" class="px-1">
+                          <a :href="data.twitter_url">
+                            <i class="fab fa-2x fa-twitter"></i>
+                            </a>
+                      </span>
+                      <!-- If linkedin_url is not null -->
+                      <span v-if="data.linkedin_url" class="px-1">
+                          <a :href="data.linkedin_url" class="px-1">
+                            <i class="fab fa-2x fa-linkedin-in"></i> 
+                          </a>
+                      </span>
+                      <!-- If facebook_url is not null -->
+                      <span v-if="data.facebook_url" class="px-1">
+                        <a :href="data.facebook_url">
+                          <i class="fab fa-2x fa-facebook"></i>
                         </a>
-                    </span>
-                    <!-- If facebook_url is not null -->
-                    <span v-if="data.facebook_url" class="px-1">
-                      <a :href="data.facebook_url">
-                        <i class="fab fa-2x fa-facebook"></i>
-                      </a>
-                    </span>
-                    <!-- If github_url is not null -->
-                    <span v-if="data.github_url" class="px-1">
-                        <a :href="data.github_url">
-                          <i class="fab fa-2x fa-github"></i>
-                        </a>
-                    </span>
+                      </span>
+                      <!-- If github_url is not null -->
+                      <span v-if="data.github_url" class="px-1">
+                          <a :href="data.github_url">
+                            <i class="fab fa-2x fa-github"></i>
+                          </a>
+                      </span>
+                    </div>
                 </div>
               </div> <!-- .aside-inner ends here -->
               
