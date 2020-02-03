@@ -1,19 +1,18 @@
 <template>
+
         <div id="home" class="row">
-                <div class="loading-overlay ">
-                </div>
+      
                 <div class="content-wrapper">
-                    <div class="content text-center center-md-content" style="color: black">
-                        <div class="user-name" v-if="this.$parent.data.fname && this.$parent.data.lname">
+                    <div class="content text-center center-md-content">
+                        <div class="user-name mb-3" v-if="this.$parent.data.fname && this.$parent.data.lname">
                             <h1>{{this.$parent.data.fname + ' ' + this.$parent.data.lname}}</h1>
                         </div>
-                        <div class="job-title mb-5">
-                            <p>Web Developer & Graphic Designer </p>
+                        <div class="short-description mb-5">
+                            <p>A <b>self-motivated</b> full-stack <b>web developer</b> specializing in developing <b>dynamic web applications</b></p>
                         </div>
 
-
                         <div class="text-center btns-wrapper">
-                            <router-link class="d-block d-md-inline-block" to="/work"><button class="btn btn-secondary mb-4" v-on:click="fadeLoadingOverlay">View work</button></router-link>
+                            <router-link class="d-block d-md-inline-block" to="/work/web-development"><button class="btn btn-danger" v-on:click="fadeLoadingOverlay">View work</button></router-link>
                          </div>
                     </div>
                 </div>
@@ -35,7 +34,6 @@
                 $('#top-bar').addClass('d-none');
                 $('body').addClass('overflow-hidden');
                 $('.loading-overlay').addClass('loading-overlay-animation');
-                $('.btns-wrapper').addClass('home-btns-animation');
 
             } 
             

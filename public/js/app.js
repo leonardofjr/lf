@@ -34810,7 +34810,10 @@ var render = function() {
               [
                 _c(
                   "router-link",
-                  { staticClass: "nav-item nav-link", attrs: { to: "/work" } },
+                  {
+                    staticClass: "nav-item nav-link",
+                    attrs: { to: "/work/web-development" }
+                  },
                   [_vm._v("Work")]
                 ),
                 _vm._v(" "),
@@ -34998,7 +35001,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(51)
+var __vue_template__ = __webpack_require__(84)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35064,7 +35067,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -35077,7 +35079,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             $('#top-bar').addClass('d-none');
             $('body').addClass('overflow-hidden');
             $('.loading-overlay').addClass('loading-overlay-animation');
-            $('.btns-wrapper').addClass('home-btns-animation');
         }
     },
 
@@ -35093,87 +35094,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
-    _c("div", { staticClass: "loading-overlay " }),
-    _vm._v(" "),
-    _c("div", { staticClass: "content-wrapper" }, [
-      _c(
-        "div",
-        {
-          staticClass: "content text-center center-md-content",
-          staticStyle: { color: "black" }
-        },
-        [
-          this.$parent.data.fname && this.$parent.data.lname
-            ? _c("div", { staticClass: "user-name" }, [
-                _c("h1", [
-                  _vm._v(
-                    _vm._s(
-                      this.$parent.data.fname + " " + this.$parent.data.lname
-                    )
-                  )
-                ])
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "text-center btns-wrapper" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "d-block d-md-inline-block",
-                  attrs: { to: "/work" }
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-secondary mb-4",
-                      on: { click: _vm.fadeLoadingOverlay }
-                    },
-                    [_vm._v("View work")]
-                  )
-                ]
-              )
-            ],
-            1
-          )
-        ]
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "job-title mb-5" }, [
-      _c("p", [_vm._v("Web Developer & Graphic Designer ")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-63cd6604", module.exports)
-  }
-}
-
-/***/ }),
+/* 51 */,
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36684,6 +36605,90 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
+    _c("div", { staticClass: "content-wrapper" }, [
+      _c("div", { staticClass: "content text-center center-md-content" }, [
+        this.$parent.data.fname && this.$parent.data.lname
+          ? _c("div", { staticClass: "user-name mb-3" }, [
+              _c("h1", [
+                _vm._v(
+                  _vm._s(
+                    this.$parent.data.fname + " " + this.$parent.data.lname
+                  )
+                )
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "text-center btns-wrapper" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "d-block d-md-inline-block",
+                attrs: { to: "/work/web-development" }
+              },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: { click: _vm.fadeLoadingOverlay }
+                  },
+                  [_vm._v("View work")]
+                )
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "short-description mb-5" }, [
+      _c("p", [
+        _vm._v("A "),
+        _c("b", [_vm._v("self-motivated")]),
+        _vm._v(" full-stack "),
+        _c("b", [_vm._v("web developer")]),
+        _vm._v(" specializing in developing "),
+        _c("b", [_vm._v("dynamic web applications")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-63cd6604", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

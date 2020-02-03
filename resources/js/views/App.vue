@@ -75,7 +75,7 @@
 
                       <div class="primary-menu">
                           <div>
-                            <router-link to="/work" class="nav-item nav-link">Work</router-link>
+                            <router-link to="/work/web-development" class="nav-item nav-link">Work</router-link>
                               <div class="ml-3">
                                 <router-link to="/work/web-development/" class="nav-item nav-link" exact>Web Development</router-link>
                                 <router-link to="/work/logo-design/" class="nav-item nav-link" exact>Logo Design</router-link>

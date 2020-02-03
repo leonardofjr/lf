@@ -182,46 +182,6 @@ body {
   white-space: nowrap;
 }
 
-.btns-wrapper {
-  bottom: 0;
-  width: 100%;
-  -webkit-transform: translateY(75vh);
-          transform: translateY(75vh);
-}
-
-.home-btns-animation {
-  -webkit-animation-name: slideInHomeBtns;
-          animation-name: slideInHomeBtns;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes slideInHomeBtns {
-  0% {
-    -webkit-transform: translateY(75vh);
-            transform: translateY(75vh);
-  }
-
-  100% {
-    -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
-  }
-}
-
-@keyframes slideInHomeBtns {
-  0% {
-    -webkit-transform: translateY(75vh);
-            transform: translateY(75vh);
-  }
-
-  100% {
-    -webkit-transform: translateY(0vh);
-            transform: translateY(0vh);
-  }
-}
-
 /*** Hyperlinks ***/
 
 a {
@@ -242,7 +202,8 @@ body {
   font-weight: 300;
 }
 
-strong {
+strong,
+b {
   font-weight: 600;
 }
 
@@ -444,7 +405,18 @@ footer {
 
 #home .content-wrapper {
   width: 100%;
+  background: #000;
   height: 100vh;
+}
+
+#home .content-wrapper .user-name {
+  text-transform: uppercase;
+  letter-spacing: 20px;
+}
+
+#home .content-wrapper .btns-wrapper button {
+  text-transform: uppercase;
+  z-index: 10000;
 }
 
 .loading-overlay {
@@ -453,35 +425,6 @@ footer {
   z-index: 100000;
   width: 100%;
   height: 100%;
-}
-
-.loading-overlay-animation {
-  -webkit-animation-name: loadingOverlayAnimation;
-          animation-name: loadingOverlayAnimation;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes loadingOverlayAnimation {
-  0% {
-    height: 100%;
-  }
-
-  100% {
-    height: 0;
-  }
-}
-
-@keyframes loadingOverlayAnimation {
-  0% {
-    height: 100%;
-  }
-
-  100% {
-    height: 0;
-  }
 }
 
 #contact form input,
