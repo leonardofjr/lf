@@ -9,16 +9,28 @@
                     <p class="my-3">Please don't hesitate to contact me if you have any questions, comments or mesages. I'll try to response to.</p>
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" placeholder="Your Name">
+                        <span class="invalid-feedback" role="alert">
+                            <strong class="error-name"></strong>
+                        </span>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="email" name="email" placeholder="Email">
+                        <span class="invalid-feedback" role="alert">
+                            <strong class="error-email"></strong>
+                        </span>
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" rows="10" type="text" id="message" name="message" placeholder="Message"></textarea>
+                        <span class="invalid-feedback" role="alert">
+                            <strong class="error-message"></strong>
+                        </span>
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary float-right btn-danger" v-on:click="sendMessage">Send</button>
+                    <div class="form-group text-right ">
+                        <button class="btn btn-primary btn-danger btn-submit" v-on:click="sendMessage">Send</button>
                     </div>
+                        <div class="alert alert-success pt-3 d-none" role="alert">
+                            <strong>Your message has been sent.</strong>
+                        </div>
                 </div>
                 <div class="col-md-4 pl-5">
                     <h4>Contact information</h4>
@@ -75,6 +87,7 @@
         data() {
             return {
                 root: 'http://localhost:8000',
+                errors: [],
             }
         },
         mounted() {
@@ -100,16 +113,35 @@
                     },
                 })
                 .then((response) => {
-                    if(response.status === 200) {
-                        console.log(response.data.message);
-                        return response;
+                    if(response.data.status === 'errors') {
+                        console.error(response.data.message);
+                        this.validate('input[name="name"]', response.data.errors.name);
+                        this.validate('input[name="email"]', response.data.errors.email);
+                        this.validate('textarea[name="message"]', response.data.errors.message);
+
+                    } else {
+                        $('*').removeClass('is-invalid');
+                        $('.btn-submit').attr('disabled', true);
+                        $('.alert-success').removeClass('d-none')
                     }
+
                 })
                 .catch((error) => {
                     return error;
                 })
+            },
+            
+            validate(ele, err) {
+                if (err) {
+                    $(ele).addClass('is-invalid');
+                    $(ele).siblings('span').children('strong').text(err[0]);
+
+                } else {
+                    $(ele).removeClass('is-invalid');
+                }
             }
-        }
+        },
+
 
     }
 </script>

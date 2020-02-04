@@ -416,7 +416,6 @@ footer {
 
 #home .content-wrapper .btns-wrapper button {
   text-transform: uppercase;
-  z-index: 10000;
 }
 
 .loading-overlay {

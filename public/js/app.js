@@ -35001,7 +35001,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(84)
+var __vue_template__ = __webpack_require__(51)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35094,7 +35094,85 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 51 */,
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
+    _c("div", { staticClass: "content-wrapper" }, [
+      _c("div", { staticClass: "content text-center center-md-content" }, [
+        this.$parent.data.fname && this.$parent.data.lname
+          ? _c("div", { staticClass: "user-name mb-3" }, [
+              _c("h1", [
+                _vm._v(
+                  _vm._s(
+                    this.$parent.data.fname + " " + this.$parent.data.lname
+                  )
+                )
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "text-center btns-wrapper" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "d-block d-md-inline-block",
+                attrs: { to: "/work/web-development" }
+              },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: { click: _vm.fadeLoadingOverlay }
+                  },
+                  [_vm._v("View work")]
+                )
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "short-description mb-5" }, [
+      _c("p", [
+        _vm._v("A "),
+        _c("b", [_vm._v("self-motivated")]),
+        _vm._v(" full-stack "),
+        _c("b", [_vm._v("web developer")]),
+        _vm._v(" specializing in developing "),
+        _c("b", [_vm._v("dynamic web applications")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-63cd6604", module.exports)
+  }
+}
+
+/***/ }),
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36324,11 +36402,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            root: 'http://localhost:8000'
+            root: 'http://localhost:8000',
+            errors: []
         };
     },
     mounted: function mounted() {
@@ -36340,6 +36431,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         sendMessage: function sendMessage() {
+            var _this = this;
+
             axios({
                 url: this.root + '/api/mail',
                 method: 'post',
@@ -36352,13 +36445,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     message: $('textarea[name="message"]').val()
                 }
             }).then(function (response) {
-                if (response.status === 200) {
-                    console.log(response.data.message);
-                    return response;
+                if (response.data.status === 'errors') {
+                    console.error(response.data.message);
+                    _this.validate('input[name="name"]', response.data.errors.name);
+                    _this.validate('input[name="email"]', response.data.errors.email);
+                    _this.validate('textarea[name="message"]', response.data.errors.message);
+                } else {
+                    $('*').removeClass('is-invalid');
+                    $('.btn-submit').attr('disabled', true);
+                    $('.alert-success').removeClass('d-none');
                 }
             }).catch(function (error) {
                 return error;
             });
+        },
+        validate: function validate(ele, err) {
+            if (err) {
+                $(ele).addClass('is-invalid');
+                $(ele).siblings('span').children('strong').text(err[0]);
+            } else {
+                $(ele).removeClass('is-invalid');
+            }
         }
     }
 
@@ -36392,16 +36499,18 @@ var render = function() {
           _vm._v(" "),
           _vm._m(3),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
+          _c("div", { staticClass: "form-group text-right " }, [
             _c(
               "button",
               {
-                staticClass: "btn btn-primary float-right btn-danger",
+                staticClass: "btn btn-primary btn-danger btn-submit",
                 on: { click: _vm.sendMessage }
               },
               [_vm._v("Send")]
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _vm._m(4)
         ]),
         _vm._v(" "),
         _c(
@@ -36453,7 +36562,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _vm._m(5)
                   ])
                 ]
               : _vm._e(),
@@ -36504,7 +36613,7 @@ var render = function() {
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _vm._m(5)
+            _vm._m(6)
           ],
           2
         )
@@ -36531,7 +36640,13 @@ var staticRenderFns = [
       _c("input", {
         staticClass: "form-control",
         attrs: { type: "text", name: "name", placeholder: "Your Name" }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "invalid-feedback", attrs: { role: "alert" } },
+        [_c("strong", { staticClass: "error-name" })]
+      )
     ])
   },
   function() {
@@ -36542,7 +36657,13 @@ var staticRenderFns = [
       _c("input", {
         staticClass: "form-control",
         attrs: { type: "email", name: "email", placeholder: "Email" }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "invalid-feedback", attrs: { role: "alert" } },
+        [_c("strong", { staticClass: "error-email" })]
+      )
     ])
   },
   function() {
@@ -36559,8 +36680,27 @@ var staticRenderFns = [
           name: "message",
           placeholder: "Message"
         }
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "invalid-feedback", attrs: { role: "alert" } },
+        [_c("strong", { staticClass: "error-message" })]
+      )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "alert alert-success pt-3 d-none",
+        attrs: { role: "alert" }
+      },
+      [_c("strong", [_vm._v("Your message has been sent.")])]
+    )
   },
   function() {
     var _vm = this
@@ -36605,90 +36745,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row", attrs: { id: "home" } }, [
-    _c("div", { staticClass: "content-wrapper" }, [
-      _c("div", { staticClass: "content text-center center-md-content" }, [
-        this.$parent.data.fname && this.$parent.data.lname
-          ? _c("div", { staticClass: "user-name mb-3" }, [
-              _c("h1", [
-                _vm._v(
-                  _vm._s(
-                    this.$parent.data.fname + " " + this.$parent.data.lname
-                  )
-                )
-              ])
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "text-center btns-wrapper" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "d-block d-md-inline-block",
-                attrs: { to: "/work/web-development" }
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-danger",
-                    on: { click: _vm.fadeLoadingOverlay }
-                  },
-                  [_vm._v("View work")]
-                )
-              ]
-            )
-          ],
-          1
-        )
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "short-description mb-5" }, [
-      _c("p", [
-        _vm._v("A "),
-        _c("b", [_vm._v("self-motivated")]),
-        _vm._v(" full-stack "),
-        _c("b", [_vm._v("web developer")]),
-        _vm._v(" specializing in developing "),
-        _c("b", [_vm._v("dynamic web applications")])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-63cd6604", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
