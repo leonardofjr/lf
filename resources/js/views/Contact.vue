@@ -5,7 +5,7 @@
                 <hr>
             </div>
             <div class="row">
-                <div class="col-md-8 ">
+                <div class="col-md-8 mb-5 mb-md-0 ">
                     <p class="my-3">Please don't hesitate to contact me if you have any questions, comments or mesages. I'll try to response to.</p>
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" placeholder="Your Name">
@@ -50,7 +50,7 @@
                             </div>
                             <div class="">
                                 <dt>vCard</dt>
-                                <dd><a href="#">Download</a></dd>
+                                <dd><a href="/LeoFelipa.vcf">Download</a></dd>
                             </div>
                         </dl>
                     </template>
@@ -73,7 +73,7 @@
                              <a :href="this.$parent.data.github_url"><i class="fab fa-2x fa-github mr-3"></i></a>
                         </span>
                     </div>
-                    <div>
+                    <div class="d-none">
                         <h4>Quick links</h4>
                     </div>
                 </div>
@@ -92,10 +92,6 @@
         },
         mounted() {
              this.$parent.displayTopbar();
-
-        },
-        // Fetches posts when the component is created.
-        created() {
 
         },
         methods: {

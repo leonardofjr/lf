@@ -34579,7 +34579,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       method: 'get',
       url: this.web_url + 'api/user'
     }).then(function (response) {
-      console.log(response);
       if (!response.data['logged_in']) {
         _this.data = response.data;
         _this.user = false;
@@ -36426,9 +36425,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.$parent.displayTopbar();
     },
 
-    // Fetches posts when the component is created.
-    created: function created() {},
-
     methods: {
         sendMessage: function sendMessage() {
             var _this = this;
@@ -36486,7 +36482,7 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 " }, [
+        _c("div", { staticClass: "col-md-8 mb-5 mb-md-0 " }, [
           _c("p", { staticClass: "my-3" }, [
             _vm._v(
               "Please don't hesitate to contact me if you have any questions, comments or mesages. I'll try to response to."
@@ -36709,14 +36705,18 @@ var staticRenderFns = [
     return _c("div", {}, [
       _c("dt", [_vm._v("vCard")]),
       _vm._v(" "),
-      _c("dd", [_c("a", { attrs: { href: "#" } }, [_vm._v("Download")])])
+      _c("dd", [
+        _c("a", { attrs: { href: "/LeoFelipa.vcf" } }, [_vm._v("Download")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h4", [_vm._v("Quick links")])])
+    return _c("div", { staticClass: "d-none" }, [
+      _c("h4", [_vm._v("Quick links")])
+    ])
   }
 ]
 render._withStripped = true

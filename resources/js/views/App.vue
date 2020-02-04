@@ -160,7 +160,6 @@
           url: this.web_url + 'api/user',
         })
         .then(response => {
-          console.log(response);
           if (!response.data['logged_in']) {
             this.data = response.data;
             this.user = false;
