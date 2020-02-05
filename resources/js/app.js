@@ -99,7 +99,7 @@ Vue.mixin({
     data: function () {
             return {
                 get web_url() {
-                   // return "https://leojr.me/api/";
+                   // return "https://lfelipa.com/";
                     return "http://localhost:8000/";
         }
     }

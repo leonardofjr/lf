@@ -86,7 +86,6 @@
     export default {
         data() {
             return {
-                root: 'http://localhost:8000',
                 errors: [],
             }
         },
@@ -97,7 +96,7 @@
         methods: {
             sendMessage() {
                 axios({
-                    url: this.root + '/api/mail',
+                    url: this.web_url + '/api/mail',
                     method: 'post',
                     headers: {
                         'X-CSRF-TOKEN' : this.$parent.csrf,

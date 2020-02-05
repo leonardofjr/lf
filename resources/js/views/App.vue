@@ -14,8 +14,8 @@
                 <div class="dropdown">
                 <!-- If user is null -->  
                 <template  v-if="!user" class="mr-3 my-3 text-right">
-                        <a href="/admin/login">Login</a> 
-                        <a href="/admin/register">Register</a>
+                      <!--   <a href="/admin/login">Login</a> 
+                       <a href="/admin/register">Register</a>-->
                 </template>
 
                 <!-- else if user data is returned -->

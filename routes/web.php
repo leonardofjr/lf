@@ -13,7 +13,7 @@
 /* Frontend */
 
 Route::get('/', 'FrontendController@getHomePage');
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true, 'register' => false]);
 
 //Route::get('/{catchall?}', 'FrontendController@getHomePage')->where('catchall', '^(?!admin).*$', '^(?!api).*$', '^(?!email).*$')->name('administration');
 

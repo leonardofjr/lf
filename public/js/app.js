@@ -14416,7 +14416,7 @@ __WEBPACK_IMPORTED_MODULE_4_vue___default.a.mixin({
     data: function data() {
         return {
             get web_url() {
-                // return "https://leojr.me/api/";
+                // return "https://lfelipa.com/";
                 return "http://localhost:8000/";
             }
         };
@@ -34644,15 +34644,7 @@ var render = function() {
           { staticClass: "dropdown" },
           [
             !_vm.user
-              ? [
-                  _c("a", { attrs: { href: "/admin/login" } }, [
-                    _vm._v("Login")
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "/admin/register" } }, [
-                    _vm._v("Register")
-                  ])
-                ]
+              ? void 0
               : [
                   _c(
                     "a",
@@ -36417,7 +36409,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            root: 'http://localhost:8000',
             errors: []
         };
     },
@@ -36430,7 +36421,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios({
-                url: this.root + '/api/mail',
+                url: this.web_url + '/api/mail',
                 method: 'post',
                 headers: {
                     'X-CSRF-TOKEN': this.$parent.csrf
