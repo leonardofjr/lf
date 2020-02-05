@@ -24,12 +24,6 @@
     <!-- Vue.js -->
     <script type="text/javascript" src="/js/app.js"></script>
 
-    <!-- Functions Script -->
-    <script type="text/javascript" src="/js/functions.js"></script>
-
-
-
-
 </html>
 
 

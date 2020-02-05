@@ -1,4 +1,3 @@
-<style>@import '/css/frontend.css';</style>
 <template>     
       <main>
         <div id="phone-btn" class="d-md-none">
@@ -7,7 +6,7 @@
             </a>
         </div>
         <div id="top-bar" class="navbar navbar-light fixed-top d-none">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" v-on:click="toggleNav($event)">
               <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -75,18 +74,18 @@
 
                       <div class="primary-menu">
                           <div>
-                            <router-link to="/work/web-development" class="nav-item nav-link">Work</router-link>
+                            <router-link v-on:click.native="resetNavigation()" to="/work/web-development" class="nav-item nav-link">Work</router-link>
                               <div class="ml-3">
-                                <router-link to="/work/web-development/" class="nav-item nav-link" exact>Web Development</router-link>
-                                <router-link to="/work/logo-design/" class="nav-item nav-link" exact>Logo Design</router-link>
-                                <router-link to="/work/graphic-design/" class="nav-item nav-link" exact>Graphic Design</router-link>
+                                <router-link v-on:click.native="resetNavigation()" to="/work/web-development/" class="nav-item nav-link" exact>Web Development</router-link>
+                                <router-link v-on:click.native="resetNavigation()" to="/work/logo-design/" class="nav-item nav-link" exact>Logo Design</router-link>
+                                <router-link v-on:click.native="resetNavigation()" to="/work/graphic-design/" class="nav-item nav-link" exact>Graphic Design</router-link>
                               </div>
                           </div>
 
                           <div class="mt-3">
-                            <router-link to="/blog" class="nav-item nav-link">Blog</router-link>
-                            <router-link to="/about" class="nav-item nav-link" exact>About</router-link>
-                            <router-link to="/contact" class="nav-item nav-link">Let's Talk</router-link>
+                            <router-link v-on:click.native="resetNavigation()" to="/blog" class="nav-item nav-link">Blog</router-link>
+                            <router-link v-on:click.native="resetNavigation()" to="/about" class="nav-item nav-link" exact>About</router-link>
+                            <router-link v-on:click.native="resetNavigation()" to="/contact" class="nav-item nav-link">Let's Talk</router-link>
                           </div>
                       </div>
               </nav>
@@ -130,7 +129,7 @@
               
           </aside>
 
-          <section id="content" class="container-fluid" style="position: absolute">
+          <section v-on:click="resetNavigation()" id="content" class="container-fluid" style="position: absolute">
                 <transition
                   name="fade"
                   mode="out-in"
@@ -154,7 +153,10 @@
         user: false,
      };
    },
-  created() {
+  mounted() {
+        this.loadNavigationEvents();
+
+
         axios({
           method: 'get',
           url: this.web_url + 'api/user',
@@ -173,6 +175,8 @@
         .catch(e => {
               this.errors.push(e)
         });
+
+
   },
   methods: {
           displayTopbar() {
@@ -208,7 +212,79 @@
               return month[date.getMonth()] + ' ' + date.getDate() + ',' + date.getFullYear();
               // output example: January 1, 2050
           },
-  }
+
+          loadNavigationEvents() {
+              $(document).ready(function() {
+                  if ($(window).width() > 800) {
+                      $('#content').addClass('frontend-lg');
+                  } 
+                $(window).resize(function(e) {
+                    // If the window.width is greater than 800 then the following if statement will be executed.
+                    if ($(window).width() > 800) {
+                        $('#content').addClass('frontend-lg');
+                    } else {
+                        $('#content').removeClass('frontend-lg');
+                    }
+                })
+              })
+          },
+
+          toggleNav() {
+                  if (!$('.navbar-toggler').hasClass('toggle-on')) {
+                    // The following function will be excuted
+                    this.slideInNavigation();
+                      //The function bellow will only be called if #content contains the .frontend-lg class.
+                    if($('#content').hasClass('frontend-lg')) {
+                        this.slideInContent();
+                    }
+                  } else {
+
+                      // The following function will be excuted
+                       this.slideOutNavigation();
+                      //The function bellow will only be called if #content contains the .frontend-lg class.
+                      if($('#content').hasClass('frontend-lg')) {
+                          this.slideOutContent();
+                      }
+                  }
+              },
+            slideInNavigation() {
+                $('.navbar-toggler').addClass('toggle-on')
+                // The following classes applied by the slideOutElements() function will be removed.
+                $('aside').removeClass('slide-in-navigation slide-out-navigation show');
+                $('#content').removeClass('slide-in-content slide-out-content show');
+                $('aside').addClass('slide-in-navigation show');
+            },
+            slideOutNavigation() {
+                $('.navbar-toggler').removeClass('toggle-on')
+                // The following classes applied by the slideInElements() function will be removed.
+                $('aside').removeClass('slide-in-navigation show');
+                $('#content').removeClass('slide-in-content show');
+                $('aside').addClass('slide-out-navigation');
+            },
+            slideInContent() {
+                $('#content').addClass('slide-in-content show');
+            },
+            slideOutContent() {
+                $('#content').addClass('slide-out-content');
+            },
+            resetNavigation() {
+              if ($('aside').hasClass('show') ) {
+                  // The following classes applied by the slideInElements() function will be removed.
+                  $('aside').removeClass('slide-in-navigation show');
+                  $('#content').removeClass('slide-in-content show');
+                  // The following function will be excuted
+                  this.slideOutNavigation();
+                  //The function bellow will only be called if #content contains the .frontend-lg class.
+                  if($('#content').hasClass('frontend-lg')) {
+                      this.slideOutContent();
+                  }
+              }
+            }
+           }
 }
 </script>
+
+
+
+
 

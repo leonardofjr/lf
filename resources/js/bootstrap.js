@@ -12,6 +12,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('bootstrap/dist/css/bootstrap.min.css');
+
 } catch (e) {}
 
 /**
@@ -54,3 +56,18 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+
+
+
+/**
+ * Next we will import our custom css file
+ *
+ *
+ */
+
+let css = document.createElement('link');
+css.setAttribute('href', '/css/frontend.css');
+css.setAttribute('rel', 'stylesheet');
+css.setAttribute('type', 'text/css');
+document.head.appendChild(css);

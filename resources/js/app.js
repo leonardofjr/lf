@@ -4,34 +4,22 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import JQuery from 'jquery';
-
-window.$ = window.JQuery =  JQuery; 
-import'popper.js';
-import'bootstrap';
-import'bootstrap/dist/css/bootstrap.min.css';
-
-
-window.axios = require('axios');
-
-Vue.prototype.$http = window.axios;
-
-
+import './bootstrap.js';
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import App from './views/App'
-import Home from './views/Home'
-import About from './views/About'
-import Work from './views/Work'
-import WebDevelopment from './views/WebDevelopment'
-import LogoDesign from './views/LogoDesign'
-import GraphicDesign from './views/GraphicDesign'
-import Blog from './views/Blog'
-import BlogPost from './views/BlogPost'
-import Contact from './views/Contact'
+const  App = () => System.import('./views/App');
+const  Home = () => System.import('./views/Home');
+const  About = () => System.import('./views/About');
+const  Work = () => System.import('./views/Work');
+const  WebDevelopment = () => System.import('./views/WebDevelopment');
+const  LogoDesign = () => System.import('./views/LogoDesign');
+const  GraphicDesign = () => System.import('./views/GraphicDesign');
+const  Blog = () => System.import('./views/Blog');
+const  BlogPost = () => System.import('./views/BlogPost');
+const  Contact = () => System.import('./views/Contact');
 
 
 const router = new VueRouter({
@@ -107,10 +95,9 @@ Vue.mixin({
     
 })
 
-
-const app = new Vue({
-    el: '#app',
-    components: { App },
-    router,
-});
+    const app = new Vue({
+        el: '#app',
+        components: { App },
+        router,
+    });
 
