@@ -9,7 +9,7 @@
                         <h2 class="title">{{post.title}}</h2>
                         <p class="created-at">{{$parent.date(post.created_at)}}</p>
                             <img :src="post.image ? '/storage/'+ post.image : 'https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected'" class="img-fluid my-5">                        <p v-html="$parent.excerpt(post.content, 150)"></p>
-                        <router-link :to="'post/' + post.slug">Read more</router-link>
+                        <router-link :to="'/blog/post/' + post.slug">Read more</router-link>
                         <div class="my-5">
                             <hr>
                         </div>

@@ -35,7 +35,7 @@ import Contact from './views/Contact'
 
 
 const router = new VueRouter({
-    mode: '',
+    mode: 'history',
     routes: [
         {
             path: '/',

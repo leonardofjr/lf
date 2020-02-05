@@ -14368,7 +14368,7 @@ __WEBPACK_IMPORTED_MODULE_4_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vue_
 
 
 var router = new __WEBPACK_IMPORTED_MODULE_5_vue_router__["a" /* default */]({
-    mode: '',
+    mode: 'history',
     routes: [{
         path: '/',
         name: 'home',
@@ -36043,9 +36043,11 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("router-link", { attrs: { to: "post/" + post.slug } }, [
-                  _vm._v("Read more")
-                ]),
+                _c(
+                  "router-link",
+                  { attrs: { to: "/blog/post/" + post.slug } },
+                  [_vm._v("Read more")]
+                ),
                 _vm._v(" "),
                 _vm._m(1, true)
               ],
@@ -36157,6 +36159,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -36186,27 +36190,22 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container page", attrs: { id: "blog" } },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._l(this.$parent.data.blog, function(post) {
-        return _c(
-          "div",
-          {
-            key: post.id,
-            staticClass: "d-flex justify-content-center blog-item"
-          },
-          [
-            _vm.params === post.slug
-              ? [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "text-center",
-                      staticStyle: { width: "80%" }
-                    },
-                    [
-                      _c("h2", { staticClass: "title" }, [
+    _vm._l(this.$parent.data.blog, function(post) {
+      return _c(
+        "div",
+        {
+          key: post.id,
+          staticClass: "d-flex justify-content-center blog-item"
+        },
+        [
+          _vm.params === post.slug
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "text-center", staticStyle: { width: "80%" } },
+                  [
+                    _c("div", { staticClass: "page-title" }, [
+                      _c("h1", { staticClass: "title" }, [
                         _vm._v(_vm._s(post.title))
                       ]),
                       _vm._v(" "),
@@ -36214,6 +36213,10 @@ var render = function() {
                         _vm._v(_vm._s(_vm.$parent.date(post.created_at)))
                       ]),
                       _vm._v(" "),
+                      _c("hr")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "content" }, [
                       _c("img", {
                         staticClass: "img-fluid my-5",
                         attrs: {
@@ -36230,35 +36233,23 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass: "btn btn-primary mt-4",
+                          staticClass: "btn btn-danger my-4",
                           on: { click: _vm.$parent.back }
                         },
                         [_vm._v("Go Back")]
                       )
-                    ]
-                  )
-                ]
-              : _vm._e()
-          ],
-          2
-        )
-      })
-    ],
-    2
+                    ])
+                  ]
+                )
+              ]
+            : _vm._e()
+        ],
+        2
+      )
+    })
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page-title" }, [
-      _c("h1", [_vm._v("Blog")]),
-      _vm._v(" "),
-      _c("hr")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
