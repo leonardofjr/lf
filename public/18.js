@@ -574,7 +574,15 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "navbar-brand", attrs: { to: "/", exact: "" } },
+                {
+                  staticClass: "navbar-brand",
+                  attrs: { to: "/", exact: "" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.resetNavigation()
+                    }
+                  }
+                },
                 [
                   this.data.profile_image
                     ? _c("img", {
@@ -602,7 +610,12 @@ var render = function() {
                 "router-link",
                 {
                   staticClass: "navbar-brand text-uppercase",
-                  attrs: { to: "/", exact: "" }
+                  attrs: { to: "/", exact: "" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.resetNavigation()
+                    }
+                  }
                 },
                 [
                   _vm._v(
@@ -618,11 +631,22 @@ var render = function() {
             "div",
             { staticClass: "user-title" },
             [
-              _c("router-link", { attrs: { to: "/" } }, [
-                _c("h2", { staticClass: "user-title-style " }, [
-                  _vm._v("Web Developer")
-                ])
-              ])
+              _c(
+                "router-link",
+                {
+                  attrs: { to: "/" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.resetNavigation()
+                    }
+                  }
+                },
+                [
+                  _c("h2", { staticClass: "user-title-style " }, [
+                    _vm._v("Web Developer")
+                  ])
+                ]
+              )
             ],
             1
           )

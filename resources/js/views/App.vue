@@ -51,7 +51,7 @@
               <div class="user">
                 <!-- User Avatar -->
                 <div class="user-avatar d-flex justify-content-center">
-                    <router-link to="/"  class="navbar-brand"  exact>
+                    <router-link to="/"  class="navbar-brand" v-on:click.native="resetNavigation()"  exact>
                       <img v-if="this.data.profile_image" :src='"/storage/" + this.data.profile_image' alt="" class="avatar img-fluid rounded-circle mt-4">
                       <img v-else src="/imgs/logo.png" alt="" class="avatar img-fluid rounded-circle">
                     </router-link>
@@ -59,12 +59,12 @@
                 
                 <!-- User Name -->
                 <div  class="user-name d-flex justify-content-center">
-                  <router-link to="/"  class="navbar-brand text-uppercase"  exact >{{data['fname']}} {{data['lname']}}</router-link>
+                  <router-link to="/"  class="navbar-brand text-uppercase"  v-on:click.native="resetNavigation()" exact >{{data['fname']}} {{data['lname']}}</router-link>
                 </div>
                 
                 <!-- User Job Title -->
                 <div class="user-title">
-                <router-link to="/">
+                <router-link to="/"  v-on:click.native="resetNavigation()">
                   <h2 class="user-title-style ">Web Developer</h2>
                   </router-link>
                 </div>
