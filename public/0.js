@@ -1,14 +1,14 @@
-webpackJsonp([2],{
+webpackJsonp([0],{
 
-/***/ 52:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(57)
 /* script */
-var __vue_script__ = __webpack_require__(68)
+var __vue_script__ = __webpack_require__(64)
 /* template */
-var __vue_template__ = __webpack_require__(69)
+var __vue_template__ = __webpack_require__(65)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/views/LogoDesign.vue"
+Component.options.__file = "resources/js/views/Work.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-11c38db0", Component.options)
+    hotAPI.createRecord("data-v-25b093a0", Component.options)
   } else {
-    hotAPI.reload("data-v-11c38db0", Component.options)
+    hotAPI.reload("data-v-25b093a0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -158,13 +158,11 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 68:
+/***/ 64:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -176,36 +174,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {};
     },
-
-
-    methods: {
-        getPostBody: function getPostBody(post) {
-            this.body = this.stripTags(post);
-
-            return this.body.length > 50 ? this.body.substring(0, 50) + '...' : this.body;
-        },
-        stripTags: function stripTags(text) {
-            return text.replace(/(<([^>]+)>)/ig, '');
-        }
+    mounted: function mounted() {
+        this.$parent.displayTopbar();
     },
 
     // Fetches posts when the component is created.
-    mounted: function mounted() {
-        this.$parent.$parent.displayTopbar();
-    }
+    created: function created() {}
 });
 
 /***/ }),
 
-/***/ 69:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -213,31 +207,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { staticClass: "container page", attrs: { id: "logo_design" } },
-    _vm._l(this.$parent.$parent.data.portfolio, function(post) {
-      return _c(
-        "div",
-        { key: post.id, staticClass: "row portfolio-item" },
-        [
-          post.type === "logo_design"
-            ? [
-                _c("div", { staticClass: "col-12 col-md-4" }, [
-                  _c("img", {
-                    staticClass: "img-fluid",
-                    attrs: {
-                      src: post.image
-                        ? "/storage/" + post.image
-                        : "https://via.placeholder.com/500/333333/FFFFFF/?text=no%20image%20selected"
-                    }
-                  })
-                ])
-              ]
-            : _vm._e()
-        ],
-        2
+    "section",
+    { staticClass: "container page", attrs: { id: "work" } },
+    [
+      _c("div", { staticClass: "page-title" }, [
+        _c("h1", [_vm._v("Work")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "nav justify-content-end" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item nav-link",
+                attrs: { to: "/work/web-development/", exact: "" }
+              },
+              [_vm._v("Web Development")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item nav-link",
+                attrs: { to: "/work/logo-design/", exact: "" }
+              },
+              [_vm._v("Logo Design")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item nav-link",
+                attrs: { to: "/work/graphic-design/", exact: "" }
+              },
+              [_vm._v("Graphic Design")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("hr")
+      ]),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "fade", mode: "out-in" } },
+        [_c("router-view")],
+        1
       )
-    })
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -246,7 +266,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-11c38db0", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-25b093a0", module.exports)
   }
 }
 

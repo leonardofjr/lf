@@ -31,7 +31,7 @@
         },
         mounted() {
             console.log(this.$router.currentRoute.params.id);
-              this.$parent.displayTopbar();
+              this.$parent.displayTopbar(); 
         },
         // Fetches posts when the component is created.
         created() {

@@ -24,6 +24,8 @@
         },
         mounted() {
               this.$parent.displayTopbar();
+
+
         },
         // Fetches posts when the component is created.
         created() {

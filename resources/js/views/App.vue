@@ -178,6 +178,10 @@
 
 
   },
+    updated() {
+      window.scrollTo(0, 0);
+    }
+  ,
   methods: {
           displayTopbar() {
                 $('#top-bar').removeClass('d-none');
