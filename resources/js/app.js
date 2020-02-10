@@ -87,8 +87,8 @@ Vue.mixin({
     data: function () {
             return {
                 get web_url() {
-                   // return "https://lfelipa.com/";
-                    return "http://localhost:8000/";
+                   //return "https://lfelipa.com/";
+                     return "http://localhost:8000/";
         }
     }
 }

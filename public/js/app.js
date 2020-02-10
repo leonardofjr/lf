@@ -14340,7 +14340,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.mixin({
     data: function data() {
         return {
             get web_url() {
-                // return "https://lfelipa.com/";
+                //return "https://lfelipa.com/";
                 return "http://localhost:8000/";
             }
         };

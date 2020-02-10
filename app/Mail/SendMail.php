@@ -28,7 +28,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('leo@lfelipa.com')
+        return $this->from('test@me.com')
         ->markdown('emails.sendMail', [
             'data' => $this->data
         ]);

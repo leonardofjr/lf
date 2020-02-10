@@ -263,7 +263,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios({
-                url: this.web_url + '/api/mail',
+                url: this.web_url + 'api/mail',
                 method: 'post',
                 headers: {
                     'X-CSRF-TOKEN': this.$parent.csrf

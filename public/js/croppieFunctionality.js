@@ -9,7 +9,7 @@ const uploadedImageElement = $('#uploadedImageFile');
 const imageFilePreviewElement = $('#imageFilePreview');
 const cropBtnElement = $('#cropBtn');
 const croppieModal = $('#croppieModal');
-const croppieModalCloseBtn = $('.close, .closeBtn, #croppieModal');
+const croppieModalCloseBtn = $('.close, .closeBtn');
 const csrfTokenElement = $('meta[name="csrf-token"]').attr('content');
 let currentImage = imageFilePreviewElement.attr('src');
 
@@ -74,7 +74,7 @@ function ajaxUpload(result) {
         method : 'post',
         type : 'json',
         headers: {
-            'X-CSRF_TOKEN' : csrfTokenElement,
+            'X-CSRF-TOKEN' : csrfTokenElement,
         },
         data: {
             'image' : result
@@ -94,7 +94,7 @@ function ajaxUpload(result) {
 /*** FUNCTIONS ***/
 
 function updateImagePreview(data) {
-    $(imageFilePreviewElement).attr('src', data.tempDirectory + data.filename )
+    $(imageFilePreviewElement).attr('src', 'https://lfelipa.com' + data.tempDirectory + data.filename )
     $(imageFilePreviewElement).show();
 }
 

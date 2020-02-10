@@ -31,7 +31,7 @@ class MailController extends Controller
             ]);
         } else {
 
-            $email = 'leonardo.f.jr@gmail.com';
+            $email = 'leo@lfelipa.com';
 
             Mail::to($email)->send(new sendMail($request));
             return response()->json([
